@@ -1,0 +1,225 @@
+\chapter{Your Central Work}
+
+\section{Definitions and Problem Formulation}
+
+    In this section describes the relvant physical definitions used and referred to in the later code implementation.
+
+    Examples will be given n terms of laikag quadruped robot as most of the testing of the framework was done with that. 
+
+\subsection{Dynamical Systems}
+    
+    Dynamical systems are distinguished by an evolution of their state $\mathbf{x}(t)$ through time. This evolution is fully described by a set of ordinary differential equations of the form $\dot{\mathbf{x}}(t) = \mathbf{F}(\mathbf{x}(t),t}$ which simplifies to $\dot{\mathbf{x}}(t) = \mathbf{F}(\mathbf{x}(t))$ under the assumption that the dynamical system is autonomous, i.e. not explicitly dependent on time. 
+
+    When trying to solve for the explicit solution $\mathbf{x}(t)$ an initial value at time 0 $\mathbf{x_0}=\mathbf{x}(t_0)$ is needed. For simplicity we set $t_0 = 0$. With this the initial value problem IVP can be formulated: \begin{gather} find \ \ \mathbf{x}(t) \\ s.t. \ \dot{\mathbf{x}}(t) = \mathbf{F}(\mathbf{x}(t)) \\ and \ \ \mathbf{x}(0) = \mathbf{x}_0 \label{1} \end{gather}
+
+
+
+
+
+
+    It's elements are a concatenation of coordinates describing the instantaeous constellation of a system and their temporal derivatives at a time t. As explicit expressions of $\mathbf{x}(t)$ can rarely be found analytically, it is 
+
+    Don't explain why things are the way they are, just state them. 
+
+
+    It's elements are coordinates  in a chosen set of coordinates. For convenience we choose the so called generalized coordinates $\mathbf{q}(t)=\begin{pmatrix}q_1(t)&q_2(t)&\ldots&q_n(t) \end{pmatrix}^T$, which describe the system configuration with a minimal amount of coordinates, the number of which coincided with the degrees of freedom of the system. The individual q might represent angles, positions along a specific direction or even along a constrained curve. 
+
+    to acquire the equations of motion one needs to solve a 2n dimensional system of differential equations of the general form 
+    \begin{align*}
+    \dot{\mathbf{q}}(t) = \mathbf{f}(\mathbf{q}(t),\dot{\mathbf{q}}(t))\\
+    \ddot{\mathbf{q}}(t) = \mathbf{g}(\mathbf{q}(t),\dot{\mathbf{q}}(t))
+    \end{align*}
+    with $\mathbf{f}$ and $\mathbf{g}$ being some general nonlinear functions under the assumtion that the system is autonomous. 
+    q(t) describes the evolution through time.
+    q(t) can only be analytically found in a few cases and quickly breaks down when contact forces and other nonlinearities come into play. 
+
+
+    q and qdot are suffitient to describe the system as they are precisely the initial conditions for solving for the trajectory in future time. 
+
+
+    This is something for the appendix
+    It is often much simpler to formulate the dynamics in terms of differential equations, which in the case of mechanical systems result in ordinary differential equations with the first and second time derivative of q. 
+    qdot = f(q,qdot)
+    qddot = g(q,qdot)
+
+    order reduction:
+
+    x = [q,qdot] => xdot = [qdot, qddot] = F(x) = [f(x), g(x)]
+
+
+    q,qdot,qddot 
+
+
+    %$\math
+
+    The trajectory of a system is the evolution of the state x through time starting from an initial state at an initial time $\mathbf{x}_0 = \mathbf{x}(t_0)$. Explicit for trajectories $\mathbf{x}(t) = \mathbf{F}(t)$ are generally hard to find which is why system dynamics are usually described in the form of an initial value problem using systems of differential equations $\dot{\mathbf{x}}(t) = \mathbf{F}(\mathbf{x}(t),t)$. $\dot{\mathbf{q}}(t) = \begin{pmatrix}\dot{q_1}(t)&\dot{q_2}(t)&\ldots&\dot{q_n}\end{pmatrix}^T$ is denoted as the vector of generalized velocities. 
+
+    For mechanical systems the 
+
+
+    For ease of notation we define the state $\mathbf{x}(t)$ of a system by the concatenation of the generalized coordinates and velocities.
+
+    $\mathbf{x}(t) = \begin{pmatrix}\mathbf{q}(t)&\dot{\mathbf{q}}(t)\end{pmatrix}^T$
+
+
+
+    the solution of x may depend on anarbitrary order of time derivatives, however it can always be reduced to a first order system of ode's. 
+
+    we look at dynamical systems of the form of ivps  
+
+
+    Here we assume that the differential equations do not explicitly depend on time and are therefore autonomous $\mathbf{F}(\mathbf{x}(t),t) = \mathbf{F}(\mathbf{x}(t))$.   
+
+    define state and trajectory first.
+
+
+    Explic 
+    The dynamic of a system can often be described by a system on differential equations, 
+    The dynamical systems we dealt were autonomous and nonlinear in nature. Autonomous as we did not 
+    state, derivatives, trajectory
+
+    state
+    ivp
+    generalized coordinates and their derivatives
+    trajectories 
+
+
+
+
+\subsection{Phase Space and Attractors}
+    
+
+    
+    The phase space is a particular instance of state spaces, restricted to the set of generalized coordinates $q_i$ and their corresponding generalized velocities $\dot{q_i}$, sometimes in form of generalized momenta (via scaling by mass or inertia). It encompasses all possible initial conditions of a mechanical system and solutions of of the ivp result in trajectories through the phase space, starting at 
+
+
+    Starting with a system and an initial condition that is part of an attractor 
+
+    Attractors are sets of states in the phase space
+    In a general nonlinear dynamical system, the evolution of the state can be divided into two main events using the concept of attractors. Attractors are sets of states toward which the system trajectories will converge or diverge from. If the set only consists of one state it is called a fixed point, else a periodic orbit where the trajectory will visit all states of the set periodically if given enough time. 
+    We propose methods for dealing with both cases. 
+    The set of initial conditions in the phase space for which the resulting trajectories converge towards the attractor is called the basin of attraction. If an initial condition does not lie in this set, it's trajectory diverges from the attractor. 
+    Formally, a trajectory converges to an attractor A if $\underset{t \rightarrow \infty}{lim}\mathbf{x}(t) \in A$ 
+
+    When referring to a system being robust to a disturbance, it means that it's trajectory in the phase space will return to the specified attractor under the influence of that particular disturbance. 
+
+
+
+\subsection{ Parameter space and Disturbance space}
+    
+    separate from "dynamics", focus on 
+
+    dimension disturbance space equals d
+
+    In reference they did it with the phase space  
+
+    We actively separate phase space and disturbance space for the concept to be more versatile
+
+    The disturbance space is defined as the set containing all combinations of disturbances, against which the robustness of the system is evaluated. The choice of disturbances in "REFERENCE" are the initial conditions in the phase space (reference to the section in related work or copy that here) as they can be interpreted as the direct result of external forces. In general however, the disturbances may be chosen arbitrarily and the resulting robustness measure will quantify robustness against these. Examples of this were initial tilting of a quadruped over pitch and roll axes and oscillations with the disturbance space spanning the amplitudes and frequencies. Tuple combinations are favoured because of their ease of visualization and mild computational power requirements.  
+
+    "REFERENCE" chose the DS to coincide with the phase space, as elements of it can be directly interpreted as the result of external forces on the system. This choice is not always feasible nor necessary, as will be shown in the following sections. 
+
+    It may coincide with the phase space as implemented in "REFERENCE", in which case disturbances can be interpreted as the effects of external forces acting on the system. This moves the system onto a different trajectory 
+    , however it will be shown in the following sections, that this is not always feasible nor necesseary. Especially in systems with a large number of degrees of freedom n, the resulting disturbance space is 2n dimensional. 
+
+    case DS = phase space: d
+
+    dimension parameter space = p
+    The two main variable spaces of relevance move are the parameter space (PS), where each dimension represents the value of a chosen system parameter. The goal of finding a robustness measure can be though of as $RM:\mathbb{R}^p \rightarrow \mathbb{R}$, i.e. a mapping from the p-dimensional parameter space to a scalar value. (really it also depends on the disturbance space) Finding the best system parameters with respect to the resulting robustness can be formulated as an optimization problem ...
+
+
+    
+    state space v phase space
+
+\subsection{robustness Measure}
+
+    The basic idea of robustness 
+
+    First explain the basics of the REF implementation
+    Then expand to general disturbance spaces with a pointer to the meaning of DS = phase space
+
+    
+    The goal aim of the robustness measure is to quantify the robustness of a system with a particular parameter constellation with respect to a set of distrubances. As in "REFERENCE", the basic idea is that the more disturbances the system can endure, i.e. it converges to the attractor, the more robust it is. Discretizing the DS and simply counting the total number of disturbances the system is robust to is impractiacal because of the possibly fractal nature of the boundary of the basin of attraction (ref) and the fact that the number of evaluations is O((1/h)^d), meaning that higher resolution and a larger DS will drastically increase computational time. To remedy this issue, the in "REF" proposed minimal Radius is found which denotes the radius of the largest hypersphere that sill fits completely within the basin of attraction.
+
+    In other words, any combination of disturbances which lies on the surface of the hypersphere with the minimal radius in the DS will result in a trajectory that converges to the attractor in the phase space. 
+
+    Taking sampling initial conditions form the phase space as disturbances gives a nice physical interpretation and in "REF" this was denoted as general robustness (or was it?), however as a counterexample, periodic or constant disturbances are cleary not covered by this. 
+    This is why we worked with general disturbance spaces that can be chosen to work for the particular application at hand. 
+    Note that the trajectory will still lie in the phase space and convergence evaluation 
+
+
+
+\section{Code Implementation}
+
+\subsection{Framework Overview}
+
+
+
+\subsection{Solver}
+
+Starting with a sytem of ODE's and as corresponding set of initial states, the first step towards computing robustness measure is finding the resulting trajectories. This is achieved by numerically integrating the differential equations over small timesteps until either convergence is detected or the $t_max$ is reached. With the chosen solver it is imperative to keep this timestep constant when comparing different robustness measures. The time step has a direct influence on the solvers accuracy and by that onto the system dynamics. It is advised to find a value that is a sufficient compromise between accuracy and cumputational time and keeping this fixed from there on.
+
+DDE provides q, qdot and qddot at every timestep when computing the trajectories. 
+
+As initial conditions for the IVP  
+\subsection{Detecting Attractors}
+
+In order to evaluate wheather a trajectory converges 
+    
+    General idea with similarity of states to attractorstate
+
+    Fixed points
+
+    fixed points are defined states where $\dot{\mathbf{x}}(t) = \mathbf{0} \quad \forall \ t\  >\  t_0 $, i.e. $\mathbf{q}(t)=\mathbf{q}_{fp}, \dot{\mathbf{q}}(t) = \ddot{\mathbf{q}}(t)  \forall t > t_0$
+
+    Periodic Orbits
+        Poincare => issues
+
+    Issue with wrong attractor
+
+    Simplification
+
+
+\subsection{"Evaluating" Convergence}
+Cleary it is impractical to let t go to infitiy, which is why some t_n,max needs to be defined at which the simulation stops. 
+    quite similar to 
+
+\subsection{minRad algorithm}
+
+    maybe not go into too much detail on how it works (look at ref)
+
+    tuning
+
+    visualizations
+
+\subsection{boundarys PS DS}
+
+    
+
+    elephant in the room 
+    changing even the unit changes the scaling and therefore the robustness value.
+
+    explain and give examples on how boundaries were chosen. 
+
+    was noted in REF that it can be an ellipse as well, but they didn't know how to choose it's parameters. We do this by analysis and finding reasonable boundaries in the DS.
+
+    order of complexity depending on PS and DS
+
+\subsection{Multithreading}
+    computational time can be reduced by 
+    pseudocode
+
+\subsection{case specific adaptations}
+    
+    applyParameters
+
+    simAndEval
+
+\subsection{Optimization and Complexity reduction}
+    
+    cmaes
+    complexity reductions should probably be noted where they are implemented (i.e. not in this section)
+
+\section{Results}
+
+    optimization of robustness examples
