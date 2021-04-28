@@ -103,30 +103,40 @@
     Define an Attractor  $ A\ =\ \{\ \{\mathbf{x}\ \in \mathbb{R}^{2n}}\ \mid\ }$
 
     These so called attractors come in two variants.
-    If the attractor consists of only one state, it is called a fixed point. Fixed points come with the condition of 
-    $\dot{\mathbf{x}}(t) = \mathbf{0} \forall t \in \mathbb{R}$. This means the state of the fixed point is unchanging and a trajectory with the fixed point as an initial condition is reduced to a point in the phase space. A classical example of this is the stable bottom position of a pendulum, where if it starts with zero velocity, it won't leave the stable position. This is not the case for any other position as gravity will act on the mass (exept for the inverted position, however this is practically not realizable). 
+    If the attracting set consists of only one state, it is called a fixed point. Fixed points come with the condition of 
+    $\dot{\mathbf{x}}(t) = \mathbf{0} \forall t \in \mathbb{R}$. This means the state of the fixed point is unchanging and a trajectory with the fixed point as an initial condition is reduced to a point in the phase space. A classical example of this is the stable bottom position of a pendulum, where if it starts with zero velocity, it won't leave the stable position. This is not the case for any other position as gravity will act on the mass (except for the inverted position, however this is practically not realizable). 
 
-    In the general case with A consisting of more than one state, (reference above eq) is not true. Rather the trajectory is moving through the sets of A, visiting every element at some point in time and returning to it repeatedly in the future in a periodic fashion. These sets are called limit cycles. This name is derived from what happens to states that are close to A, but not part of it. 
+    In the general case with A containing of more than one state, (reference above eq) is not true. Rather the trajectory is moving through the sets of A, visiting every element at some point in time and returning to it repeatedly in the future in a periodic fashion. These sets are called limit cycles. This name is derived from what happens to states that are close to A, but not part of it. An intuitive example for this are the compliant linkages described in (ref strandbeest compliant version), where the end effector follows a cyclic trajectory, i.e. set of states if undisturbed. 
+
+    In the code implementation section, we provide methods for dealing with both cases. 
 
     define basin of attraction. 
 
-    note that there may be an arbitrary number of attractors. 
+    Around any attractor, there exists a set of states in the phase space, the trajectories of which all tend towards the attractor. This set is called the basin of attraction. (mathematical formulation)
+    Formally, a trajectory converges to an attractor A iff $\underset{t \rightarrow \infty}{lim}\mathbf{x}(t) \in A$
+    We denote an initial condition which ends up at the attractor of choice as converging towards the attractor. Any initial condition for which this is not true is said to diverge. Note that there may exist any number of attractors in the phase space (reference paper with multitude of attractors) towards the  which is why a particular attractor needs to be specified. If the attractor converges a different attractor, it is still defined as diverging from the attractor of interest.  
+    The attractor of interest is can be found by simulation, but often it already clear a priori, mostly in the form of the undisturbed state. 
 
-    Within bounded time intervals, the evolution of a state trajectory can be described by two main behaviours. Either it stays confined to a set of states   (also reference cell mapping algorithms which do exactly that).
+    The size of this set can be interpreted as a measure of robustness, which was done in (REF) and is further described in (next section).
+
+    Determining the 
+
+
+    %Within bounded time intervals, the evolution of a state trajectory can be described by two main behaviours. Either it stays confined to a set of states   (also reference cell mapping algorithms which do exactly that).
 
     examples for attractors (strandbeest for periodic orbit) 
 
 
-    The phase space is a particular instance of state spaces, restricted to the set of generalized coordinates $q_i$ and their corresponding generalized velocities $\dot{q_i}$, sometimes in form of generalized momenta (via scaling by mass or inertia). It encompasses all possible initial conditions of a mechanical system and solutions of of the ivp result in trajectories through the phase space, starting at 
+    %The phase space is a particular instance of state spaces, restricted to the set of generalized coordinates $q_i$ and their corresponding generalized velocities $\dot{q_i}$, sometimes in form of generalized momenta (via scaling by mass or inertia). It encompasses all possible initial conditions of a mechanical system and solutions of of the ivp result in trajectories through the phase space, starting at 
 
 
-    Starting with a system and an initial condition that is part of an attractor 
+    %Starting with a system and an initial condition that is part of an attractor 
 
-    Attractors are sets of states in the phase space
-    In a general nonlinear dynamical system, the evolution of the state can be divided into two main events using the concept of attractors. Attractors are sets of states toward which the system trajectories will converge or diverge from. If the set only consists of one state it is called a fixed point, else a periodic orbit where the trajectory will visit all states of the set periodically if given enough time. 
-    We propose methods for dealing with both cases. 
-    The set of initial conditions in the phase space for which the resulting trajectories converge towards the attractor is called the basin of attraction. If an initial condition does not lie in this set, it's trajectory diverges from the attractor. 
-    Formally, a trajectory converges to an attractor A if $\underset{t \rightarrow \infty}{lim}\mathbf{x}(t) \in A$ 
+   % Attractors are sets of states in the phase space
+    %In a general nonlinear dynamical system, the evolution of the state can be divided into two main events using the concept of attractors. Attractors are sets of states toward which the system trajectories will converge or diverge from. If the set only consists of one state it is called a fixed point, else a periodic orbit where the trajectory will visit all states of the set periodically if given enough time. 
+     
+    %The set of initial conditions in the phase space for which the resulting trajectories converge towards the attractor is called the basin of attraction. If an initial condition does not lie in this set, it's trajectory diverges from the attractor. 
+     
 
     When referring to a system being robust to a disturbance, it means that it's trajectory in the phase space will return to the specified attractor under the influence of that particular disturbance. 
 
@@ -258,6 +268,9 @@ In order to evaluate wheather a trajectory converges
 
 \subsection{Application to specific systems}
     
+
+    need to decide on PS and DS plus boundaries. Need to find or define attractor. 
+
     analysis needed to find parameter space and disturbance space boundaries and good initial guesses.
     analysis of high dof motion tricky (bad 3d image), rather plot every coordinate over time (image). 
 
