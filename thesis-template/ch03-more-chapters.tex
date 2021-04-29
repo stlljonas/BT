@@ -1,6 +1,6 @@
 \chapter{Your Central Work}
 
-\section{Definitions and Problem Formulation}
+\section{Fundamentals and Problem Formulation}
 
     In this section describes the relvant physical definitions from which the robustness measure is derived and which will be referred to in the later code implementation.
 
@@ -122,35 +122,61 @@
 
 \subsection{Robustness Measure}
     
-    For the following (no, this) section it is important to have an intuitive understanding of what these abstract definitions mean for actual applications. We will have a single or a set of states of our system that we have as a goal (= attractor). In the context of a quadruped this might be an upright standing position (fixed point) or a periodic walking gait. If the system is perturbed, it's state will inevitably be changed such that it is most likely not part of the attractor anymore. Finding the trajectory shows how the system will further evolve. Now convergence means that under the disturbance applied, in the long term, we will still return to and stay on the attroctor, or the system recovered, it is successful in compensating the disturbance. Divergence means something else happened, which we will just interpret as failure. So if the trajectory related to an initial condition caused by a particular disturbance converges to the attractor, the system is in a sense robust to that disturbance. 
+    INTRO
+
+    The robustness measure proposed in REF and implemented in the following is derived from basic concepts of nonlinear dynamic outlined in the previous section. In the actual implementation and testing compromises had to be made (rephrase) in order to improve feasibility, because of which we propose some slight reframing of some definitions to accomodate for those variations.
+    
+    REF METHOD
+
+    Given a target behaviour of a system in form of an attractor, convergence of a state trajectory can be interpreted as a successfull recovery from a disturbance. Looking at a set of disturbances, a larger portion of recoveries means a larger robustness within that set. If one could define a set of all possible disturbances, one could theoretically compute general robustness. 
+
+    Choosing instantaneous external forces as disturbances, their effect on the system can be captured by a change in system state. Forces have are directly related to the generalized accelerations $\ddot{\mathbf{q}}$ following Newton's second law, which in turn changes $\mathbf{q}$ and $\dot{\mathbf{q}}$ via the underlying differential equations.
+    This is the approch in the paper which has nice implications xy. Namely the basin of attraction is exactly that set. There is definitely some analysis of these sets as seen in the previous work. 
+    Also the scaling issue between q and qdot, maybe just reference it and go into detail later. 
+    HOOWEVER
+
+
+    The disturbances are implied via the sampling of initial conditions in the phase space. Taking instantaneous External forces that act on a system will have via the underlying differntial equations a direct effect on the generalized positions and velocities $\mathbf{q}$ and $\dot{\mathbf{q}}$
+
+    ADAPTATIONS / REDEFINITION
+
+    IMPLICATIONS OF ADAPTATIONS
+
+    Say we have a particular behaviour of our system that we want it to follow and we can define precisely. 
+
+    ...
+    We will have a single or a set of states of our system that we have as a goal (= attractor). In the context of a quadruped this might be an upright standing position (fixed point) or a periodic walking gait. If the system is perturbed, it's state will inevitably be changed such that it is most likely not part of the attractor anymore. Finding the trajectory shows how the system will further evolve. Now convergence means that under the disturbance applied, in the long term, we will still return to and stay on the attroctor, or the system recovered, it is successful in compensating the disturbance. Divergence means something else happened, which we will just interpret as failure. So if the trajectory related to an initial condition caused by a particular disturbance converges to the attractor, the system is in a sense robust to that disturbance. 
 
     If one wants to maximize robustness, really one wants to change the system or rather its parameters in such a manner that the set of disturbances which result in convergence of the state trajectory is maximized. This is the basic formulation. 
 
-    This basic idea was proposed and implemented in REF, with a more focused choice of disturbance space. Disturbances themselves were disregarded and only their effects in the phase space taken into consideration. So here the goal was to maximize the set of converging inital conditions independent of their cause. 
+    As detailed in REF and REF, evaluating the exact size of the set of convergiing disturbed systems, is often hard and sometimes misleading, which is why the more conservative measure of the minimal radius found with the help of random sampling is adopted (phrasing). This is in addition to the fact, that with the numerical solver at hand (ref section below), solving long trajectories and evaluating their convergence via a given attractor is much simpler to implement than the cell mapping methods detailed in previous work. 
+
+    This basic idea was proposed and implemented in REF, with a more focused choice of disturbance space. Disturbances themselves were disregarded and only their effects in the phase space taken into consideration. So here the goal was to maximize the set of converging inital conditions independent of their cause. However as the sampled inital conditions are just effects of disturbances, in the test we sampled and applied general disturbances, which can be thought of as subsets of the full phase space. Especially as we work with high dof systems, sampling disturbances in the full state space becomes infeasible very quickly. A generalization to disturbances as opposed to initial conditions allows us to explore more easily understandable examples where physical intuition can be applied. 
+
+
+    While we still determine convergence by checking the state trajectory wrt the attractor in the phase space, disturbances will be sampled in the DS, meaning the minimal radius also lies in the disturbance space. Nice thing is that any disturbance one can come up with can be tested, but generalizbility to other disturbances (for which one doesn't evaluate the robustness) ceases to exist (rephrase)
+
+    The nonlinear dynamics view is uesful in detecting attractors and evaluating, but sometimes when the needed information can be acquired more easily, we always chose that route. 
 
 
 
+    We sample in the bounded DS, evaluate convergence of disturbed system via convergence to the specified attractor in the phase space and 
+    %When referring to a system being robust to a disturbance, it means that it's trajectory in the phase space will return to the specified attractor under the influence of that particular disturbance. 
 
-
-    As detailed in REF and REF, evaluating the exact size of the set of convergining initial conditions, is often hard and sometimes misleading, which is why the more conservative measure of the minimal radius found with the help of random sampling is adopted (phrasing). 
-
-
-    When referring to a system being robust to a disturbance, it means that it's trajectory in the phase space will return to the specified attractor under the influence of that particular disturbance. 
-
-    The size of this set can be interpreted as a measure of robustness, which was done in (REF) and is further described in.
-
-    
-    The basic idea of robustness 
-
-    First explain the concept of the REF robustness measure, not how they actually compute it. 
-    Then expand to general disturbance spaces with a pointer to the meaning of DS = phase space
+    %The size of this set can be interpreted as a measure of robustness, which was done in (REF) and is further described in.
 
     
-    The goal aim of the robustness measure is to quantify the robustness of a system with a particular parameter constellation with respect to a set of distrubances. 
-    In REF, these disturbances were chosen to be initial conditions sampled from the phase space. They have a nice physical interpretation. However instantaneous forces are not the only kind of disturbance. Here we will apply the concept of the minimal Radius in REF described to some general disturbance space. This may concide with or be a subspace of the phase space, but it must not necessarily be the case. At the same time, evolution of the state trajectory and convergence will still be evaluated in the phase space. 
-    We choose the method from REF because of it's simplicity in implementation with the given resources (dde). 
+    %The basic idea of robustness 
 
-    As in "REFERENCE", the basic idea is that the more disturbances the system can endure, i.e. it converges to the attractor, the more robust it is. Discretizing the DS and simply counting the total number of disturbances the system is robust to is impractiacal because of the possibly fractal nature of the boundary of the basin of attraction (ref) and the fact that the number of evaluations is $O((1/h)^d)$, meaning that higher resolution and a larger DS will drastically increase computational time. To remedy this issue, the in "REF" proposed minimal Radius is found which denotes the radius of the largest hypersphere that sill fits completely within the basin of attraction.
+    %First explain the concept of the REF robustness measure, not how they actually compute it. 
+    %Then expand to general disturbance spaces with a pointer to the meaning of DS = phase space
+
+    
+    %The goal aim of the robustness measure is to quantify the robustness of a system with a particular parameter constellation with respect to a set of distrubances. 
+    %In REF, these disturbances were chosen to be initial conditions sampled from the phase space. They have a nice physical interpretation. However instantaneous forces are not the only kind of disturbance. Here we will apply the concept of the minimal Radius in REF described to some general disturbance space. This may concide with or be a subspace of the phase space, but it must not necessarily be the case. At the same time, evolution of the state trajectory and convergence will still be evaluated in the phase space. 
+    
+
+    %As in "REFERENCE", the basic idea is that the more disturbances the system can endure, i.e. it converges to the attractor, the more robust it is. Discretizing the DS and simply counting the total number of disturbances the system is robust to is impractiacal because of the possibly fractal nature of the boundary of the basin of attraction (ref) and the fact that the number of evaluations is $O((1/h)^d)$, meaning that higher resolution and a larger DS will drastically increase computational time. To remedy this issue, the in "REF" proposed minimal Radius is found which denotes the radius of the largest hypersphere that sill fits completely within the basin of attraction.
 
     In other words, any combination of disturbances which lies on the surface of the hypersphere with the minimal radius in the DS will result in a trajectory that converges to the attractor in the phase space. 
 
@@ -164,18 +190,20 @@
 
 \subsection{ Parameter space and Disturbance space}
     
-    
+    The choice of parameter spaces (have I mentioned them before?) and disturbance spaces
     I feel like this should be part of the robustness measure
 
     separate from "dynamics", focus on 
 
     dimension disturbance space equals d
 
-    In reference they did it with the phase space  
+    We define the $Disturbance\ Space$ (DS) as the d dimensional space in from which we sample the disturbances. As in REF, 
+    The disturbance space is defined as the set containing all combinations of disturbances, against which the robustness of the system is evaluated. The choice of disturbances in "REFERENCE" are the initial conditions in the phase space (reference to the section in related work or copy that here) as they can be interpreted as the direct result of external forces. In general however, the disturbances may be chosen arbitrarily and the resulting robustness measure will quantify robustness against these. Examples of this were initial tilting of a quadruped over pitch and roll axes and oscillations with the disturbance space spanning the amplitudes and frequencies. Tuple combinations are favoured in testing because of their ease of visualization and mild computational power requirements.  
 
-    We actively separate phase space and disturbance space for the concept to be more versatile
+    Issues with the disturbance space. Scaling and boundaries will fundamentally effect the robustness measure. The choice of the phase space as the DS in REF remedied this as there is a direct relation between the coordinates and their derivatives via physical units and the test cases were ones where all the coordinates had the same units and were generally similar (multi-pendulum => only angles and angular velocities). Changing the units will already yield different results and combining various different coordinates might very quickly compicate things further. 
 
-    The disturbance space is defined as the set containing all combinations of disturbances, against which the robustness of the system is evaluated. The choice of disturbances in "REFERENCE" are the initial conditions in the phase space (reference to the section in related work or copy that here) as they can be interpreted as the direct result of external forces. In general however, the disturbances may be chosen arbitrarily and the resulting robustness measure will quantify robustness against these. Examples of this were initial tilting of a quadruped over pitch and roll axes and oscillations with the disturbance space spanning the amplitudes and frequencies. Tuple combinations are favoured because of their ease of visualization and mild computational power requirements.  
+
+
 
     "REFERENCE" chose the DS to coincide with the phase space, as elements of it can be directly interpreted as the result of external forces on the system. This choice is not always feasible nor necessary, as will be shown in the following sections. 
 
@@ -194,11 +222,19 @@
 
 \section{Code Implementation}
 
+This section details the implementations of the robustness measure and particular challenges that were encountered and overcome. (rephrase)
 \subsection{Framework Overview}
 
 
 differential equations are implicitly represented as simulation objects in dde. Their parameters can be set. The state x as well. Use the solver to compute the trajectory under a disturbance for a given amount of timesteps. check if trajectory converges or diverges. Do this repeatedly with initial conditions sample
 talk about how knowing the exact shape of the basin of attraction is not necessary for optimization of the robustness, with this and because of the additional work needed to implement the cell mapping algorithms, the method with full trajectories was chosen. For this we need a solver. boom. Great segue!
+
+
+specify laikago as an example. Or rather briefly describe what it is and use it to illustrate issue that might arise, 
+
+here we want a nice block diagram. 
+
+Also here we want
 
 \subsection{Solver}
 
@@ -210,21 +246,27 @@ Here we used dde ... write some stuff about dde.
 Describe what dde puts out
     DDE provides q, qdot and qddot at every timestep when computing the trajectories. 
 
+We choose the method from REF over cell mapping because of it's simplicity in implementation with the given solver. 
+
+One particularity of the dde framework, x and z are the horizontal plane, and y is the vertical axis, which the reader nees to keep in mind. 
+
 Starting with a sytem of ODE's and as corresponding set of initial states, the first step towards computing robustness measure is finding the resulting trajectories. This is achieved by numerically integrating the differential equations over small timesteps until either convergence is detected or the $t_max$ is reached. With the chosen solver it is imperative to keep this timestep constant when comparing different robustness measures. The time step has a direct influence on the solvers accuracy and by that onto the system dynamics. It is advised to find a value that is a sufficient compromise between accuracy and cumputational time and keeping this fixed from there on.
 
 trajectories here are not continuous but sets of states for discrete timepoints $[t_1,t_2,\ldots, t_n]$. 
 
-Maybe talk about simulation setup, specifically laikago, that it doesn't do anything but try to keep its limbs in the predefined state.  
 
 \subsection{Detecting Attractors}
 
 In order to evaluate wheather a trajectory converges 
     
-    General idea with similarity of states to attractorstate
+Automatic identification of fixed points
+    General idea with similarity of states to attractor state
 
     Fixed points
     this is rather easy
     fixed points are defined states where $\dot{\mathbf{x}}(t) = \mathbf{0} \quad \forall \ t\  >\  t_0 $, i.e. $\mathbf{q}(t)=\mathbf{q}_{fp}, \dot{\mathbf{q}}(t) = \ddot{\mathbf{q}}(t)  \forall t > t_0$
+
+    Issue that this is one specific state that does not accomodate for any deviation. With laikago standing up, we might accept translations of the robot in the xy-plane or rotations about the 
 
     Periodic Orbits
         not as trivial. need assumptions
@@ -239,7 +281,10 @@ In order to evaluate wheather a trajectory converges
 
 
 \subsection{"Evaluating" Convergence}
+    
     Cleary it is impractical to let t go to infitiy, which is why some $t_n$, max needs to be defined at which the simulation stops. 
+
+    Any way of checking and guaranteeing for divergence is actually really useful, as when continually apllied at every timestep, the simulation can be stopped if divergence is detected and computational time be saved. Example Laikgao, if we want it to stand upright and we detect it tipping over, that run has clearly failed and can be stopped early. 
     quite similar to 
 
 \subsection{minRad algorithm}
@@ -300,9 +345,11 @@ In order to evaluate wheather a trajectory converges
     Introduction to laikago
         high dof
         rather long computational time. 
+        how it's implemented (no walking yet) laikago, that it doesn't do anything but try to keep its limbs in the predefined state.  
     optimization of robustness examples
 
     Laikago Droptest
     Laikago Swingtest
+        note that here we kind of broke the mathematical framework as technically the underlying diff eq were changed. But we just ignored this, NO effects of this need to be investigated further. 
 
     This is kind of a twist on the concept as we are starting at a fixed point and continually applying disturbances to see for what disturbances the trajectory conveges, which in this case is expressed by the system staying at the initial state. 

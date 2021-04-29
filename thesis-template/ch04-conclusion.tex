@@ -1,14 +1,24 @@
 \chapter{Conclusion and Outlook}
 
 
+physical explanation why there can't be that much optimization for swing and droptest
 
 Implication that the system must be dynamical in nature (i.e. it must evolve). So a rudimentary control strategy must be implemented or outside forced must be applied. Don't quite know where to put this. 
 
 
 further explore effects of combining disturbences of differnent sorts and the effects of the choice of bounds.
 
-applying to systems of high dof with full phase space
+applying to systems of high dof with full phase space. Is it even possible? How much can the code be optimized?
 
 apply to physical dimensions of systems (intuitively more drastic effects)
 
 using the phase space as the disturbance space but heavily restricting it (actuator limits, improbable constellations etc)
+
+Optimizing with limit cycles as attractors. 
+
+solver (or rather finding the trajectories in general) will always be the largest bottleneck and finding methods to reduce number of trajectories to be evaluated or the computational time per trajectory would be very benefitial
+
+
+Seems unlikely that this will ever be plug and play. Lots of tuning, lots of fiddling around. But there could definitely be applications, especially in novel systems where rigorous analysis is lacking. 
+
+High complexity is still an issue. 
