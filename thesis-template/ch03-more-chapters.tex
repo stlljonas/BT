@@ -8,19 +8,15 @@
 
 \subsection{Dynamical Systems}
     
-    Dynamical systems are distinguished by an evolution of their state $\mathbf{x}(t)$ through time. This evolution can be fully described by a set of ordinary differential equations of the form $\dot{\mathbf{x}}(t) = \mathbf{F}(\mathbf{x}(t),t})$ which simplifies to $\dot{\mathbf{x}}(t) = \mathbf{F}(\mathbf{x}(t))$ under the assumption that the dynamical system is autonomous, i.e. is not explicitly dependent on time. 
-
+    Dynamical systems are distinguished by an evolution of their state $\mathbf{x}(t)$ through time. This evolution can be fully described by a set of ordinary differential equations of the form $\dot{\mathbf{x}}(t) = \mathbf{F}(\mathbf{x}(t),t})$, where $\mathbf{F}$ is some nonlinear function. This simplifies to $\dot{\mathbf{x}}(t) = \mathbf{F}(\mathbf{x}(t))$ under the assumption that the dynamical system is autonomous, i.e. is not explicitly dependent on time. 
     When solving for the explicit solution $\mathbf{x}(t)$, an initial condition $\mathbf{x_0}=\mathbf{x}(t_0)$ is required, which is a system state at an initial time. For simplicity and without loss of generality for autonomous systems, we set $t_0 = 0$. With this the Initial Value Problem (IVP) can be formulated: \begin{gather} \label{eq:1} find \ \ \mathbf{x}(t) \\ s.t. \ \dot{\mathbf{x}}(t) = \mathbf{F}(\mathbf{x}(t)) \\ and \ \ \mathbf{x}(0) = \mathbf{x}_0 \end{gather}
-
-    We denote the solution to the IVP as $\mathbf{x}(t,\mathbf{x}_0)$. It represents trajectory of the system state through time given an initial condition. The space in which this trajectory lies is spanned by all possible states \mathbf{x} and termed the state space. Note that any future state of the trajectoy $\mathbf{x}(\tau,\mathbf{x}_0)$ at time $\tau$ can be interpreted as an initial condition of the IVP itself. It turns out that the new solution coincides with the initial one, i.e. $\mathbf{x}(t,\mathbf{x}_0) = \mathbf{x}(t,\mathbf{x}(\tau,\mathbf{x}_0))$, which illustrates how any state of a trajectory $\mathbf{x}(t) \ \in \ \mathbf{x}(t,\mathbf{x}_0)$ is suffitient to describe trajectory itself. 
+    We denote the solution to the IVP as $\mathbf{x}(t,\mathbf{x}_0)$. It represents trajectory of the system state through time given an initial condition. The space in which this trajectory lies is spanned by all possible states $\mathbf{x}$ and termed the $state\ space$. Note that any future state of the trajectoy $\mathbf{x}(\tau,\mathbf{x}_0)$ at time $\tau$ can be interpreted as an initial condition of the IVP itself. It turns out that the new solution coincides with the initial one, i.e. $\mathbf{x}(t,\mathbf{x}_0) = \mathbf{x}(t,\mathbf{x}(\tau,\mathbf{x}_0))$, which illustrates that any state $\mathbf{x}(t)$ of a trajectory $\mathbf{x}(t,\mathbf{x}_0)$ is suffitient to represent the trajectory as a whole. 
     
-    Mechanical systems (which are the focus of this project) tend to be described in terms of so called generalized coordinates $\mathbf{q}(t)=\begin{pmatrix}q_1(t)&q_2(t)&\ldots&q_n(t) \end{pmatrix}^T$. They are the minimal set of coordinates needed to fully describe the position and orientation of all of the systems elements. Their dimension n cooincides with the number of degrees of freedom of the system. The related differential equations are of second order, depending on $\ddot{\mathbf{q}}(t)$ in addition to $\dot{\mathbf{q}}(t)$ and $\mathbf{q}(t)$. Simply put, this is due to their derivation by Newton's second method, where forces acting on the system are related to the second time derivative via $F = ma$. 
+    Mechanical systems (on which we will focus on form here on out) tend to be described in terms of so called generalized coordinates: \begin{gather}\mathbf{q}(t)=\begin{pmatrix}q_1(t)&q_2(t)&\ldots&q_n(t) \end{pmatrix}^\intercal . \end{gather} They are the minimal set of coordinates needed to fully describe the position and orientation of all of the systems elements. Their dimension n cooincides with the number of degrees of freedom of the system. The corresponding differential equations are of second order, depending on $\ddot{\mathbf{q}}(t)$ in addition to $\dot{\mathbf{q}}(t)$ and $\mathbf{q}(t)$. Simply put, this is due to their derivation by Newton's second method, where forces acting on the system are related to the second time derivative via $F = ma$.
+    Through an order reduction (Appendix) these differential equations can be cast into the reviously mentioned general form \ref{eq:1}, where \begin{gather*} \mathbf{x}(t) = \begin{pmatrix}\mathbf{q}(t)&\dot{\mathbf{q}}(t)\end{pmatrix}^\intercal .\end{gather*}
+    This implies that in order to solve the IVP, initial conditions $\mathbf{q}_0$ and $\dot{\mathbf{q}}_0$ are required. We can also state that for a system with n degrees of freedom, $\mathbf{x}(t) \in \mathbb{R}^{2n}$. The particular state space spanned by generalized coordinates and velocities is termed the $phase\ space$. Within it, any states are single points and state trajectories are smooth curves. The phase space is used for generalizable qualitative analysis of the behaviour of nonlinear dynamical systems and plays a pivotal role in the fromulation of the robustness measure. 
 
-
-    Through an order reduction (Appendix) these differential equations can be cast into the reviously mentioned general form \ref{eq:1}, where $\mathbf{x}(t) = \begin{pmatrix}q_1(t)&q_2(t)&\ldots&q_n(t)&\dot{q}_1(t)&\dot{q}_2&\ldots&\dot{q}_n \end{pmatrix}^T$ (maybe just use vectorial forms of q and qdot).
     When discussing high level concepts we will refer to the system state $\mathbf{x}(t)$ for simplicity, while in the code implementation the generalized coordinates $\mathbf{q}(t)$ and its derivatives will be more relevant. Keep in mind that both are equivalent.
-
-    This implies that in order to solve the IVP, initial conditions $\mathbf{q}_0$ and $\dot{\mathbf{q}}_0$ are required. We can also state that for a system with n degrees of freedom, $\mathbf{x}(t) \in \mathbb{R}^{2n}$. The state space spanned by the generalized coordinates and velocities is termed the phase space $\mathbf{x}(t) = \begin{pmatrix}\mathbf{q}(t)\\\dot{\mathbf{q}}(t)\end{pmatrix}$. It can be used for a generalizable qualitative analysis of the behaviour of nonlinear dynamical systems. 
 
 
 
@@ -31,7 +27,7 @@
 
 
 
-    %It's elements are coordinates  in a chosen set of coordinates. For convenience we choose the so called generalized coordinates $\mathbf{q}(t)=\begin{pmatrix}q_1(t)&q_2(t)&\ldots&q_n(t) \end{pmatrix}^T$, which describe the system configuration with a minimal amount of coordinates, the number of which coincided with the degrees of freedom of the system. The individual q might represent angles, positions along a specific direction or even along a constrained curve. 
+    %It's elements are coordinates  in a chosen set of coordinates. For convenience we choose the so called generalized coordinates $\mathbf{q}(t)=\begin{pmatrix}q_1(t)&q_2(t)&\ldots&q_n(t) \end{pmatrix}^\intercal$, which describe the system configuration with a minimal amount of coordinates, the number of which coincided with the degrees of freedom of the system. The individual q might represent angles, positions along a specific direction or even along a constrained curve. 
 
     %to acquire the equations of motion one needs to solve a 2n dimensional system of differential equations of the general form 
     %\begin{align*}
@@ -48,27 +44,19 @@
 
     %This is something for the appendix
     %It is often much simpler to formulate the dynamics in terms of differential equations, which in the case of mechanical systems result in ordinary differential equations with the first and second time derivative of q. 
-    qdot = f(q,qdot)
-    qddot = g(q,qdot)
-
-    order reduction:
-
-    x = [q,qdot] => xdot = [qdot, qddot] = F(x) = [f(x), g(x)]
-
-
-    q,qdot,qddot 
+    
 
 
     %$\math
 
-    %The trajectory of a system is the evolution of the state x through time starting from an initial state at an initial time $\mathbf{x}_0 = \mathbf{x}(t_0)$. Explicit for trajectories $\mathbf{x}(t) = \mathbf{F}(t)$ are generally hard to find which is why system dynamics are usually described in the form of an initial value problem using systems of differential equations $\dot{\mathbf{x}}(t) = \mathbf{F}(\mathbf{x}(t),t)$. $\dot{\mathbf{q}}(t) = \begin{pmatrix}\dot{q_1}(t)&\dot{q_2}(t)&\ldots&\dot{q_n}\end{pmatrix}^T$ is denoted as the vector of generalized velocities. 
+    %The trajectory of a system is the evolution of the state x through time starting from an initial state at an initial time $\mathbf{x}_0 = \mathbf{x}(t_0)$. Explicit for trajectories $\mathbf{x}(t) = \mathbf{F}(t)$ are generally hard to find which is why system dynamics are usually described in the form of an initial value problem using systems of differential equations $\dot{\mathbf{x}}(t) = \mathbf{F}(\mathbf{x}(t),t)$. $\dot{\mathbf{q}}(t) = \begin{pmatrix}\dot{q_1}(t)&\dot{q_2}(t)&\ldots&\dot{q_n}\end{pmatrix}^\intercal$ is denoted as the vector of generalized velocities. 
 
     %For mechanical systems the 
 
 
     %For ease of notation we define the state $\mathbf{x}(t)$ of a system by the concatenation of the generalized coordinates and velocities.
 
-    %$\mathbf{x}(t) = \begin{pmatrix}\mathbf{q}(t)&\dot{\mathbf{q}}(t)\end{pmatrix}^T$
+    %$\mathbf{x}(t) = \begin{pmatrix}\mathbf{q}(t)&\dot{\mathbf{q}}(t)\end{pmatrix}^\intercal$
 
 
 
@@ -82,49 +70,39 @@
     %define state and trajectory first.
 
 
-    Explic 
-    The dynamic of a system can often be described by a system on differential equations, 
-    The dynamical systems we dealt were autonomous and nonlinear in nature. Autonomous as we did not 
-    state, derivatives, trajectory
-
-    state
-    ivp
-    generalized coordinates and their derivatives
-    trajectories 
-
-
-
-
 \subsection{Attractors and Convergence}
     
 
-    From analysis of nonliner dynamics we know that in the phase space of a system, there usually exist sets of states which show an attracting behaviour. Once a trajectory reaches an element of such a set, all future states will also be part of it. (insert math formula)
+    In nonlinear dynamical systems, there may exist sets of states in the phase space which show an attracting behaviour. By "attracting" we mean that once a trajectory reaches an element of such a set, all of its future states will also be part of that set. Define an attractor as a set of states:
+    \begin{gather} \mathbf{A} \subset phase\ space,\\ s.t.\ if \ \mathbf{x}(t_0) = \mathbf{x}_0\ \in \mathbf{A}, \\ \mathbf{x}(t,\mathbf{x}_0) \in \mathbf{A}\quad \forall\ t > t_0. \label{eq:2} \end{gather}
+    Attractors can be divided into two fundamental variants.
+    If the attracting set consists of only one state, it is called a fixed point. Fixed points are associated with the condition
+    \begin{gather} \label{eq:3} \dot{\mathbf{x}}(t) = \mathbf{0}\ \ \forall \ t \in \mathbb{R},\end{gather}
+    meaning that the state of the fixed point is unchanging and the related trajectory is reduced to a point in the phase space. Wheather a state $\mathbf{x}(t)$ is a fixed point can be easily determined by checking $\mathbf{F}(\mathbf{x}(t)) = \mathbf{0}$. A classical example of a fixed point is the stable bottom position of a pendulum, where if it starts with zero initial velocity, it won't leave the stable position. This is not the case for any other position as gravity will act on the mass (except for the inverted position, however this is practically not realizable).
+    In the general case with A containing of more than one state, (reference above eq) is not true. Rather the trajectory is moving through the sets of A, visiting every element at some point in time and returning to it in future times in a periodic fashion. These types of attractors are called limit cycles. Finding them is generally a hard problem, but for simpler cases one can check:
+    \begin{gather} If\ for \ \mathbf{x}(t,\mathbf{x}_0) ,\ t > 0 \quad \exists \quad \mathbf{x}(\tau) = \mathbf{x}(\tau + h),\ \tau > 0,\ h > 0, \\ \{\ \mathbf{x}(t) \mid t \in [\tau,\tau + h)\ \}, \ is \ a\ \mathbf{limit\ cycle}. \end{gather}
+    An example for this case are the compliant linkages described in (ref strandbeest compliant version), where the end effector follows a cyclic trajectory, i.e. set of states if undisturbed. 
+    In the code implementation section, we provide methods for dealing with both types of attractors and the problem of applying the continuous analysis in a discrete setting. 
 
-    Define an Attractor  $ A\ =\ \{\ \{\mathbf{x}\ \in \mathbb{R}^{2n}}\ \mid\ }$
+    For any initial condition not part of the attractor, the related trajectory may land and stay on the attractor after some time $t > t_0$. We define this occurance: 
+    \begin{gather} Given\ an\ attractor\ \mathbf{A},\ for\ any\ \mathbf{x}_0 \notin \mathbf{A}\\ if\ \ \underset{t \rightarrow \infty}{lim} \ \mathbf{x}(t,\mathbf{x}_0) \in \mathbf{A}\ \Rightarrow\
+    \mathbf{x}(t,\mathbf{x}_0)\ \mathbf{converges}\ to\ \mathbf{A}\  \end{gather}
+    Should the definition above not hold, we denote the trajectoy as diverging (as in cell mapping methods). 
 
-    These so called attractors come in two variants.
-    If the attracting set consists of only one state, it is called a fixed point. Fixed points come with the condition of 
-    $\dot{\mathbf{x}}(t) = \mathbf{0} \forall t \in \mathbb{R}$. This means the state of the fixed point is unchanging and a trajectory with the fixed point as an initial condition is reduced to a point in the phase space. A classical example of this is the stable bottom position of a pendulum, where if it starts with zero velocity, it won't leave the stable position. This is not the case for any other position as gravity will act on the mass (except for the inverted position, however this is practically not realizable). 
+    Note that there may exist any number of attractors in the phase space of a system (reference paper with multitude of attractors). Convergence is always defined with respect to a particular attractor $\mathbf{A}$, which needs to be specified. Therefore if the trajectory converges to a different attractor, it is still defined as diverging from the attractor of interest.  
 
-    In the general case with A containing of more than one state, (reference above eq) is not true. Rather the trajectory is moving through the sets of A, visiting every element at some point in time and returning to it repeatedly in the future in a periodic fashion. These sets are called limit cycles. This name is derived from what happens to states that are close to A, but not part of it. An intuitive example for this are the compliant linkages described in (ref strandbeest compliant version), where the end effector follows a cyclic trajectory, i.e. set of states if undisturbed. 
+    The set of all states for which the related trajectories converge to the attractor of interest is called the $Basin\ of\ Attraction$ (BoA) and is defined as: 
+    \begin{gather} \{\ \mathbf{x}_0 \in \mathbb{R}^{2n} \mid  \underset{t \rightarrow \infty}{lim} \ \mathbf{x}(t,\mathbf{x}_0) \in \mathbf{A}\ \}\end{gather}
+    where $\mathbf{A}$ is an attractor as defined in \ref{eq:3}.
 
-    In the code implementation section, we provide methods for dealing with both cases. 
 
-    define basin of attraction. 
 
-    Around any attractor, there exists a set of states in the phase space, the trajectories of which all tend towards the attractor. This set is called the basin of attraction. (mathematical formulation)
-    Formally, a trajectory converges to an attractor A iff $\underset{t \rightarrow \infty}{lim}\mathbf{x}(t) \in A$
-    We denote an initial condition which ends up at the attractor of choice as converging towards the attractor. Any initial condition for which this is not true is said to diverge. Note that there may exist any number of attractors in the phase space (reference paper with multitude of attractors) towards the  which is why a particular attractor needs to be specified. If the attractor converges a different attractor, it is still defined as diverging from the attractor of interest.  
-    The attractor of interest is can be found by simulation, but often it already clear a priori, mostly in the form of the undisturbed state. 
 
-    The size of this set can be interpreted as a measure of robustness, which was done in (REF) and is further described in (next section).
-
-    Determining the 
-
+    %Formally, a trajectory converges to an attractor A iff $\underset{t \rightarrow \infty}{lim}\mathbf{x}(t) \in A$
+    %We denote an initial condition which ends up at the attractor of choice as converging towards the attractor. Any initial condition for which this is not true is said to diverge. Note that there may exist any number of attractors in the phase space (reference paper with multitude of attractors) towards the  which is why a particular attractor needs to be specified. If the attractor converges a different attractor, it is still defined as diverging from the attractor of interest.  
+    %The attractor of interest is can be found by simulation, but often it already clear a priori, mostly in the form of the undisturbed state. 
 
     %Within bounded time intervals, the evolution of a state trajectory can be described by two main behaviours. Either it stays confined to a set of states   (also reference cell mapping algorithms which do exactly that).
-
-    examples for attractors (strandbeest for periodic orbit) 
 
 
     %The phase space is a particular instance of state spaces, restricted to the set of generalized coordinates $q_i$ and their corresponding generalized velocities $\dot{q_i}$, sometimes in form of generalized momenta (via scaling by mass or inertia). It encompasses all possible initial conditions of a mechanical system and solutions of of the ivp result in trajectories through the phase space, starting at 
@@ -138,9 +116,51 @@
     %The set of initial conditions in the phase space for which the resulting trajectories converge towards the attractor is called the basin of attraction. If an initial condition does not lie in this set, it's trajectory diverges from the attractor. 
      
 
+    
+
+    
+
+\subsection{Robustness Measure}
+    
+    For the following (no, this) section it is important to have an intuitive understanding of what these abstract definitions mean for actual applications. We will have a single or a set of states of our system that we have as a goal (= attractor). In the context of a quadruped this might be an upright standing position (fixed point) or a periodic walking gait. If the system is perturbed, it's state will inevitably be changed such that it is most likely not part of the attractor anymore. Finding the trajectory shows how the system will further evolve. Now convergence means that under the disturbance applied, in the long term, we will still return to and stay on the attroctor, or the system recovered, it is successful in compensating the disturbance. Divergence means something else happened, which we will just interpret as failure. So if the trajectory related to an initial condition caused by a particular disturbance converges to the attractor, the system is in a sense robust to that disturbance. 
+
+    If one wants to maximize robustness, really one wants to change the system or rather its parameters in such a manner that the set of disturbances which result in convergence of the state trajectory is maximized. This is the basic formulation. 
+
+    This basic idea was proposed and implemented in REF, with a more focused choice of disturbance space. Disturbances themselves were disregarded and only their effects in the phase space taken into consideration. So here the goal was to maximize the set of converging inital conditions independent of their cause. 
+
+
+
+
+
+    As detailed in REF and REF, evaluating the exact size of the set of convergining initial conditions, is often hard and sometimes misleading, which is why the more conservative measure of the minimal radius found with the help of random sampling is adopted (phrasing). 
+
+
     When referring to a system being robust to a disturbance, it means that it's trajectory in the phase space will return to the specified attractor under the influence of that particular disturbance. 
 
-    Underline that this concept of convergene or divergence is a very general way of saying wheather a system works as intended or doesn't. 
+    The size of this set can be interpreted as a measure of robustness, which was done in (REF) and is further described in.
+
+    
+    The basic idea of robustness 
+
+    First explain the concept of the REF robustness measure, not how they actually compute it. 
+    Then expand to general disturbance spaces with a pointer to the meaning of DS = phase space
+
+    
+    The goal aim of the robustness measure is to quantify the robustness of a system with a particular parameter constellation with respect to a set of distrubances. 
+    In REF, these disturbances were chosen to be initial conditions sampled from the phase space. They have a nice physical interpretation. However instantaneous forces are not the only kind of disturbance. Here we will apply the concept of the minimal Radius in REF described to some general disturbance space. This may concide with or be a subspace of the phase space, but it must not necessarily be the case. At the same time, evolution of the state trajectory and convergence will still be evaluated in the phase space. 
+    We choose the method from REF because of it's simplicity in implementation with the given resources (dde). 
+
+    As in "REFERENCE", the basic idea is that the more disturbances the system can endure, i.e. it converges to the attractor, the more robust it is. Discretizing the DS and simply counting the total number of disturbances the system is robust to is impractiacal because of the possibly fractal nature of the boundary of the basin of attraction (ref) and the fact that the number of evaluations is $O((1/h)^d)$, meaning that higher resolution and a larger DS will drastically increase computational time. To remedy this issue, the in "REF" proposed minimal Radius is found which denotes the radius of the largest hypersphere that sill fits completely within the basin of attraction.
+
+    In other words, any combination of disturbances which lies on the surface of the hypersphere with the minimal radius in the DS will result in a trajectory that converges to the attractor in the phase space. 
+
+    Taking sampling initial conditions form the phase space as disturbances gives a nice physical interpretation and in "REF" this was denoted as general robustness (or was it?), however as a counterexample, periodic or constant disturbances are cleary not covered by this. 
+    This is why we worked with general disturbance spaces that can be chosen to work for the particular application at hand. 
+    Note that the trajectory will still lie in the phase space and convergence evaluation 
+
+
+    Describe robustness measure from paper but for the actual definition use the general disturbance space. 
+
 
 \subsection{ Parameter space and Disturbance space}
     
@@ -171,27 +191,6 @@
     
     state space v phase space
 
-\subsection{robustness Measure}
-
-    The basic idea of robustness 
-
-    First explain the basics of the REF implementation
-    Then expand to general disturbance spaces with a pointer to the meaning of DS = phase space
-
-    
-    The goal aim of the robustness measure is to quantify the robustness of a system with a particular parameter constellation with respect to a set of distrubances. 
-    In REF, these disturbances were chosen to be initial conditions sampled from the phase space. They have a nice physical interpretation. However instantaneous forces are not the only kind of disturbance. Here we will apply the concept of the minimal Radius in REF described to some general disturbance space. This may concide with or be a subspace of the phase space, but it must not necessarily be the case. At the same time, evolution of the state trajectory and convergence will still be evaluated in the phase space. 
-
-
-    As in "REFERENCE", the basic idea is that the more disturbances the system can endure, i.e. it converges to the attractor, the more robust it is. Discretizing the DS and simply counting the total number of disturbances the system is robust to is impractiacal because of the possibly fractal nature of the boundary of the basin of attraction (ref) and the fact that the number of evaluations is $O((1/h)^d)$, meaning that higher resolution and a larger DS will drastically increase computational time. To remedy this issue, the in "REF" proposed minimal Radius is found which denotes the radius of the largest hypersphere that sill fits completely within the basin of attraction.
-
-    In other words, any combination of disturbances which lies on the surface of the hypersphere with the minimal radius in the DS will result in a trajectory that converges to the attractor in the phase space. 
-
-    Taking sampling initial conditions form the phase space as disturbances gives a nice physical interpretation and in "REF" this was denoted as general robustness (or was it?), however as a counterexample, periodic or constant disturbances are cleary not covered by this. 
-    This is why we worked with general disturbance spaces that can be chosen to work for the particular application at hand. 
-    Note that the trajectory will still lie in the phase space and convergence evaluation 
-
-
 
 \section{Code Implementation}
 
@@ -211,11 +210,11 @@ Here we used dde ... write some stuff about dde.
 Describe what dde puts out
     DDE provides q, qdot and qddot at every timestep when computing the trajectories. 
 
-
 Starting with a sytem of ODE's and as corresponding set of initial states, the first step towards computing robustness measure is finding the resulting trajectories. This is achieved by numerically integrating the differential equations over small timesteps until either convergence is detected or the $t_max$ is reached. With the chosen solver it is imperative to keep this timestep constant when comparing different robustness measures. The time step has a direct influence on the solvers accuracy and by that onto the system dynamics. It is advised to find a value that is a sufficient compromise between accuracy and cumputational time and keeping this fixed from there on.
 
 trajectories here are not continuous but sets of states for discrete timepoints $[t_1,t_2,\ldots, t_n]$. 
 
+Maybe talk about simulation setup, specifically laikago, that it doesn't do anything but try to keep its limbs in the predefined state.  
 
 \subsection{Detecting Attractors}
 
@@ -224,10 +223,11 @@ In order to evaluate wheather a trajectory converges
     General idea with similarity of states to attractorstate
 
     Fixed points
-
+    this is rather easy
     fixed points are defined states where $\dot{\mathbf{x}}(t) = \mathbf{0} \quad \forall \ t\  >\  t_0 $, i.e. $\mathbf{q}(t)=\mathbf{q}_{fp}, \dot{\mathbf{q}}(t) = \ddot{\mathbf{q}}(t)  \forall t > t_0$
 
     Periodic Orbits
+        not as trivial. need assumptions
         assume that period of attractor is the same as forcing frequency. Think controller forcing a gait given period, then the leg will also move at that period. This is not generally true and needs to be verified. 
         Poincare => issues with high computational effort and issues with systems that exhibit oscillations with a multitude of periods. 
 
@@ -235,18 +235,24 @@ In order to evaluate wheather a trajectory converges
 
     Simplification
 
+    sometimes we can loosen the requirements for convergence. For the laikago experiments, where the goal is just for the quadruped to not tip over, 
+
 
 \subsection{"Evaluating" Convergence}
     Cleary it is impractical to let t go to infitiy, which is why some $t_n$, max needs to be defined at which the simulation stops. 
     quite similar to 
 
 \subsection{minRad algorithm}
-
+    
     maybe not go into too much detail on how it works (look at ref)
-
+    No DO go into detail. This is the part where we actually want to explain how we find the minimal radius. 
+    Because of the random sampling of disturbances, the convergence of the minRad algorithm and therefore the robustness value is inherently stochastic and might be dominated by noise. The extent of theis noise can be reduced by larger amounts of samples. An compromize between noise and computational time must be found.
+    Number of iterations
+    
     tuning
 
     visualizations
+    plot resultion as a function of iterations. NO, write down the formula $resolution = (1/2)^n$ with n being the number of iterations. 
 
 \subsection{boundarys PS DS}
 
@@ -298,3 +304,5 @@ In order to evaluate wheather a trajectory converges
 
     Laikago Droptest
     Laikago Swingtest
+
+    This is kind of a twist on the concept as we are starting at a fixed point and continually applying disturbances to see for what disturbances the trajectory conveges, which in this case is expressed by the system staying at the initial state. 
