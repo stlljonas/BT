@@ -2,7 +2,7 @@
 
 \section{Fundamentals and Problem Formulation}
 
-    In this section describes the relvant physical definitions from which the robustness measure is derived and which will be referred to in the later code implementation.
+    In this section describes the relvant physical definitions from which the robustness measure is derived and which will be referred to in the later code implementation. all of which are important for understanding and some of which are directly used for the implementation. 
 
     Examples will be given n terms of laikag quadruped robot as most of the testing of the framework was done with that. 
 
@@ -78,8 +78,8 @@
     Attractors can be divided into two fundamental variants.
     If the attracting set consists of only one state, it is called a fixed point. Fixed points are associated with the condition
     \begin{gather} \label{eq:3} \dot{\mathbf{x}}(t) = \mathbf{0}\ \ \forall \ t \in \mathbb{R},\end{gather}
-    meaning that the state of the fixed point is unchanging and the related trajectory is reduced to a point in the phase space. Wheather a state $\mathbf{x}(t)$ is a fixed point can be easily determined by checking $\mathbf{F}(\mathbf{x}(t)) = \mathbf{0}$. A classical example of a fixed point is the stable bottom position of a pendulum, where if it starts with zero initial velocity, it won't leave the stable position. This is not the case for any other position as gravity will act on the mass (except for the inverted position, however this is practically not realizable).
-    In the general case with A containing of more than one state, (reference above eq) is not true. Rather the trajectory is moving through the sets of A, visiting every element at some point in time and returning to it in future times in a periodic fashion. These types of attractors are called limit cycles. Finding them is generally a hard problem, but for simpler cases one can check:
+    meaning that the state of the fixed point is unchanging and the related trajectory is reduced to a point in the phase space. Wheather a state $\mathbf{x}(t)$ is a fixed point can be easily determined by checking $\mathbf{F}(\mathbf{x}(t)) = \mathbf{0}$. A classical example of a fixed point is the stable bottom position of a pendulum, where if given zero initial velocity, it won't leave the stable position. This is not the case for any other position as gravity will act on the mass (except for the inverted position, however this is practically not realizable).
+    In the general case with A containing of more than one state, (reference above eq) is not true. Rather the trajectory is moving through the sets of A, visiting every element at some point in time and returning to it at future times in a periodic fashion. These types of attractors are called limit cycles. Finding them is generally a hard problem, but for simpler cases one can check:
     \begin{gather} If\ for \ \mathbf{x}(t,\mathbf{x}_0) ,\ t > 0 \quad \exists \quad \mathbf{x}(\tau) = \mathbf{x}(\tau + h),\ \tau > 0,\ h > 0, \\ \{\ \mathbf{x}(t) \mid t \in [\tau,\tau + h)\ \}, \ is \ a\ \mathbf{limit\ cycle}. \end{gather}
     An example for this case are the compliant linkages described in (ref strandbeest compliant version), where the end effector follows a cyclic trajectory, i.e. set of states if undisturbed. 
     In the code implementation section, we provide methods for dealing with both types of attractors and the problem of applying the continuous analysis in a discrete setting. 
@@ -128,21 +128,35 @@
     
     REF METHOD
 
-    Given a target behaviour of a system in form of an attractor, convergence of a state trajectory can be interpreted as a successfull recovery from a disturbance. Looking at a set of disturbances, a larger portion of recoveries means a larger robustness within that set. If one could define a set of all possible disturbances, one could theoretically compute general robustness. 
+    Given a target behaviour of a system in form of an attractor, convergence of a state trajectory can be interpreted as a successfull recovery from a disturbance. Looking at a set of disturbances, a larger portion of recoveries means a larger robustness within that set. This can be taken as a scalar measure of robustness within that set. If one could define a set of all possible disturbances, one could theoretically compute general robustness. At this point already one might notice that the set of disturbances may lie in a continuous space, making 
 
-    Choosing instantaneous external forces as disturbances, their effect on the system can be captured by a change in system state. Forces have are directly related to the generalized accelerations $\ddot{\mathbf{q}}$ following Newton's second law, which in turn changes $\mathbf{q}$ and $\dot{\mathbf{q}}$ via the underlying differential equations.
-    This is the approch in the paper which has nice implications xy. Namely the basin of attraction is exactly that set. There is definitely some analysis of these sets as seen in the previous work. 
+    Choosing instantaneous external forces as disturbances, their effect on the system can be captured by a change on the systems state. Forces are directly related to the generalized accelerations $\ddot{\mathbf{q}}$ following Newton's second law, which in turn changes $\mathbf{q}$ and $\dot{\mathbf{q}}$ via the underlying differential equations. This implies that the set of disturbances in this case coincides with the elements of the phase space.
+    This is precisely the approch chosen for sampling of disturbances and measurement of robustness in (reference paper). A nice implications of this is that the set of disturbances from which the system recovers from coincides with the basin of attraction (defined previously). There exists literature analyzing . 
     Also the scaling issue between q and qdot, maybe just reference it and go into detail later. 
+
+
+    However it also assumes that the system experiences a disturbance at exacltly one point and not after. This is of course quite limiting. Effects like resonance for example cannot be captured
+    Also all disturbances are treated equally. Good for generality, but one has no real control over the process (i.e. be robust to THAT thing in particular)
     HOOWEVER
 
 
-    The disturbances are implied via the sampling of initial conditions in the phase space. Taking instantaneous External forces that act on a system will have via the underlying differntial equations a direct effect on the generalized positions and velocities $\mathbf{q}$ and $\dot{\mathbf{q}}$
+    %The disturbances are implied via the sampling of initial conditions in the phase space. Taking instantaneous External forces that act on a system will have via the underlying differntial equations a direct effect on the generalized positions and velocities $\mathbf{q}$ and $\dot{\mathbf{q}}$
 
     ADAPTATIONS / REDEFINITION
 
     IMPLICATIONS OF ADAPTATIONS
 
-    Say we have a particular behaviour of our system that we want it to follow and we can define precisely. 
+    The good thing of the conservative measure of the minimal Radius is has next to no requirements onto the shape of the attracting set of disturbances and can easily be implemented in different spaces. 
+
+    TRANSITION TO NEXT CHAPT
+
+    we ultimately want to optimize over robustness measure, so we need to look into that. 
+
+
+
+
+
+    %Say we have a particular behaviour of our system that we want it to follow and we can define precisely. 
 
     ...
     We will have a single or a set of states of our system that we have as a goal (= attractor). In the context of a quadruped this might be an upright standing position (fixed point) or a periodic walking gait. If the system is perturbed, it's state will inevitably be changed such that it is most likely not part of the attractor anymore. Finding the trajectory shows how the system will further evolve. Now convergence means that under the disturbance applied, in the long term, we will still return to and stay on the attroctor, or the system recovered, it is successful in compensating the disturbance. Divergence means something else happened, which we will just interpret as failure. So if the trajectory related to an initial condition caused by a particular disturbance converges to the attractor, the system is in a sense robust to that disturbance. 
@@ -351,5 +365,9 @@ Automatic identification of fixed points
     Laikago Droptest
     Laikago Swingtest
         note that here we kind of broke the mathematical framework as technically the underlying diff eq were changed. But we just ignored this, NO effects of this need to be investigated further. 
+
+
+        Maybe we could do one high precision, high resolution DS swingtest to see if we can spot resonance 
+
 
     This is kind of a twist on the concept as we are starting at a fixed point and continually applying disturbances to see for what disturbances the trajectory conveges, which in this case is expressed by the system staying at the initial state. 
