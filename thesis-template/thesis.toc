@@ -12,17 +12,17 @@
 \contentsline {subsection}{\numberline {3.1.4}Parameter space and Disturbance space}{9}{subsection.3.1.4}%
 \contentsline {section}{\numberline {3.2}Code Implementation}{10}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Framework Overview}{10}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Solver}{10}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.2}Solver}{11}{subsection.3.2.2}%
 \contentsline {subsection}{\numberline {3.2.3}Detecting Attractors}{11}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Evaluating Convergence}{12}{subsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.2.5}minRad algorithm}{13}{subsection.3.2.5}%
-\contentsline {subsection}{\numberline {3.2.6}boundarys PS DS}{14}{subsection.3.2.6}%
-\contentsline {subsection}{\numberline {3.2.7}Multithreading}{14}{subsection.3.2.7}%
-\contentsline {subsection}{\numberline {3.2.8}Application to specific systems}{15}{subsection.3.2.8}%
-\contentsline {subsection}{\numberline {3.2.9}Optimization and Complexity reduction}{15}{subsection.3.2.9}%
-\contentsline {section}{\numberline {3.3}Tests}{15}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Conclusion and Outlook}{17}{chapter.4}%
-\contentsline {chapter}{\numberline {A}Information For The Few (Appendix)}{19}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Foo Bar Baz}{19}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Barontes}{19}{section.A.2}%
-\contentsline {section}{\numberline {A.3}A Long Table with Booktabs}{19}{section.A.3}%
+\contentsline {subsection}{\numberline {3.2.4}Evaluating Convergence}{13}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}minRad algorithm}{14}{subsection.3.2.5}%
+\contentsline {subsection}{\numberline {3.2.6}Boundaries of $\mathsf {D}$ and $\mathsf {P}$}{15}{subsection.3.2.6}%
+\contentsline {subsection}{\numberline {3.2.7}Multithreading}{15}{subsection.3.2.7}%
+\contentsline {subsection}{\numberline {3.2.8}Application to specific systems}{16}{subsection.3.2.8}%
+\contentsline {subsection}{\numberline {3.2.9}Optimization}{16}{subsection.3.2.9}%
+\contentsline {section}{\numberline {3.3}Tests}{16}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Conclusion and Outlook}{19}{chapter.4}%
+\contentsline {chapter}{\numberline {A}Information For The Few (Appendix)}{21}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Foo Bar Baz}{21}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Barontes}{21}{section.A.2}%
+\contentsline {section}{\numberline {A.3}A Long Table with Booktabs}{21}{section.A.3}%
