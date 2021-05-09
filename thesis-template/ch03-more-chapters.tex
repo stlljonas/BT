@@ -2,7 +2,7 @@
 
 \section{Fundamentals and Problem Formulation}
 
-    In this section describes the relvant physical definitions from which the robustness measure is derived and which will be referred to in the later code implementation. all of which are important for understanding and some of which are directly used for the implementation. 
+    In this sectionlays out the relvant physical definitions from which the robustness measure is derived and which will be referred to in the later code implementation. all of which are important for understanding and some of which are directly used for the implementation. 
 
     Examples will be given n terms of laikag quadruped robot as most of the testing of the framework was done with that. 
 
@@ -304,7 +304,7 @@ A framework was built up to take in all necesseaty information, run minrad with 
     Maybe state this more as: It is advised to build a framework that can handle general cases of sampling, convergenc evaluaion and where only (insert relevant blocks) need to be specified. 
 
     %need to decide on PS and DS plus boundaries. Need to find or define attractor. 
-
+Written in c++
 
 We choose the method from REF over cell mapping because of it's simplicity in implementation with the given solver. 
 I.e. cell mapping also needs the solver, but in addition also a lot of other structure around it. 
@@ -479,12 +479,26 @@ The nonlinear dynamics approach with evaluating convergence of the system state 
     %plot resultion as a function of iterations. NO, write down the formula $resolution = (1/2)^n$ with n being the number of iterations. 
     Plot variance as a function of nsamples for some example. 
 
+\subsection{Optimization}
     
+    %Given a way to quantify the robustness of a system and the possibility to change its parameters, it is possible to optimize said parameters to maximize robustness.
+    At this point it is possible to change the system parameters in order to increase its robustness measure.
+     Without applying any further algorithms, one may discretize $\mathsf{P}$ in every dimension and compute the robustness for every possible combination of parameter values. The optimal parameters are the ones with the maximal robustness within the resolution of the chosen discretization step size $h$. This approach is computationally expensive and becomes infeasible for high ($p$) dimensional $\mathsf{P}$ as the computational effort is $\mathcal{O}(\frac{1}{h^d})$ with smaller $h$ yielding higher precision. 
+    
+    A second approach is utilizing optimizers, which can drastically reduce the number of robustness computations needed to get (close) to an optimum. As derivatives of the robustness measure are not available, the choice fell on evolutionary algorithms. In particular, the Covariance Matrix Adaptation Evolution Strategy (short CMA-ES) was used with algorithm parameters being kept as suggested by the documentation. Combining both approaches enables comparison and verification of either one. 
+
+
+    %find out how the order of computational effort when making discretization smaller vs how much one bisection algorithm iteration can do. 
+    %cmaes
+    %given robustness value, any optimizer that does not depend on derivatives can be used. 
+    %Of course one can also just explore the entire parameter space, howeve that is quite costly. Useful for debugging though (rough estimate if optimizer converges).
+
+    %complexity reductions should probably be noted where they are implemented (i.e. not in this section)
+
 
 \subsection{Boundaries of $\mathsf{D}$ and $\mathsf{P}$ }
 
-
-    Because of their fundamental effect on the robustness measure, the boundaries of $\mathsf{D}$ have to be chosen thoughtfully. In the tests carried out $\mathsf{D}$ was restricted to 2 dimensions for simplicity and ease of visualization, making finding appropriate boundaries by trial and error feasible. This would be significantly more challenging for $\mathsf{D}$ with of high dimensions. The approach was to find a balanced set of boundaries where at the minimal radius all elements $s_{\mathsf{D},i} = 0.5$, implying $R_{minRad} = \begin{Vmatrix}s_{\mathsf{D}}\end{Vmatrix}= \sqrt{\sum_{i=1}^{d} s_{\mathsf{D},i}^2} = \frac{\sqrt{d}}{2}$ for some set of system parameters. These boundaries were then used when computing robustness measures for different sets of parameters. 
+    The boundaries of $\mathsf{D}$ are relevant for the minRad algorithm during sampling of the disturbances. Because of their fundamental effect on the robustness measure, they have to be chosen thoughtfully. In the tests carried out $\mathsf{D}$ was restricted to 2 dimensions for simplicity and ease of visualization, making finding appropriate boundaries by trial and error feasible. This would be significantly more challenging for $\mathsf{D}$ with of high dimensions. The approach was to find a balanced set of boundaries where at the minimal radius all elements $s_{\mathsf{D},i} = 0.5$, implying $R_{minRad} = \begin{Vmatrix}s_{\mathsf{D}}\end{Vmatrix}= \sqrt{\sum_{i=1}^{d} s_{\mathsf{D},i}^2} = \frac{\sqrt{d}}{2}$ for some set of system parameters. These boundaries were then used when computing robustness measures for different sets of parameters. 
     Here it shall be noted that some elements of disturbance may be negative. In order to keep the framework simple, these cases were handled by randomly negating those values and scaling them appropriately. 
 
     %Here there could be an opportunity to have an influence on the eventual optimization process. Increasing the upper boundary of a specific dimension of $\mathsf{D}$ would shift the boundary of the set of recoveries closer to the origin. This squishing changes the shape of the set of recoveries and in turn affects the robustness measure. (this was already done in the first D-P space section)
@@ -508,8 +522,7 @@ The nonlinear dynamics approach with evaluating convergence of the system state 
 
     %sampling and minrad always on domain [0,1] in every dimension of D and then scale up to proper domain.
     %Sampling (idea that we sample within a d dim space where every dimension has domain [0,1], and then scale by boundaries chosen for every coordinate). 
-
-    The boundaries of $\mathsf{P}$ are dictated by the underlying system. Basic functionality must be given within the boundaries as detecting the attractor is based on that assumption. 
+    The boundaries of $\mathsf{P}$ dictate the possible range of parameters and are particularly relevant for the optimizer. Basic functionality must be given within the boundaries as detecting the attractor is based on that assumption. Mostly they dictated by the underlying system in form of physical constraints, however there may exist parameters that are valid in this sense but lead to the system not expressing the desired behaviour in the first place.  (2=>1 sentences)
 
 
     %that that the system must function more or less properly within them. This was also done by trial and error and 
@@ -555,7 +568,7 @@ The nonlinear dynamics approach with evaluating convergence of the system state 
     
     First iterations of the implementation were naively done in a "top down" fashion that was specific to the particular system. Later this was changed such that the relevant (and changing) functions were isolated and could quickly be redefined for new applications. 
 
-    The first of these is the function applying the parameters to the system. This is generally as simple as changing some variables but still needs to be customized for the specific system.  
+    The first of these is the function applying the parameters to the system. This is generally as simple as changing some variables but fully depends on and needs to be customized for the specific system at hand.  
 
     The second is arguably the more essential one. This is the function called by the multithreading pipeline. It needs to run the simulation, apply disturbances, whether continuously or only initially, and evaluate the convergence, returning the boolean result. Concrete examples are listed in the TESTs section. 
 
@@ -571,20 +584,6 @@ The nonlinear dynamics approach with evaluating convergence of the system state 
         %very much dependent on the particular system and 
     %simAndEval
 
-\subsection{Optimization}
-    
-    Given a way to quantify the robustness of a system and the possibility to change its parameters, it is possible to optimize said parameters to maximize robustness. Without applying any further algorithms, one may discretize $\mathsf{P}$ in every dimension and work out the robustness for every possible combination of parameter values. The parameters with the highest robustness are trivially the best ones within the resolution of the chosen discretization step size. This approach is computationally expensive and becomes infeasible for high dimensional $\mathsf{P}$. 
-    A second approach is applying optimizers, which can drastically reduce the number of robustness measure computations.
-
-    As derivatives of the robustness measure are not available, the choice fell on evolutionary algorithms. Here the Covariance Matrix Adaptation Evolution Strategy (short CMA-ES) was used with algorithm parameters being kept as suggested by the documentation. Combining both approaches enables comparison and verification of both. 
-
-
-    %find out how the order of computational effort when making discretization smaller vs how much one bisection algorithm iteration can do. 
-    %cmaes
-    %given robustness value, any optimizer that does not depend on derivatives can be used. 
-    %Of course one can also just explore the entire parameter space, howeve that is quite costly. Useful for debugging though (rough estimate if optimizer converges).
-
-    %complexity reductions should probably be noted where they are implemented (i.e. not in this section)
 
     
 
@@ -592,10 +591,24 @@ The nonlinear dynamics approach with evaluating convergence of the system state 
     
     Platform (describe laptop specs)
 
+    Computations were performed on a ...
+
+    Initially, simple systems were analyzed to gain familiarity with dde and it's implementation. Visualizing 3d time dependent trajectories all in one plot becomes very convoluted quickly as can be seen in Fig .. . This is especially true when working with multibody systems. Attempts were made to apply principle component analysis to reduce the dimensionality, however this only yielded usable data when working with multibody systems where all bodies moved in a coordinated fashion. In these cases picking out and tracking individual bodies yielded
+
+
+    Another issue is that for effitient computation, yada yada let's see how much we want to talk about PCA anyways.  
+
+    It is much more practical to plot the evolution of individual coordinates over time, as trends are much more evident and 
+
+    "While visually appealing, these graphs were less useful for actual inspection of the trajectories."
+
     Initial familiarization with data.
         plot coordinates over time individually and maybe more importantly, in 2d plots. Compare to convoluted 3d attempts. 
         maybe failed approaches with pca. better to just track less coordinates
+
+
     Results of detecting attractors
+        poincare example
 
     Results of detecting convergence
 
