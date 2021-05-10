@@ -22,12 +22,12 @@
 \contentsline {subsection}{\numberline {3.2.1}Framework Overview}{18}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}Solver}{19}{subsection.3.2.2}%
 \contentsline {subsection}{\numberline {3.2.3}Detecting Attractors}{20}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Evaluating Convergence}{21}{subsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.2.5}minRad algorithm}{22}{subsection.3.2.5}%
-\contentsline {subsection}{\numberline {3.2.6}Optimization}{23}{subsection.3.2.6}%
-\contentsline {subsection}{\numberline {3.2.7}Boundaries of $\mathsf {D}$ and $\mathsf {P}$}{23}{subsection.3.2.7}%
+\contentsline {subsection}{\numberline {3.2.4}Evaluating Convergence}{22}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}minRad algorithm}{23}{subsection.3.2.5}%
+\contentsline {subsection}{\numberline {3.2.6}Optimization}{24}{subsection.3.2.6}%
+\contentsline {subsection}{\numberline {3.2.7}Boundaries of $\mathsf {D}$ and $\mathsf {P}$}{24}{subsection.3.2.7}%
 \contentsline {subsection}{\numberline {3.2.8}Multithreading}{24}{subsection.3.2.8}%
-\contentsline {subsection}{\numberline {3.2.9}Application to specific systems}{24}{subsection.3.2.9}%
+\contentsline {subsection}{\numberline {3.2.9}Application to specific systems}{25}{subsection.3.2.9}%
 \contentsline {section}{\numberline {3.3}Tests}{25}{section.3.3}%
 \contentsline {chapter}{\numberline {4}Conclusion and Outlook}{27}{chapter.4}%
 \contentsline {chapter}{\numberline {A}Information For The Few (Appendix)}{29}{appendix.A}%

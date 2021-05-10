@@ -9,14 +9,14 @@
 \subsection{Dynamical Systems}
     
     Dynamical systems are distinguished by an evolution of their state $\mathbf{x}(t)$ through time. This evolution can be fully described by a set of ordinary differential equations of the form $\dot{\mathbf{x}}(t) = \mathbf{F}(\mathbf{x}(t),t})$, where $\mathbf{F}$ is some nonlinear function. This simplifies to $\dot{\mathbf{x}}(t) = \mathbf{F}(\mathbf{x}(t))$ under the assumption that the dynamical system is autonomous, i.e. is not explicitly dependent on time. 
-    When solving for the explicit solution $\mathbf{x}(t)$, an initial condition $\mathbf{x_0}=\mathbf{x}(t_0)$ is required, which is a system state at an initial time. For simplicity and without loss of generality for autonomous systems, we set $t_0 = 0$. With this the Initial Value Problem (IVP) can be formulated: \begin{gather} \label{eq:1} find \ \ \mathbf{x}(t) \\ s.t. \ \dot{\mathbf{x}}(t) = \mathbf{F}(\mathbf{x}(t)) \\ and \ \ \mathbf{x}(0) = \mathbf{x}_0 \end{gather}
+    When solving for the explicit solution $\mathbf{x}(t)$, an initial condition $\mathbf{x_0}=\mathbf{x}(t_0)$ is required, which is a system state at an initial time. For simplicity and without loss of generality for autonomous systems, one sets $t_0 = 0$. With this the Initial Value Problem (IVP) can be formulated: \begin{gather} \label{eq:1} find \ \ \mathbf{x}(t) \\ s.t. \ \dot{\mathbf{x}}(t) = \mathbf{F}(\mathbf{x}(t)) \\ and \ \ \mathbf{x}(0) = \mathbf{x}_0 \end{gather}
     We denote the solution to the IVP as $\mathbf{x}(t,\mathbf{x}_0)$. It represents trajectory of the system state through time given an initial condition. The space in which this trajectory lies is spanned by all possible states $\mathbf{x}$ and termed the $state\ space$. Note that any future state of the trajectoy $\mathbf{x}(\tau,\mathbf{x}_0)$ at time $\tau$ can be taken as an initial condition of the IVP itself. It turns out that the new solution coincides with the initial one, i.e. $\mathbf{x}(t,\mathbf{x}_0) = \mathbf{x}(t,\mathbf{x}(\tau,\mathbf{x}_0))$, which illustrates that any state $\mathbf{x}(t)$ of a trajectory $\mathbf{x}(t,\mathbf{x}_0)$ is suffitient to represent the trajectory as a whole.
     
-    Mechanical systems (on which we will focus on form here on out) tend to be described in terms of so called generalized coordinates: \begin{gather}\mathbf{q}(t)=\begin{pmatrix}q_1(t)&q_2(t)&\ldots&q_n(t) \end{pmatrix}^\intercal . \end{gather} They are the minimal set of coordinates needed to fully describe the position and orientation of all of the systems elements. Their dimension n cooincides with the number of degrees of freedom of the system. The corresponding differential equations are of second order, depending on $\ddot{\mathbf{q}}(t)$ in addition to $\dot{\mathbf{q}}(t)$ and $\mathbf{q}(t)$. Simply put, this is due to their derivation by Newton's second method, where forces acting on the system are related to the second time derivative via $F = ma$.
+    Mechanical systems (on which the focus of this thesis lies) tend to be described in terms of so called generalized coordinates: \begin{gather}\mathbf{q}(t)=\begin{pmatrix}q_1(t)&q_2(t)&\ldots&q_n(t) \end{pmatrix}^\intercal . \end{gather} They are the minimal set of coordinates needed to fully describe the position and orientation of all of the systems elements. Their dimension n cooincides with the number of degrees of freedom of the system. The corresponding differential equations are of second order, depending on $\ddot{\mathbf{q}}(t)$ in addition to $\dot{\mathbf{q}}(t)$ and $\mathbf{q}(t)$. Simply put, this is due to their derivation by Newton's second method, where forces acting on the system are related to the second time derivative via $F = ma$.
     Through an order reduction (Appendix) these differential equations can be cast into the reviously mentioned general form \ref{eq:1}, where \begin{gather*} \mathbf{x}(t) = \begin{pmatrix}\mathbf{q}(t)&\dot{\mathbf{q}}(t)\end{pmatrix}^\intercal .\end{gather*}
     This implies that in order to solve the IVP, initial conditions $\mathbf{q}_0$ and $\dot{\mathbf{q}}_0$ are required. We can also state that for a system with n degrees of freedom, $\mathbf{x}(t) \in \mathbb{R}^{2n}$. The particular state space spanned by generalized coordinates and velocities is termed the $phase\ space$. Within it, any states are single points and state trajectories are smooth curves. The phase space is used for generalizable qualitative analysis of the behaviour of nonlinear dynamical systems and plays a pivotal role in the fromulation of the robustness measure. It shall be stressed at this point, that any instantaneous configuration of the isolated system one can think of is a point in the phase space and it is impossible for the system state to leave or exist outside of it without fundamentally changing the system. 
 
-    When discussing high level concepts we will refer to the system state $\mathbf{x}(t)$ for simplicity, while in the code implementation the generalized coordinates $\mathbf{q}(t)$ and velocities $\dot{\mathbf{q}}(t)$ will be more relevant. Keep in mind that both are equivalent.
+    When discussing high level concepts the system state will be refered to as $\mathbf{x}(t)$ for simplicity, while in the code implementation the generalized coordinates $\mathbf{q}(t)$ and velocities $\dot{\mathbf{q}}(t)$ will be more relevant. Keep in mind that both are equivalent.
 
 
 
@@ -73,7 +73,7 @@
 \subsection{Attractors and Convergence}
     
 
-    In nonlinear dynamical systems, there may exist sets of states in the phase space which show an attracting behaviour. By "attracting" we mean that once a trajectory reaches an element of such a set, all of its future states will also be part of that set. Define an attractor as a set of states:
+    In nonlinear dynamical systems, there may exist sets of states in the phase space which show an attracting behaviour. This means that once a trajectory reaches an element of such a set, all of its future states will also be part of that set. Define an attractor as a set of states:
     \begin{gather} \mathbf{A} \subset phase\ space,\\ s.t.\ if \ \mathbf{x}(t_0) = \mathbf{x}_0\ \in \mathbf{A}, \\ \mathbf{x}(t,\mathbf{x}_0) \in \mathbf{A}\quad \forall\ t > t_0. \label{eq:2} \end{gather}
     Attractors can be divided into two fundamental variants.
     If the attracting set consists of only one state, it is called a fixed point. Fixed points are associated with the condition
@@ -82,12 +82,12 @@
     In the general case with A containing of more than one state, (reference above eq) is not true. Rather the trajectory is moving through the sets of A, visiting every element at some point in time and returning to it at future times in a periodic fashion. These types of attractors are called limit cycles. Finding them is generally a hard problem, but for simpler cases one can check:
     \begin{gather} If\ for \ \mathbf{x}(t,\mathbf{x}_0) ,\ t > 0 \quad \exists \quad \mathbf{x}(\tau) = \mathbf{x}(\tau + h),\ \tau > 0,\ h > 0, \\ \{\ \mathbf{x}(t) \mid t \in [\tau,\tau + h)\ \}, \ is \ a\ \mathbf{limit\ cycle}.\label{eq:4} \end{gather}
     An example for this case are the compliant linkages described in (ref strandbeest compliant version), where the end effector follows a cyclic trajectory, i.e. set of states if undisturbed. 
-    In the code implementation section, we provide methods for dealing with both types of attractors and the problem of applying the continuous analysis in a discrete setting. 
+    In the code implementation section, methods for dealing with both types of attractors and the problem of applying the continuous analysis in a discrete setting are provided. 
 
     For any initial condition not part of the attractor, the related trajectory may land and stay on the attractor after some time $t > t_0$. We define this occurance: 
     \begin{gather} Given\ an\ attractor\ \mathbf{A},\ for\ any\ \mathbf{x}_0 \notin \mathbf{A}\\ if\ \ \underset{t \rightarrow \infty}{lim} \ \mathbf{x}(t,\mathbf{x}_0) \in \mathbf{A}\ \Rightarrow\
     \mathbf{x}(t,\mathbf{x}_0)\ \mathbf{converges}\ to\ \mathbf{A}\ \label{eq:5} \end{gather}
-    Should the definition above not hold, we denote the trajectoy as diverging (as in cell mapping methods). 
+    Should the definition above not hold, the trajectoy is denoted as diverging (as in cell mapping methods). 
 
     Note that there may exist any number of attractors in the phase space of a system (reference paper with multitude of attractors). Convergence is always defined with respect to a particular attractor $\mathbf{A}$, which needs to be specified. Therefore if the trajectory converges to a different attractor, it is still defined as diverging from the attractor of interest.  
 
@@ -95,8 +95,8 @@
     \begin{gather} \{\ \mathbf{x}_0 \in \mathbb{R}^{2n} \mid  \underset{t \rightarrow \infty}{lim} \ \mathbf{x}(t,\mathbf{x}_0) \in \mathbf{A}\ \}\end{gather}
     where $\mathbf{A}$ is an attractor as defined in \ref{eq:3}.
 
-    From here on we will represent the general attractor of interest with $\mathbf{A}$.
-    Additionally, we define disturbances as any event that acts upon the system, inducing a state change. This new state implies a new trajectory as a solution of the IVP, meaning the future behaviour of the system may differ vastly from the undisturbed case.
+    From here on the general attractor of interest will be represented by $\mathbf{A}$.
+    Additionally, disturbances are defined as any event that acts upon the system, inducing a state change. This new state implies a new trajectory as a solution of the IVP, meaning the future behaviour of the system may differ vastly from the undisturbed case.
 
 
 
@@ -125,18 +125,20 @@
 
 \subsection{Robustness Measure}
 
-    The robustness measure proposed in REF and implemented in the following is derived using the concepts of nonlinear dynamics outlined in the previous section. In the actual implementation and testing compromises have to be made (rephrase) in order to improve feasibility, which is why we propose a slight reframing of some definitions to accomodate for those variations.
+    The robustness measure proposed in REF and implemented in the following is derived using the concepts of nonlinear dynamics outlined in the previous section. In the actual implementation and testing compromises have to be made (rephrase) in order to improve feasibility, which is why a slight reframing of some definitions is proposed to accomodate for those variations.
     
     %INTERPRETATION OF CONVERGENCE
-    First we classify trajectories in successful recovery from disturbances or failure to do so. %Disturbances in mechanical systems can generally be viewed as external forces acting on the system. 
-    Given a dynamical system, assume that it shows some stable and desirable behaviour in its undisturbed state. Examples of this might be holding a specific pose or walking with a periodic gait. We can interpret these types of behaviour as attractors in the phase space of the system. Applying disturbances will disturbe the state trajectory in ways that are hard to predict as they don't follow the IVP. Once the distubances stop however, the disturbed state of the system at that point in time can be used to solve the IVP and an new traectory can be computed. may be move the system state outside of the attracting set.
+     %Disturbances in mechanical systems can generally be viewed as external forces acting on the system. 
+    Given a dynamical system, assume that it holds a desired pose or behaves in a periodic fashion in its undisturbed state. We can interpret these types of behaviour as attractors in the phase space of the system. Applying disturbances will disturbe the system state in ways that are hard to predict as the trajectory doesn't follow the IVP while the disturbance acts. Once the distubances stop however, the disturbed state $\mathbf{x_d}$ at that point in time can be used to solve the IVP and an new trajectory can be computed. Here trajectories are classified in successful recovery from disturbances back to the attractor (recoveries) or failure to do so (fatalities). Disturbances resulting in disturbed states lying on the attractor or within the BoA will trivially lead to recoveries, while any state outside of these sets will cause a fatality. 
+    %Examples of this might be holding a specific pose or walking with a periodic gait.
 
-
-     Following the new trajectory, we can detemine whether the system will converge back to the attractor. In such a case successful recovery of the system from the disturbance is achieved; one might say the system is robust to that disturbance. %If the following trajectory converges back to the attractor this implies that the system recoveres successfully from the specific disturbance applied to it. 
+     Following the new trajectory, one can detemine whether the system will converge back to the attractor. In such a case successful recovery of the system from the disturbance is achieved; one might say the system is robust to that disturbance. %If the following trajectory converges back to the attractor this implies that the system recoveres successfully from the specific disturbance applied to it. 
 
     (add hand drawn representations of the effect of disturbances in the phase space )
 
     Note (add into previous paragraph, that disturbances can do "anything" to the trajectory, i.e. mustn't be continuous, etc. But once the disturbance stops, we can take the state that the system is in at that time to compute the future dynamics, given that no more disturbances are applied. Else we repeat until no further disturbances.)
+
+    Given a solver that can simulate the disturbances as well, one can just apply them continually (not quite what I mean). The only important thing is whether the system recovers, independent of scale and temporal distribution of the disturbances. 
 
 
 
@@ -174,7 +176,7 @@
 
     A different way of choosing a subset of disturbances is needed. 
     
-    Here we remind ourselves that the disturbed states in the phase space are results of underlying disturbances. Instead of sampling initial conditions, we propose sampling and applying disturbances to the model in simulation. We define a $d$-dimensional disturbance space $\mathsf{D}$ from which we will sample disturbances and in which we will measure robustness. The idea is to apply the same concept of a minimal Radius in this space to approximate the size of the set of disturbances the system can recover from in order to measure robustness. Note that recovery of the system under a disturbance will still be evaluated by checking convergence of the state to the attractor in the phase space. 
+    Here we remind ourselves that the disturbed states in the phase space are results of underlying disturbances. Instead of sampling initial conditions, one may sample and apply disturbances to the model in simulation. We define a $d$-dimensional disturbance space $\mathsf{D}$ from which disturbances will be sampled and in which robustness will be measured. The idea is to apply the same concept of a minimal Radius in this space to approximate the size of the set of disturbances the system can recover from in order to measure robustness. Note that recovery of the system under a disturbance will still be evaluated by checking convergence of the state to the attractor in the phase space. 
 
     (mathematical formulation of robustness measure)
 
@@ -240,22 +242,22 @@
 
 \subsection{ Parameter space and Disturbance space}
     
-    In order to apply the concept of the minimal radius as a measure of robustness in the disturbance space $\mathsf{D}$, we must impose some conditions on it.
+    In order to apply the concept of the minimal radius as a measure of robustness in the disturbance space $\mathsf{D}$, one must impose some conditions on it.
     In the phase space, the origin is generally chosen such that the attractor of interest lies on or in close viscinity to it. This means sampled points $s_{\mathsf{D}} \in \mathsf{D}$ with a small norm represent no or very small disturbances, guaranteeing recovery if $s_{\mathsf{D}}$ is chosen small enough. The minimal Radius approach builds on the fact that the origin lies within the converging set and the it's boundary is reached at some point when moving farther away. (said two sentences before) 
     For this reason me must ensure that in $\mathsf{D}$ the origin also represents the state being on the attractor, implying no disturbance.
-    Each element of the disturbance space is just a d dimensional vector of coordinates representing some disturbance. To impose the above condition we must ensure that the 0 vector in $\mathsf{D}$ represents no disturbance. 
-    Taking oscillations as an example we might want to represent them in a 2 dimensional DS with amplitude and frequency as the coordinates. An oscillation with either 0 amplitude or 0 frequency implies no oscillation at all, making this choice valid.
+    Each element of the disturbance space is just a d dimensional vector of coordinates representing a single or multiple disturbances. To impose the above condition it must be ensured that the 0 vector in $\mathsf{D}$ represents no disturbance. 
+    Taking oscillations as an example one might want to represent them in a 2 dimensional DS with amplitude and frequency as the coordinates. An oscillation with either 0 amplitude or 0 frequency implies no oscillation at all, making this choice valid.
     An invalid example of a coordinate is the direction of a force applied. If the angle of attack is 0, the disturbance itself is clearly non zero, breaking our condition.
-    Here we define the $set\ of\ recoveries$ $\sub$ $\mathsf{D}$ to be quantified by the minimal radius as the equivalent to the BOA $\sub$ $phase\ space$.
+    Here the $set\ of\ recoveries$ $\sub$ $\mathsf{D}$ is defined to be quantified by the minimal radius as the equivalent to the BOA $\sub$ $phase\ space$.
 
     (actually formulate it mathematically), aka "disturbed trajectory" converges to $\mathbf{A}$.
 
 
-    For any set of valid coordinates, their scaling wrt each other turns out to stronly affect the resulting robustness measure. Just choosing different units for any coordinate will stretch $\mathsf{D}$ along the corresponding dimension, changing the shape of the converging set and in turn changing the minimal Radius to its boundary. This issue is alluded to in the paper REF by allowing the minimal radius to trace an elliptical shape, which corresponds to rescaling one dimension. There seems to be no comprehensive solution to this issue, which is why we suggest finding a well posed $\mathsf{D}$ by trial and error and not changing it as long as possible. 
+    For any set of valid coordinates, their scaling wrt each other turns out to stronly affect the resulting robustness measure. Just choosing different units for any coordinate will stretch $\mathsf{D}$ along the corresponding dimension, changing the shape of the converging set and in turn changing the minimal Radius to its boundary. This issue is alluded to in the paper REF by allowing the minimal radius to trace an elliptical shape, which corresponds to rescaling one dimension. There seems to be no comprehensive solution to this issue, which is why finding a well posed $\mathsf{D}$ by trial and error is suggested. 
     Conversely, this problem may also be leveraged for controlling later optimization of robustness. If the boundary of the converging set is a given distance away along a dimensions, shrinking that dimension will move that boundary closer to the origin, making it more likely that the minimal Radius lies in that direction. With this the scaling of the coordinates could be seen as a weighting of how important robustness against that part of the disturbance is. 
     (illustration)
 
-    For the aforementioned optimization, we define the parameter space $\mathsf{P}$ to perform the optimization in. Each element of $\mathsf{P}$ is a vector of parameters describing some parts of the underlying system. A different vector of parameters will fundamentally change the system and for each element of $\mathsf{P}$, robustness can be evaluated. Eventually we want to find the vector of parameters for which robustness is maximized. We can formulate the optimization problem:
+    For the aforementioned optimization, the parameter space $\mathsf{P}$ is defined to perform the optimization in. Each element of $\mathsf{P}$ is a vector of parameters describing some parts of the underlying system. A different vector of parameters will fundamentally change the system and for each element of $\mathsf{P}$, robustness can be evaluated. Eventually the vector of parameters for which robustness is maximized is to be found. This can be formulated as an optimization problem:
 
     Note that the choice of $\mathsf{P}$ is fundamental for the results. 
 
@@ -294,7 +296,7 @@ This section details the implementations of the robustness measure and particula
 \subsection{Framework Overview}
 
 differential equations are implicitly represented as simulation objects in dde. Their parameters can be set. The state x as well. Use the solver to compute the trajectory under a disturbance for a given amount of timesteps. check if trajectory converges or diverges. Do this repeatedly with initial conditions sample
-talk about how knowing the exact shape of the basin of attraction is not necessary for optimization of the robustness, with this and because of the additional work needed to implement the cell mapping algorithms, the method with full trajectories was chosen. For this we need a solver. boom. Great segue!
+talk about how knowing the exact shape of the basin of attraction is not necessary for optimization of the robustness, with this and because of the additional work needed to implement the cell mapping algorithms, the method with full trajectories was chosen. For this a solver is needed. boom. Great segue!
 
 A framework was built up to take in all necesseaty information, run minrad with multithreading, ..
     (this is kinda the flowchart I wanted to put at the beginning of the code implementation section)
@@ -317,10 +319,80 @@ Also here we want
 
 platform (laptop) stats
 
+\tikzset{%
+  %>={Latex[width=2mm,length=2mm]},
+  % Specifications for style of nodes:
+            base/.style = {rectangle, draw=black,
+                           minimum width=2cm, minimum height=.5cm,
+                           text centered, font=\sffamily},
+  activityStarts/.style = {base,rounded corners, fill=blue!20},
+       startstop/.style = {base, fill=red!30},
+    activityRuns/.style = {base, fill=green!30},
+         process/.style = {base, minimum width=2.5cm, fill=orange!15,
+                           font=\ttfamily},
+            %arrNote/.style = {draw=black, minimum width = font=\sffamily},
+}
+
+\scalebox{1.35}{
+    \begin{tikzpicture}[node distance=3cm, every node/.style={fill=white, font=\sffamily}, align=center]
+
+    \node (pBounds)[activityStarts, scale=.5]{Parameter Bounds};
+    \node (pInit)    [activityStarts, scale=.5, right of=pBounds, xshift = 2cm]{Parameters:\\initial guess};
+    \node (system)          [activityStarts,scale=.5, right of=pInit, ]        {System};
+    \node (dBounds)[activityStarts, scale=.5, right of=system, xshift =3cm]{Disturbance \\Bounds};
+    \node (rInit)   [activityStarts,scale=.5, right of=dBounds]{$R_{curr}$:\\inital guess};
+    \node (setParam)[process, scale=.5, below of= system, xshift = -2cm]{Apply Parameters to System};
+    \node (compAttr)[process, scale=.5, below of= setParam, yshift = -3cm]{Compute Attractor};
+    \node (samplDist)[process, scale=.5, below of=rInit, xshift=-2cm]{Sample Disturbances at $R_{curr}$};
+
+    \node (simSys)[process, scale=.5, below of=samplDist]{Simulate Disturbed System};
+    \node (eval)[process, scale=.5, below of=simSys]{Evaluate Convergence};
+    \node (updR)[process, scale=.5, below of=eval]{Update $R_{curr}$};
+    \node (rerm)[process, scale=.5, below of=updR, xshift=-6cm, yshift=1cm]{$R_{curr}=$ Robustness Measure};
+    \node (opt)[process, scale=.5, below of= pInit, xshift = -4cm, yshift = -4cm]{Sample Parameters\\(via Optimizer)};
+
+    \coordinate (join1) at ([yshift=-.5cm]pInit.south);
+    \coordinate (join2) at ([yshift=-.5cm]rInit.south);
+    \coordinate (join3) at ([yshift=-.47cm]updR.south))
+    \coordinate (join4) at ([xshift=2cm]join2);
+
+    \draw[->]   (pBounds.south) -| ([xshift=-3cm]opt);
+    \draw[->] (join1) -| ([xshift=-2.2cm]setParam);
+    \draw[-] ([xshift=2cm]opt) |- (join1);
+
+    \draw  (pInit.south) edge (join1);
+    \node (sysPar)[ scale = .4, left of=join1, xshift = 1cm]{System\\Parameters};
+
+    \draw[->] (system.south) -| ([xshift=7cm]setParam);
+    %\node (adSys)[scale = .4, below of=setParam, yshift = -.75cm]{Adapted System};
+    %\draw[-] (setParam.south) |- (adSys);
+    %\draw[->] (adSys) |- (simSys.west);
+    %\draw[->] (adSys) -| (compAttr);
+
+    \draw[->] (setParam.south) |- node(adSys)[scale=.4]{Adapted System}(simSys.west);
+    \draw[->] (adSys.south) -| (compAttr);
+    \draw[->] (compAttr) -- node[scale=.4]{Attractor}(eval.west);
+    \draw[->] (dBounds.south) -| ([xshift=-4cm]samplDist);
+    %\draw[->] (rInit.south) -- node(R)[scale=.4]{$R_{curr}$}([xshift=10cm]samplDist);
+    \draw[-] (rInit.south) |- (join2);
+    \node (R)[scale =.5, below of=join2, yshift =3cm]{$R_{curr}$};
+    \draw[->] (R.south) -| ([xshift=3.3cm]samplDist);
+    \draw[->] (samplDist) -- node[scale=.4]{Disturbances\\$\{s_i\}, i=\{1,2,...,n_s\}$}(simSys);
+    \draw[->] (simSys) -- node[scale=.4]{State Trajectories}(eval);
+    \draw[->] (eval) -- node[scale=.4]{$R_{curr} >$ or $<$ \\than minimal radius}(updR);
+    \node (R2)[scale =.5, below of=join3, yshift =2.25cm]{$R_{curr}$};
+    \draw[-] (updR.south) |- ([yshift=-.2cm]join3);
+    \draw[->] (R2.west) |- (rerm.east);
+    \draw[->] (rerm.west) -| (opt.south);
+    \draw[-] (R2.east) -| (join4);
+    \draw[-] (join4) -- ([xshift=.3cm]join2);
+    \end{tikzpicture}
+}
+
 \subsection{Solver}
 
 One of the hardes part of the process is actually finding the state trajectories of the system. 
-Finding an explicit analytical solution to the IVP is possible for simple cases, but very hard if not impossible for more complex systems. Numerical solvers represent a general approach to approximate the trajectories. For this the differential equations of the IVP are integrated over small time steps $\Delta t$ to approximate future states. Iterating this process gives a discrete approximation of the continuous state trajectory. Note that we represent general discrete points in time with $t_n$.
+Finding an explicit analytical solution to the IVP is possible for simple cases, but very hard if not impossible for more complex systems. Numerical solvers represent a general approach to approximate the trajectories. For this the differential equations of the IVP are integrated over small time steps $\Delta t$ to approximate future states. Iterating this process gives a discrete approximation of the continuous state trajectory. Note that general discrete points in time ar represented as $t_n$.
 The state trajectory is therefore just a set of states $\mathbf{x}(t_n)$ at time points $[t_0,t_1,\ldots, t_n]$ with $t_{i+1}-t_{i} = \Delta t\quad \forall\ i \in [0,n-1]\ $.
 A smaller time step will result in a more accurate approximation, however it will take more computational effort to progress through the same amount of time.
 It is advised to find a time step that is a sufficient compromise between accuracy and cumputational time and keeping it fixed from there on. Here $\Delta t = 0.01$ was found to be appropriate. 
@@ -352,7 +424,7 @@ DDE represents the system states by generalized coorinates and provides the gene
 
 \subsection{Detecting Attractors}
 
-In order to evaluate the convergence of a trajectory resulting from a disturbance, first the attracting set of states must be found. For this we follow the nonlinear dynamics definitions for a general approach.
+In order to evaluate the convergence of a trajectory resulting from a disturbance, first the attracting set of states must be found. For this the nonlinear dynamics definitions ar followed for a general approach.
 
 %!! Note that we generally want to run the undisturbed simulation a bit so it can settle. 
 %Automatic identification of fixed points
@@ -558,7 +630,7 @@ The nonlinear dynamics approach with evaluating convergence of the system state 
 \subsection{Multithreading}
 
     %computational time can be reduced by 
-    The computation of the simulations takes up a bulk of the computational time. As for every minRad iteration a number trajectories need to be found, this process benefits from parallelization. A simple multithreading pipeline was implement, computing $n_{th}$ simulations on $n_{th}$ threads in parallel. For this to be effitient, it is necessary for the functions to give feedback to the pipeline on whether the simulations are done. Completed simulations are restarted with different disturbance samples until either all $n_s$ samples are computed or a failure of recovery  is detected. In this case all threads are stopped and the minRad algorithm proceeds to the next iteration. 
+    The computation of the state trajectories takes up a bulk of the computational time. As for every minRad iteration a number trajectories need to be found, this process benefits from parallelization. A simple multithreading pipeline was implement, computing $n_{th}$ simulations on $n_{th}$ threads in parallel. For this to be effitient, it is necessary for the functions to give feedback to the pipeline on whether the simulations are done. Completed simulations are restarted with different disturbance samples until either all $n_s$ samples are computed or a failure of recovery  is detected. In this case all threads are stopped and the minRad algorithm proceeds to the next iteration. 
     With this the computational time can approximatiely be reduced by a factor of $n_{th}$, assuming there exist $n_{th}$ cores on the platform. 
 
     %for this a pipeline was implemented, simulating one sim on every virtual (?) core until all samples were processed, or all were stopped if any failed recovery was detected. With the system at hand this reduced computational time (for this part of the entire computation) by a factor of $n_{th}$. 
