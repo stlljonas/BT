@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.4.25)  12 MAY 2021 18:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.4.25)  12 MAY 2021 23:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1102,12 +1102,12 @@ pdfTeX warning: /usr/bin/pdflatex (file ./figures/ETH_logo.pdf): PDF inclusion:
 <figures/ETH_logo.pdf, id=10, 8833.0pt x 2366.8425pt>
 File: figures/ETH_logo.pdf Graphic file (type pdf)
 <use figures/ETH_logo.pdf>
-Package pdftex.def Info: figures/ETH_logo.pdf  used on input line 3590.
+Package pdftex.def Info: figures/ETH_logo.pdf  used on input line 3627.
 (pdftex.def)             Requested size: 136.59175pt x 36.58455pt.
 <figures/CRL_logo.pdf, id=12, 3207.02144pt x 894.56308pt>
 File: figures/CRL_logo.pdf Graphic file (type pdf)
 <use figures/CRL_logo.pdf>
-Package pdftex.def Info: figures/CRL_logo.pdf  used on input line 3591.
+Package pdftex.def Info: figures/CRL_logo.pdf  used on input line 3628.
 (pdftex.def)             Requested size: 136.59175pt x 38.09691pt.
 [1
 
@@ -1143,262 +1143,32 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@toc=\write5
 \openout5 = `thesis.toc'.
 
- [4] (./thesis.lof
-! Missing control sequence inserted.
-<inserted text> 
-                \inaccessible 
-l.3 ...ite {respoly}\relax }}{5}{figure.caption.7}
-                                                  %
-? 
-! Parameters must be numbered consecutively.
-<to be read again> 
-                   ##
-l.3 ...ite {respoly}\relax }}{5}{figure.caption.7}
-                                                  %
-? 
-! Parameters must be numbered consecutively.
-<to be read again> 
-                   ##
-l.3 ...ite {respoly}\relax }}{5}{figure.caption.7}
-                                                  %
-? 
-! Parameters must be numbered consecutively.
-<to be read again> 
-                   ##
-l.3 ...ite {respoly}\relax }}{5}{figure.caption.7}
-                                                  %
-? 
-! Parameters must be numbered consecutively.
-<to be read again> 
-                   1
-l.3 ...ite {respoly}\relax }}{5}{figure.caption.7}
-                                                  %
-? 
-
-LaTeX Warning: Citation `respoly' on page v undefined on input line 3.
-
-! Missing control sequence inserted.
-<inserted text> 
-                \inaccessible 
-l.4 ...\cite {phase}\relax }}{6}{figure.caption.8}
-                                                  %
-? 
-! Parameters must be numbered consecutively.
-<to be read again> 
-                   ##
-l.4 ...\cite {phase}\relax }}{6}{figure.caption.8}
-                                                  %
-? 
-! Parameters must be numbered consecutively.
-<to be read again> 
-                   ##
-l.4 ...\cite {phase}\relax }}{6}{figure.caption.8}
-                                                  %
-? 
-! Parameters must be numbered consecutively.
-<to be read again> 
-                   ##
-l.4 ...\cite {phase}\relax }}{6}{figure.caption.8}
-                                                  %
-? 
-! Parameters must be numbered consecutively.
-<to be read again> 
-                   1
-l.4 ...\cite {phase}\relax }}{6}{figure.caption.8}
-                                                  %
-? 
-
-LaTeX Warning: Citation `phase' on page v undefined on input line 4.
-
-! Missing control sequence inserted.
-<inserted text> 
-                \inaccessible 
-l.5 ...e {classify}\relax }}{8}{figure.caption.10}
-                                                  %
-? 
-! Parameters must be numbered consecutively.
-<to be read again> 
-                   ##
-l.5 ...e {classify}\relax }}{8}{figure.caption.10}
-                                                  %
-? 
-! Parameters must be numbered consecutively.
-<to be read again> 
-                   ##
-l.5 ...e {classify}\relax }}{8}{figure.caption.10}
-                                                  %
-? 
-! Parameters must be numbered consecutively.
-<to be read again> 
-                   ##
-l.5 ...e {classify}\relax }}{8}{figure.caption.10}
-                                                  %
-? 
-! Parameters must be numbered consecutively.
-<to be read again> 
-                   1
-l.5 ...e {classify}\relax }}{8}{figure.caption.10}
-                                                  %
-? 
-
-LaTeX Warning: Citation `classify' on page v undefined on input line 5.
-
-! Missing control sequence inserted.
-<inserted text> 
-                \inaccessible 
-l.6 ...cite {cell1}\relax }}{9}{figure.caption.11}
-                                                  %
-? 
-! Parameters must be numbered consecutively.
-<to be read again> 
-                   ##
-l.6 ...cite {cell1}\relax }}{9}{figure.caption.11}
-                                                  %
-? 
-! Parameters must be numbered consecutively.
-<to be read again> 
-                   ##
-l.6 ...cite {cell1}\relax }}{9}{figure.caption.11}
-                                                  %
-? 
-! Parameters must be numbered consecutively.
-<to be read again> 
-                   ##
-l.6 ...cite {cell1}\relax }}{9}{figure.caption.11}
-                                                  %
-? 
-! Parameters must be numbered consecutively.
-<to be read again> 
-                   1
-l.6 ...cite {cell1}\relax }}{9}{figure.caption.11}
-                                                  %
-? 
-
-LaTeX Warning: Citation `cell1' on page v undefined on input line 6.
-
-! Missing control sequence inserted.
-<inserted text> 
-                \inaccessible 
-l.7 ...cite {cell1}\relax }}{9}{figure.caption.11}
-                                                  %
-? 
-! Parameters must be numbered consecutively.
-<to be read again> 
-                   ##
-l.7 ...cite {cell1}\relax }}{9}{figure.caption.11}
-                                                  %
-? 
-! Parameters must be numbered consecutively.
-<to be read again> 
-                   ##
-l.7 ...cite {cell1}\relax }}{9}{figure.caption.11}
-                                                  %
-? 
-! Parameters must be numbered consecutively.
-<to be read again> 
-                   ##
-l.7 ...cite {cell1}\relax }}{9}{figure.caption.11}
-                                                  %
-? 
-! Parameters must be numbered consecutively.
-<to be read again> 
-                   1
-l.7 ...cite {cell1}\relax }}{9}{figure.caption.11}
-                                                  %
-? 
-
-LaTeX Warning: Citation `cell1' on page v undefined on input line 7.
-
-! Missing control sequence inserted.
-<inserted text> 
-                \inaccessible 
-l.8 ...te {sixdim}\relax }}{11}{figure.caption.12}
-                                                  %
-? 
-! Parameters must be numbered consecutively.
-<to be read again> 
-                   ##
-l.8 ...te {sixdim}\relax }}{11}{figure.caption.12}
-                                                  %
-? 
-! Parameters must be numbered consecutively.
-<to be read again> 
-                   ##
-l.8 ...te {sixdim}\relax }}{11}{figure.caption.12}
-                                                  %
-? 
-! Parameters must be numbered consecutively.
-<to be read again> 
-                   ##
-l.8 ...te {sixdim}\relax }}{11}{figure.caption.12}
-                                                  %
-? 
-! Parameters must be numbered consecutively.
-<to be read again> 
-                   1
-l.8 ...te {sixdim}\relax }}{11}{figure.caption.12}
-                                                  %
-? 
-
-LaTeX Warning: Citation `sixdim' on page v undefined on input line 8.
-
-! Missing control sequence inserted.
-<inserted text> 
-                \inaccessible 
-l.9 ...ite {quant}\relax }}{12}{figure.caption.13}
-                                                  %
-? 
-! Parameters must be numbered consecutively.
-<to be read again> 
-                   ##
-l.9 ...ite {quant}\relax }}{12}{figure.caption.13}
-                                                  %
-? 
-! Parameters must be numbered consecutively.
-<to be read again> 
-                   ##
-l.9 ...ite {quant}\relax }}{12}{figure.caption.13}
-                                                  %
-? 
-! Parameters must be numbered consecutively.
-<to be read again> 
-                   ##
-l.9 ...ite {quant}\relax }}{12}{figure.caption.13}
-                                                  %
-? 
-! Parameters must be numbered consecutively.
-<to be read again> 
-                   1
-l.9 ...ite {quant}\relax }}{12}{figure.caption.13}
-                                                  %
-? 
-
-LaTeX Warning: Citation `quant' on page v undefined on input line 9.
-
-[5
-
-
-])
+ [4] (./thesis.lof)
 \tf@lof=\write6
 \openout6 = `thesis.lof'.
 
- [6] (./thesis.lot)
+ [5
+
+
+] [6
+
+] (./thesis.lot)
 \tf@lot=\write7
 \openout7 = `thesis.lot'.
 
  [7
-
 
 ] [8
 
 ]
 \openout2 = `ch01-introduction.aux'.
 
- (./ch01-introduction.tex
+
+(./ch01-introduction.tex
 chapter 1.
 )
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <100> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 3751.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 3788.
 
 Overfull \hbox (2.28006pt too wide) has occurred while \output is active
 []|[] []
@@ -1411,7 +1181,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.3751 \include{ch01-introduction}
+l.3788 \include{ch01-introduction}
                                    [1
 
 
@@ -1468,24 +1238,12 @@ LaTeX Warning: Citation `respoly' on page 4 undefined on input line 32.
 
 LaTeX Warning: Citation `anytraj' on page 4 undefined on input line 32.
 
-<figures/resdidual_force_polytope.png, id=223, 807.015pt x 424.58624pt>
+<figures/resdidual_force_polytope.png, id=211, 807.015pt x 424.58624pt>
 File: figures/resdidual_force_polytope.png Graphic file (type png)
 <use figures/resdidual_force_polytope.png>
 Package pdftex.def Info: figures/resdidual_force_polytope.png  used on input li
 ne 36.
 (pdftex.def)             Requested size: 455.30121pt x 239.54182pt.
-! Illegal parameter number in definition of \reserved@a.
-<to be read again> 
-                   1
-l.37 ...e configuration of the arm.\cite{respoly}}
-                                                  
-? 
-! Illegal parameter number in definition of \reserved@a.
-<to be read again> 
-                   1
-l.37 ...e configuration of the arm.\cite{respoly}}
-                                                  
-? 
 
 LaTeX Warning: Citation `respoly' on page 4 undefined on input line 37.
 
@@ -1493,24 +1251,12 @@ LaTeX Warning: Citation `respoly' on page 4 undefined on input line 37.
 LaTeX Warning: Citation `respoly' on page 4 undefined on input line 37.
 
 [4] [5 <./figures/resdidual_force_polytope.png>]
-<figures/Limitcycle.png, id=235, 391.4625pt x 298.11375pt>
+<figures/Limitcycle.png, id=224, 391.4625pt x 298.11375pt>
 File: figures/Limitcycle.png Graphic file (type png)
 <use figures/Limitcycle.png>
 Package pdftex.def Info: figures/Limitcycle.png  used on input line 55.
 (pdftex.def)             Requested size: 227.6506pt x 173.36552pt.
 
-! Illegal parameter number in definition of \reserved@a.
-<to be read again> 
-                   1
-l.56 ...rging towards the attractor. \cite{phase}}
-                                                  
-? 
-! Illegal parameter number in definition of \reserved@a.
-<to be read again> 
-                   1
-l.56 ...rging towards the attractor. \cite{phase}}
-                                                  
-? 
 
 LaTeX Warning: Citation `phase' on page 6 undefined on input line 56.
 
@@ -1535,7 +1281,7 @@ l.80     \subfloat
                   [\centering Class 3]{{\includegraphics*[width=0.4\linewidt...
 
 ? 
-<figures/IMG_0769.jpg, id=243, 960.58875pt x 945.5325pt>
+<figures/IMG_0769.jpg, id=232, 960.58875pt x 945.5325pt>
 File: figures/IMG_0769.jpg Graphic file (type jpg)
 <use figures/IMG_0769.jpg>
 Package pdftex.def Info: figures/IMG_0769.jpg  used on input line 80.
@@ -1545,23 +1291,11 @@ l.82     \subfloat
                   [\centering Class 4]{{\includegraphics*[width=0.4\linewidt...
 
 ? 
-<figures/IMG_0770.jpg, id=245, 948.54375pt x 949.5475pt>
+<figures/IMG_0770.jpg, id=234, 948.54375pt x 949.5475pt>
 File: figures/IMG_0770.jpg Graphic file (type jpg)
 <use figures/IMG_0770.jpg>
 Package pdftex.def Info: figures/IMG_0770.jpg  used on input line 82.
 (pdftex.def)             Requested size: 182.11769pt x 182.29945pt.
-! Illegal parameter number in definition of \reserved@a.
-<to be read again> 
-                   1
-l.83 ...ity while (b) is bounded. \cite{classify}}
-                                                  %
-? 
-! Illegal parameter number in definition of \reserved@a.
-<to be read again> 
-                   1
-l.83 ...ity while (b) is bounded. \cite{classify}}
-                                                  %
-? 
 
 LaTeX Warning: Citation `classify' on page 7 undefined on input line 83.
 
@@ -1590,24 +1324,6 @@ LaTeX Warning: Citation `cell1' on page 7 undefined on input line 93.
 LaTeX Warning: Citation `cell2' on page 7 undefined on input line 93.
 
 [7] [8 <./figures/IMG_0769.jpg> <./figures/IMG_0770.jpg>]
-! Illegal parameter number in definition of \reserved@a.
-<to be read again> 
-                   1
-l.96 ...\caption{One dimensional SCM.\cite{cell1}}
-                                                  
-? 
-! Illegal parameter number in definition of \reserved@a.
-<to be read again> 
-                   1
-l.96 ...\caption{One dimensional SCM.\cite{cell1}}
-                                                  
-? 
-
-LaTeX Warning: Citation `cell1' on page 9 undefined on input line 96.
-
-
-LaTeX Warning: Citation `cell1' on page 9 undefined on input line 96.
-
 
 ! LaTeX Error: File `figures/1d-cm' not found.
 
@@ -1615,19 +1331,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.98 ...raphics[width=.9\linewidth]{figures/1d-cm}
-                                                  
-? 
-! Illegal parameter number in definition of \reserved@a.
-<to be read again> 
-                   1
-l.99 ...ctor can be seen at x = 0.5. \cite{cell1}}
-                                                  
-? 
-! Illegal parameter number in definition of \reserved@a.
-<to be read again> 
-                   1
-l.99 ...ctor can be seen at x = 0.5. \cite{cell1}}
+l.98 ...raphics[width=.5\linewidth]{figures/1d-cm}
                                                   
 ? 
 
@@ -1648,46 +1352,22 @@ LaTeX Warning: Citation `parallel' on page 9 undefined on input line 104.
 
 LaTeX Warning: Citation `integr' on page 9 undefined on input line 104.
 
-<figures/IMG_0783.jpg, id=260, 2055.68pt x 2593.69pt>
+<figures/IMG_0783.jpg, id=249, 2055.68pt x 2593.69pt>
 File: figures/IMG_0783.jpg Graphic file (type jpg)
 <use figures/IMG_0783.jpg>
 Package pdftex.def Info: figures/IMG_0783.jpg  used on input line 108.
-(pdftex.def)             Requested size: 409.7683pt x 516.98746pt.
-! Illegal parameter number in definition of \reserved@a.
-<to be read again> 
-                   1
-l.109 ...onal Basins of Attraction. \cite{sixdim}}
-                                                  
-? 
-! Illegal parameter number in definition of \reserved@a.
-<to be read again> 
-                   1
-l.109 ...onal Basins of Attraction. \cite{sixdim}}
-                                                  
-? 
+(pdftex.def)             Requested size: 227.6506pt x 287.20645pt.
 
 LaTeX Warning: Citation `sixdim' on page 9 undefined on input line 109.
 
 
 LaTeX Warning: Citation `sixdim' on page 9 undefined on input line 109.
 
-<figures/bisection.png, id=261, 550.30594pt x 737.00343pt>
+<figures/bisection.png, id=250, 550.30594pt x 737.00343pt>
 File: figures/bisection.png Graphic file (type png)
 <use figures/bisection.png>
 Package pdftex.def Info: figures/bisection.png  used on input line 118.
-(pdftex.def)             Requested size: 409.7683pt x 548.80396pt.
-! Illegal parameter number in definition of \reserved@a.
-<to be read again> 
-                   1
-l.119 ...ed for $N_{BS}$ iterations. \cite{quant}}
-                                                  
-? 
-! Illegal parameter number in definition of \reserved@a.
-<to be read again> 
-                   1
-l.119 ...ed for $N_{BS}$ iterations. \cite{quant}}
-                                                  
-? 
+(pdftex.def)             Requested size: 227.6506pt x 304.88359pt.
 
 LaTeX Warning: Citation `quant' on page 9 undefined on input line 119.
 
@@ -1700,11 +1380,15 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: Citation `quant' on page 9 undefined on input line 123.
 
-[9]) [10] [11 <./figures/IMG_0783.jpg>] [12 <./figures/bisection.png>]
+) [9] [10 <./figures/IMG_0783.jpg>] [11 <./figures/bisection.png>]
 \openout2 = `ch03-more-chapters.aux'.
 
 
-(./ch03-more-chapters.tex
+(./ch03-more-chapters.tex [12
+
+
+
+]
 chapter 3.
 
 Overfull \hbox (2.28006pt too wide) has occurred while \output is active
@@ -1715,11 +1399,7 @@ Overfull \hbox (2.28006pt too wide) has occurred while \output is active
 Overfull \vbox (459.06232pt too high) has occurred while \output is active []
 
 
-[13
-
-
-
-] [14] [15]
+[13] [14] [15]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [16]
@@ -1739,169 +1419,207 @@ Type  H <return>  for immediate help.
 l.432     }
            
 ? 
-[18] [19] [20] [21]
+[18] [19]
+<figures/fixed_point_detection.png, id=339, 2306.6175pt x 2131.965pt>
+File: figures/fixed_point_detection.png Graphic file (type png)
+<use figures/fixed_point_detection.png>
+Package pdftex.def Info: figures/fixed_point_detection.png  used on input line 
+489.
+(pdftex.def)             Requested size: 318.70944pt x 294.56934pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<figures/limit_cycle_detection.png, id=341, 2830.575pt x 2204.235pt>
+File: figures/limit_cycle_detection.png Graphic file (type png)
+<use figures/limit_cycle_detection.png>
+Package pdftex.def Info: figures/limit_cycle_detection.png  used on input line 
+502.
+(pdftex.def)             Requested size: 318.70944pt x 248.18436pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[20] [21 <./figures/fixed_point_detection.png>] [22 <./figures/limit_cycle_dete
+ction.png>]
+<figures/limit_cycle_convergence.png, id=362, 2577.63pt x 2547.5175pt>
+File: figures/limit_cycle_convergence.png Graphic file (type png)
+<use figures/limit_cycle_convergence.png>
+Package pdftex.def Info: figures/limit_cycle_convergence.png  used on input lin
+e 539.
+(pdftex.def)             Requested size: 318.70944pt x 314.97931pt.
+ [23 <./figures/limit_cycle_convergence.png>]
 <figures/minRad_tuning_graph.png, id=370, 2758.305pt x 2421.045pt>
 File: figures/minRad_tuning_graph.png Graphic file (type png)
 <use figures/minRad_tuning_graph.png>
-Package pdftex.def Info: figures/minRad_tuning_graph.png  used on input line 57
-7.
+Package pdftex.def Info: figures/minRad_tuning_graph.png  used on input line 59
+0.
 (pdftex.def)             Requested size: 409.7683pt x 359.63158pt.
-
-Overfull \hbox (4.0818pt too wide) in paragraph at lines 584--586
+ [24 <./figures/minRad_tuning_graph.png>]
+Overfull \hbox (4.0818pt too wide) in paragraph at lines 597--599
 \T1/ptm/m/n/12 ple-mented for a gen-eral case. Given a $\OML/cmm/m/it/12 d$ \T1
 /ptm/m/n/12 di-men-sional $\OT1/cmss/m/n/12 D$ \T1/ptm/m/n/12 and lower and up-
 per bounds $\OML/cmm/m/it/12 b[]; b[] \OMS/cmsy/m/n/12 2
  []
 
-[22]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [23 <./figures/minRad_tuning_graph.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 634.
+(hyperref)                removing `math shift' on input line 647.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 634.
+(hyperref)                removing `math shift' on input line 647.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 634.
+(hyperref)                removing `math shift' on input line 647.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 634.
+(hyperref)                removing `math shift' on input line 647.
 
-[24]
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [25]
-<figures/droptest_ds_v2.png, id=388, 3209.9925pt x 3234.0825pt>
+[26]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [27]
+<figures/minrad_analysis_v2.png, id=391, 2180.145pt x 2023.56pt>
+File: figures/minrad_analysis_v2.png Graphic file (type png)
+<use figures/minrad_analysis_v2.png>
+Package pdftex.def Info: figures/minrad_analysis_v2.png  used on input line 786
+.
+(pdftex.def)             Requested size: 227.6506pt x 211.2913pt.
+<figures/droptest_ds_v2.png, id=392, 3209.9925pt x 3234.0825pt>
 File: figures/droptest_ds_v2.png Graphic file (type png)
 <use figures/droptest_ds_v2.png>
-Package pdftex.def Info: figures/droptest_ds_v2.png  used on input line 781.
+Package pdftex.def Info: figures/droptest_ds_v2.png  used on input line 798.
 (pdftex.def)             Requested size: 318.70944pt x 321.05849pt.
 
-[26 <./figures/droptest_ds_v2.png>]
-<figures/droptest_ds_overay_v10000.png, id=395, 3209.9925pt x 3234.0825pt>
+[28 <./figures/minrad_analysis_v2.png>]
+<figures/droptest_ds_overay_v10000.png, id=399, 3209.9925pt x 3234.0825pt>
 File: figures/droptest_ds_overay_v10000.png Graphic file (type png)
 <use figures/droptest_ds_overay_v10000.png>
 Package pdftex.def Info: figures/droptest_ds_overay_v10000.png  used on input l
-ine 791.
+ine 808.
 (pdftex.def)             Requested size: 318.70944pt x 321.05849pt.
-<figures/droptest_ps_full_v2.png, id=396, 1927.2pt x 1716.4125pt>
+<figures/droptest_ps_full_v2.png, id=400, 1927.2pt x 1716.4125pt>
 File: figures/droptest_ps_full_v2.png Graphic file (type png)
 <use figures/droptest_ps_full_v2.png>
-Package pdftex.def Info: figures/droptest_ps_full_v2.png  used on input line 80
-0.
+Package pdftex.def Info: figures/droptest_ps_full_v2.png  used on input line 81
+7.
 (pdftex.def)             Requested size: 150.25023pt x 133.8063pt.
-<figures/droptest_ps_zoom1_v2.png, id=397, 1927.2pt x 1716.4125pt>
+<figures/droptest_ps_zoom1_v2.png, id=401, 1927.2pt x 1716.4125pt>
 File: figures/droptest_ps_zoom1_v2.png Graphic file (type png)
 <use figures/droptest_ps_zoom1_v2.png>
 Package pdftex.def Info: figures/droptest_ps_zoom1_v2.png  used on input line 8
-05.
+22.
 (pdftex.def)             Requested size: 150.25023pt x 133.8063pt.
-<figures/droptest_ps_zoom2_v2.png, id=398, 1927.2pt x 1716.4125pt>
+<figures/droptest_ps_zoom2_v2.png, id=402, 1927.2pt x 1716.4125pt>
 File: figures/droptest_ps_zoom2_v2.png Graphic file (type png)
 <use figures/droptest_ps_zoom2_v2.png>
 Package pdftex.def Info: figures/droptest_ps_zoom2_v2.png  used on input line 8
-10.
+27.
 (pdftex.def)             Requested size: 150.25023pt x 133.8063pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[27 <./figures/droptest_ds_overay_v10000.png>]
-<figures/droptest_ds_bad_v4.png, id=406, 1927.2pt x 1933.2225pt>
+[29 <./figures/droptest_ds_v2.png>]
+<figures/droptest_ds_bad_v4.png, id=409, 1927.2pt x 1933.2225pt>
 File: figures/droptest_ds_bad_v4.png Graphic file (type png)
 <use figures/droptest_ds_bad_v4.png>
-Package pdftex.def Info: figures/droptest_ds_bad_v4.png  used on input line 831
+Package pdftex.def Info: figures/droptest_ds_bad_v4.png  used on input line 848
 .
 (pdftex.def)             Requested size: 150.25023pt x 150.70815pt.
-<figures/droptest_ds_medium_v4.png, id=407, 1939.245pt x 1933.2225pt>
+<figures/droptest_ds_medium_v4.png, id=410, 1939.245pt x 1933.2225pt>
 File: figures/droptest_ds_medium_v4.png Graphic file (type png)
 <use figures/droptest_ds_medium_v4.png>
 Package pdftex.def Info: figures/droptest_ds_medium_v4.png  used on input line 
-836.
+853.
 (pdftex.def)             Requested size: 150.25023pt x 149.76419pt.
-<figures/droptest_ds_opt_v4.png, id=408, 1927.2pt x 1951.29pt>
+<figures/droptest_ds_opt_v4.png, id=411, 1927.2pt x 1951.29pt>
 File: figures/droptest_ds_opt_v4.png Graphic file (type png)
 <use figures/droptest_ds_opt_v4.png>
-Package pdftex.def Info: figures/droptest_ds_opt_v4.png  used on input line 841
+Package pdftex.def Info: figures/droptest_ds_opt_v4.png  used on input line 858
 .
 (pdftex.def)             Requested size: 150.25023pt x 152.11664pt.
- [28 <./figures/droptest_ps_full_v2.png> <./figures/droptest_ps_zoom1_v2.png> <
-./figures/droptest_ps_zoom2_v2.png> <./figures/droptest_ds_bad_v4.png> <./figur
-es/droptest_ds_medium_v4.png> <./figures/droptest_ds_opt_v4.png>]
 
-Package caption Warning: \label without proper reference on input line 855.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[30 <./figures/droptest_ds_overay_v10000.png>]
+
+Package caption Warning: \label without proper reference on input line 872.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `fig:swingoverlay' on page 29 undefined on input line 
-854.
+LaTeX Warning: Reference `fig:swingoverlay' on page 31 undefined on input line 
+871.
 
-<figures/swingtest_ds_overay_v3.png, id=415, 3209.9925pt x 3216.015pt>
+<figures/swingtest_ds_overay_v3.png, id=418, 3209.9925pt x 3216.015pt>
 File: figures/swingtest_ds_overay_v3.png Graphic file (type png)
 <use figures/swingtest_ds_overay_v3.png>
 Package pdftex.def Info: figures/swingtest_ds_overay_v3.png  used on input line
- 857.
+ 874.
 (pdftex.def)             Requested size: 318.70944pt x 319.26486pt.
-<figures/swingtest_ps.png, id=416, 579.6054pt x 563.706pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<figures/swingtest_ps.png, id=419, 579.6054pt x 563.706pt>
 File: figures/swingtest_ps.png Graphic file (type png)
 <use figures/swingtest_ps.png>
-Package pdftex.def Info: figures/swingtest_ps.png  used on input line 863.
+Package pdftex.def Info: figures/swingtest_ps.png  used on input line 880.
 (pdftex.def)             Requested size: 318.70944pt x 309.97044pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/swingtest_ds_bad.png, id=417, 1951.29pt x 1951.29pt>
+<figures/swingtest_ds_bad.png, id=420, 1951.29pt x 1951.29pt>
 File: figures/swingtest_ds_bad.png Graphic file (type png)
 <use figures/swingtest_ds_bad.png>
-Package pdftex.def Info: figures/swingtest_ds_bad.png  used on input line 873.
+Package pdftex.def Info: figures/swingtest_ds_bad.png  used on input line 890.
 (pdftex.def)             Requested size: 150.25023pt x 150.24086pt.
-<figures/swingtest_ds_medium.png, id=418, 1933.2225pt x 1933.2225pt>
+<figures/swingtest_ds_medium.png, id=421, 1933.2225pt x 1933.2225pt>
 File: figures/swingtest_ds_medium.png Graphic file (type png)
 <use figures/swingtest_ds_medium.png>
-Package pdftex.def Info: figures/swingtest_ds_medium.png  used on input line 87
-8.
+Package pdftex.def Info: figures/swingtest_ds_medium.png  used on input line 89
+5.
 (pdftex.def)             Requested size: 150.25023pt x 150.23618pt.
-<figures/swingtest_ds_opt_vfinal.png, id=419, 463.9734pt x 463.9734pt>
+<figures/swingtest_ds_opt_vfinal.png, id=422, 463.9734pt x 463.9734pt>
 File: figures/swingtest_ds_opt_vfinal.png Graphic file (type png)
 <use figures/swingtest_ds_opt_vfinal.png>
 Package pdftex.def Info: figures/swingtest_ds_opt_vfinal.png  used on input lin
-e 883.
+e 900.
 (pdftex.def)             Requested size: 150.25023pt x 150.24443pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/swingtest_2dPS_cmaes.png, id=421, 2378.8875pt x 1264.725pt>
+<figures/swingtest_2dPS_cmaes.png, id=424, 2378.8875pt x 1264.725pt>
 File: figures/swingtest_2dPS_cmaes.png Graphic file (type png)
 <use figures/swingtest_2dPS_cmaes.png>
-Package pdftex.def Info: figures/swingtest_2dPS_cmaes.png  used on input line 8
-96.
+Package pdftex.def Info: figures/swingtest_2dPS_cmaes.png  used on input line 9
+13.
 (pdftex.def)             Requested size: 227.6506pt x 121.01854pt.
-<figures/swingtest_6d_cmaes.png, id=422, 2378.8875pt x 1264.725pt>
+<figures/swingtest_6d_cmaes.png, id=425, 2378.8875pt x 1264.725pt>
 File: figures/swingtest_6d_cmaes.png Graphic file (type png)
 <use figures/swingtest_6d_cmaes.png>
-Package pdftex.def Info: figures/swingtest_6d_cmaes.png  used on input line 901
+Package pdftex.def Info: figures/swingtest_6d_cmaes.png  used on input line 918
 .
 (pdftex.def)             Requested size: 227.6506pt x 121.01854pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[29 <./figures/swingtest_ds_overay_v3.png>]) [30 <./figures/swingtest_ps.png>]
-[31 <./figures/swingtest_ds_bad.png> <./figures/swingtest_ds_medium.png> <./fig
-ures/swingtest_ds_opt_vfinal.png> <./figures/swingtest_2dPS_cmaes.png> <./figur
-es/swingtest_6d_cmaes.png>]
+[31 <./figures/droptest_ps_full_v2.png> <./figures/droptest_ps_zoom1_v2.png> <.
+/figures/droptest_ps_zoom2_v2.png> <./figures/droptest_ds_bad_v4.png> <./figure
+s/droptest_ds_medium_v4.png> <./figures/droptest_ds_opt_v4.png>]) [32 <./figure
+s/swingtest_ds_overay_v3.png>] [33 <./figures/swingtest_ps.png> <./figures/swin
+gtest_ds_bad.png> <./figures/swingtest_ds_medium.png> <./figures/swingtest_ds_o
+pt_vfinal.png>] [34 <./figures/swingtest_2dPS_cmaes.png> <./figures/swingtest_6
+d_cmaes.png>]
 \openout2 = `ch04-conclusion.aux'.
 
- (./ch04-conclusion.tex [32
-
-
-
-]
+ (./ch04-conclusion.tex
 chapter 4.
 )
 Overfull \hbox (2.28006pt too wide) has occurred while \output is active
@@ -1912,10 +1630,14 @@ Overfull \hbox (2.28006pt too wide) has occurred while \output is active
 Overfull \vbox (459.06232pt too high) has occurred while \output is active []
 
 
-[33]
+[35
+
+
+
+]
 \openout2 = `apx-sample-appendix.aux'.
 
- (./apx-sample-appendix.tex [34
+ (./apx-sample-appendix.tex [36
 
 
 
@@ -1931,19 +1653,19 @@ Overfull \hbox (2.28006pt too wide) has occurred while \output is active
 Overfull \vbox (459.06232pt too high) has occurred while \output is active []
 
 
-[35] [36
+[37] [38
 
 
 
 ]
 No file thesis.bbl.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3775.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3775.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3812.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3812.
 (./thesis.aux (./abstract.aux) (./ch01-introduction.aux)
 (./ch02-related-work.aux) (./ch03-more-chapters.aux) (./ch04-conclusion.aux)
 (./apx-sample-appendix.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3775.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3775.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3812.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3812.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
@@ -1951,19 +1673,16 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 25975 strings out of 481239
- 499392 string characters out of 5920377
- 888061 words of memory out of 5000000
- 40530 multiletter control sequences out of 15000+600000
+ 26007 strings out of 481239
+ 500318 string characters out of 5920377
+ 887061 words of memory out of 5000000
+ 40553 multiletter control sequences out of 15000+600000
  605758 words of font info for 115 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,28n,81p,10101b,880s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{section*.25} has been referenced but does not exi
+pdfTeX warning (dest): name{section*.28} has been referenced but does not exi
 st, replaced by a fixed one
 
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/
@@ -1988,10 +1707,10 @@ b></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 urw/times/utmr8a.pfb>
-Output written on thesis.pdf (46 pages, 11182584 bytes).
+Output written on thesis.pdf (48 pages, 12608597 bytes).
 PDF statistics:
- 674 PDF objects out of 1000 (max. 8388607)
- 557 compressed objects within 6 object streams
- 120 named destinations out of 1000 (max. 500000)
- 456 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 678 PDF objects out of 1000 (max. 8388607)
+ 555 compressed objects within 6 object streams
+ 125 named destinations out of 1000 (max. 500000)
+ 476 words of extra memory for PDF output out of 10000 (max. 10000000)
 

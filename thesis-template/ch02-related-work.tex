@@ -34,7 +34,7 @@ On a first look this seems promising, however there might be a multitude of phys
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\linewidth]{figures/resdidual_force_polytope}
-    \caption{Comparison of two residual force polytopes with identical endeffector position. The blue area represents the maximal forces the system can compensate with the green circle being the worst case scenario. Note that the shapes change with respect to the configuration of the arm.\cite{respoly}}
+    \caption[Residual Force Polytopes]{Comparison of two residual force polytopes, with identical endeffector position. The blue area represents the maximal forces the system can compensate with the green circle being the worst case scenario. Note that the shapes change with respect to the configuration of the arm.\cite{respoly}}
     \label{fig:resforce}
 \end{figure}
 
@@ -53,7 +53,7 @@ While the trajectories go on indefinitely, most quickly go to infinity or end up
     %\resizebox{.9\linewidth}{!}{\input{plot.tex}}
     \centering
     \includegraphics[width=.5\linewidth]{figures/Limitcycle}
-    \caption{Phase Space Diagram of a Van der Pol Oscillator. The attractor is indicated by the thick line and the trajectories by thin lines, all converging towards the attractor. \cite{phase}}
+    \caption[Phase Space Diagram of a Van der Pol Oscillator]{Phase Space Diagram of a Van der Pol Oscillator. The attractor is indicated by the thick line and the trajectories by thin lines, all converging towards the attractor. \cite{phase}}
     %\scalebox{0.25}{0.25}
     \label{fig:Limitcycle}
 \end{figure}
@@ -64,7 +64,7 @@ Given that all trajectories starting in the BoA will also always stay within it,
 Rummel et al.\ \cite{walkbasin} have applied this robustness formulation to identify stable walking gaits in a two degree of freedom spring-mass walker model. In this low dimensional case the volume translates to the area of the BoA, which was always bounded for the system analyzed. Of course these basins may take many complicated forms, including fractals and regions that stretch to infinity. Sprott et al.\ \cite{classify} have come up with a method to sort the BoA into classes, listed in Table~\ref{t:class} and shown in part in Figure~\ref{fig:classes}. They achieved this by finding a power law describing the probability of a point laying within the basin, depending on it's distance from the attractor. 
 
 \begin{table}[ht]
-\caption[Spacing for units]{Classes of Basins. \cite{classify}}
+\caption[Classes of Basins]{Classes of Basins. \cite{classify}}
 \begin{tabular}{l l}
 \hline
 1       &  globally attracting basins\\
@@ -80,7 +80,7 @@ Rummel et al.\ \cite{walkbasin} have applied this robustness formulation to iden
     \subfloat[\centering Class 3]{{\includegraphics*[width=0.4\linewidth]{figures/IMG_0769.jpg} }}%
     \qquad
     \subfloat[\centering Class 4]{{\includegraphics*[width=0.4\linewidth]{figures/IMG_0770.jpg} }}%
-    \caption{Examples of basin classes. The black lines represent the attractors and the blue areas the basins of attraction. Note that in (a) parts of the basin extend to infinity while (b) is bounded. \cite{classify}}%
+    \caption[Examples of Basin Classes]{Examples of basin classes. The black lines represent the attractors and the blue areas the basins of attraction. Note that in (a) parts of the basin extend to infinity while (b) is bounded. \cite{classify}}%
     \label{fig:classes}%
 \end{figure}
 
@@ -93,10 +93,10 @@ In order to quantify the robustness of a system using the BoA, the shape of the 
 An alternative approach are the “Cell Mapping Methods”, first summarized in \cite{cell1} and recently updated in \cite{cell2} as a comprehensive book. For cell mapping methods, the entire phase space is discretized along each dimension, resulting in a grid of possibly high dimensional, equally sized cells. The center point of each cell is chosen as the initial condition with which the differential equations are solved. The resulting trajectory is computed for a short time period to determine the mapping to a following cell. Repeating this procedure for all cells reveals the global behavior of the system dynamics. The benefit here is that integration errors are only local and stay confined to the basin boundaries. In addition, as the integration of the differential equations is bound to short intervals, each evaluation becomes computationally cheaper.
 
 \begin{figure}[h]
-    \caption{One dimensional SCM.\cite{cell1}}
+    
     \centering
-    \includegraphics[width=.9\linewidth]{figures/1d-cm}
-    \caption{One dimensional SCM. The rightmost cell goes to infinity, which is mapped to the 0 position, the so called sink-cell. With the remaining cells an attractor can be seen at x = 0.5. \cite{cell1}}
+    \includegraphics[width=.5\linewidth]{figures/1d-cm}
+    \caption[One dimensional SCM]{One dimensional SCM. The rightmost cell goes to infinity, which is mapped to the 0 position, the so called sink-cell. With the remaining cells an attractor can be seen at x = 0.5. \cite{cell1}}
     \label{fig:1d-cm}
 \end{figure}
 
@@ -105,8 +105,8 @@ As always, the curse of dimensionality persists and adding more dimensions expon
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=.9\linewidth]{figures/IMG_0783.jpg}
-    \caption{3D sections of multiple six dimensional Basins of Attraction. \cite{sixdim}}
+    \includegraphics[width=.5\linewidth]{figures/IMG_0783.jpg}
+    \caption[Six Dimensional Basin of Attraction]{3D sections of multiple six dimensional Basins of Attraction. \cite{sixdim}}
     \label{fig:sboa}
 \end{figure}
 
@@ -115,8 +115,8 @@ As always, the curse of dimensionality persists and adding more dimensions expon
     \centering
     %\fontsize{7}{10}\selectfont
     %\includesvg[width=.9\linewidth]{bisection.svg}
-    \includegraphics[width=.9\linewidth]{figures/bisection.png}
-    \caption{Bisection Algorithm. Using two initial guesses $N_{MC}$ samples at the current radius are evaluated for convergence. If all samples converge the minimal radius is updated, otherwise the maximal radius. This is repeated for $N_{BS}$ iterations. \cite{quant}}
+    \includegraphics[width=.5\linewidth]{figures/bisection.png}
+    \caption[Biseciton Algorithm]{Bisection Algorithm. Using two initial guesses $N_{MC}$ samples at the current radius are evaluated for convergence. If all samples converge the minimal radius is updated, otherwise the maximal radius. This is repeated for $N_{BS}$ iterations. \cite{quant}}
     \label{fig:alg}
 \end{figure}
 
@@ -124,8 +124,9 @@ Looking again at \cite{quant}, the robustness was determined without a global ex
 
 
 
-
+\iffalse
 \newpage
 \section{Discussion} \label{Discussion}
 The previous sections presented robustness definitions in different fields as well as concrete measures applicable to nonlinear systems. Cell Mapping Methods and random sampling in combination with trajectory evaluation were discussed and their shortcomings as well as their benefits were pointed out. While Cell Mapping Methods have low evaluation costs for each of their cells, the total computational cost rises exponentially when applied to higher dimensions. At the same time they are easily parallelizable, leaving a possibility of reducing the total computational time. The random sampling methods face similar issues in high dimensions with shrinking basin ratios and large errors in the trajectory exploration caused by chaos. Given the geometry of the BoA, the volume of the basin and its minimal radius were presented as specific measures for robustness. The later introduced bisection method presented an improvement on the random sampling approach by determining only the minimal radius of the BoA. An important assumption for this method is the knowledge of the location of the BoA, as the algorithm depends on knowing the distance from the center of attraction. 
 The bisection method seems to be the most promising, especially as it has been applied to a problem very similar to the goal of the project. This however also assumes that the input data is a set of differential equations. Given experimental data, it might make sense to incorporate them into the Cell Mapping Methods, possibly mitigating the need for computing the trajectories. In any case, these are all very powerful tools, which can obtain excellent results, given a certain amount of computational resources.
+\fi

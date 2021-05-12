@@ -430,7 +430,7 @@ I.e. cell mapping also needs the solver, but in addition also a lot of other str
         \draw[-] (R2.east) -| (join4);
         \draw[-] (join4) -- ([xshift=.3cm]join2);\end{tikzpicture}
     }
-    \caption{Block diagram of the implementation of robustness measure computation and optimization. The blue boxes represent inputs specified by the user. The arrows connecting boxes designate the flow of data. Orange and yellow boxes correspond to operations on the data; the latter need to be specified for different systems and disturbances while the former stays as is. Outputs are defined depending on the application.}
+    \caption[Framework Block Diagram]{Block diagram of the implementation of robustness measure computation and optimization. The blue boxes represent inputs specified by the user. The arrows connecting boxes designate the flow of data. Orange and yellow boxes correspond to operations on the data; the latter need to be specified for different systems and disturbances while the former stays as is. Outputs are defined depending on the application.}
     \label{fig:framework}
 \end{figure}
 \newpage
@@ -476,7 +476,7 @@ In order to evaluate the convergence of a trajectory resulting from a disturbanc
 %!! Note that we generally want to run the undisturbed simulation a bit so it can settle. 
 %Automatic identification of fixed points
 
-When setting up a simulation, especially when compliance is present, the undisturbed initial state resulting from the construction is rarely part of an attractor. To remedy this simulations of the undisturbed system should be run to let the state trajectory settle to a valid attractor. As in section \ref{attractortheory}, fixed points and limit cycles handled separately. 
+When setting up a simulation, especially when compliance is present, the undisturbed initial state resulting from the construction is rarely part of an attractor. To remedy this simulations of the undisturbed system should be run to let the state trajectory settle to a valid attractor. As in section \ref{attractortheory}, fixed points and limit cycles handled separately. The approaches are exemplified by a 1d spring mass element. 
 
 In the case of fixed points, it suffices to check every state along the computed trajectory for the fixed point condition \ref{eq:3}. Whith DDE checking this is trivial as the generalized accelerations $\ddot{\mathbf{q}}(t_n)$ are provided. 
 The first state at time $t_n = t_{fp}$ for which $\dot{\mathbf{q}}(t_{fp}) = \mathbf{0}$ and $\ddot{\mathbf{q}}(t_{fp}) = \mathbf{0}$ hold, can be saved as an attractor in the form of $\mathbf{x} = \begin{bmatrix}\mathbf{q}(t_{pf})&\mathbf{0}\end{bmatrix}^\intercal$, for disturbed trajectories to be compared to. 
@@ -484,7 +484,12 @@ If $\ddot{\mathbf{q}}(t_n)$ is not eailsy obtainable, one may check a number of 
 but it makes it more probable the more additional states are checked. 
 %If the state $\norm{\mathbf{x}(t_{pf})}$ is smaller than some chosen error tolerance.  
 
-(Insert example graph of a 1d mass spring system over time.) 
+\begin{figure}[h]
+\centering
+\includegraphics[width=.7\textwidth]{figures/fixed_point_detection.png}
+\caption[Fixed Point Detection]{Detection of the fixed point of a 1d spring mass element. Once the velocity is below the tolerance(red) for all future times, we take the position at that time point as the attractor (orange). A slight deviation from the true fixed point remains.}
+\label{fpdet}
+\end{figure}
 
 Finding limit cycles is a bit more challenging as they may show chaotic behaviour and because of the discretization of time, aliasing effects could arise. For practicality the following assumptions are made. 
 First the forcing period $T$ of the system is chosen to be an integer multiple of the time step $T = m\cdot \Delta t, m \in \mathbb{N}$ to mitigate aliasing. In addiontion the period of the limit cycle is assumed to coincide with the period of the forcing period that causes the periodic behaviour in the first place. So if a controller is tasked to move a leg in a periodic fashion, it is assumed that the actual end effector trajectory shows that same period, without phase shift. Note that this is not true generally and needs to be verified. 
@@ -492,6 +497,12 @@ In this scenario one can apply the conditions for a limit cycle \ref{eq:5} in co
 If a state $\mathbf{x}(t_n) = \mathbf{x}(t_n+T)$ is found, the set of states $\{\ \mathbf{x}(t_n) \mid t_n \in [t_i,t_{i+1},\ldots,t_i+T]\ \}$ can be saved as the attractor. Denote $t_{lc,0}$ as the time where the trajectory first reaches the limit cycle. To rule ot numerical errors one may want to verify the attractor by choosing one period of states after the initial occurance of the attractor and compare each and every state $\mathbf{x}(t_{lc,0}+i\Delta t) = \mathbf{x}(t_{lc,0}+i\Delta t+T)\ \ \forall\ i \in \{1,2,\ldots, m-1\}$.
 
 (insert example graph for forced 1d pendulum)
+\begin{figure}[h]
+\centering
+\includegraphics[width=.7\textwidth]{figures/limit_cycle_detection.png}
+\caption[Limit Cycle Detection]{Detection of the limit cycle of a forced 1d spring mass element. An oscillating forcing is applied to the system, which is why it will never stop moving, but settles into a periodic orbit, the limit cycle (orange). It is detected once positions one period in future time are close enough to the current position.}
+\label{lcdet}
+\end{figure}
 
 Another approach for detecting limit cycles tested is recasting the problem such that it is equivalent to finding a fixed point. For systems with a dominant oscillation of a particular coordinate, this can be done using Poincare Sections. The idea here is to reduce the trajectory by sampling states at period of the oscillation. This essentially removes the oscillations and the fixed point condition can be applied to the reduced trajectory. This approach is well-founded in the theory of dynamical systems, however it is infeasible once there exist oscillations along multiple coordinates. In addition because of the reduction, much longer trajectories are needed, ultimately increasing computational effort, which is why this approach is not recommended. 
 
@@ -502,11 +513,6 @@ Note that when comparing two states $\mathbf{x}$ and $\mathbf{y}$ numerically, c
 It is also important to inspect the resulting attractor. As generally there exist multiple attractors in any phase space, it has to be verified that the detected attractor does represent the correct undisturbed behaviour. In initial testing a square cloth model (see pic.) made up of mass spring elements was made dynamic by applying oscillations at the top two corners. When computing the limit cycle for this system, the detected attrator seemed to be shifted from its expected location (oscillations about the "hanging down" position). Visual inspection using a graphical interface for dde showed, that for some initial condition, the entire cloth stabilized in the inverted position, which was reflected in the detected attractor. This effect is known from inverted pendulums, where applying oscillations stabilizes the inverted position (REF). This exemplifies the need for verification.  
 
 (add figs of cloth in hanging and inverted position)
-
-
-\begin{figure}
-
-\end{figure}
 
 
 For certain systems and application, fully determining all coordinates of the attractor might turn out to be difficult or simply excessively precise. Examples of this are found in section \ref{app}.
@@ -527,6 +533,13 @@ For certain systems and application, fully determining all coordinates of the at
  Evaluating convergence therefore simplifies to finding a state on the trajectory that coincides with an element of the attractor at any point in time. If undisturbed after $t_{conv}$, the state should stay on the attractor for all future times. This holds for all types of attractors. Similar to the attractor detection, additional states $\mathbf{x}(t_n),\ t_n>t_{conv}$ should be verified to also be on the attractor to make the results more robust to numerical errors. If future disturbances will be applied or disturbances are continuous, future states need to be verified until either the disturbances or the simulation itself stops, i.e. $t_{max}$ is reached. 
 
  These approaches are heavily based on the nonlinear considerations outlined in sections \ref{dynamicstheory} and \ref{attractortheory}. Ultimately, how one determines whether the system converges to the attractor under disturbances may be implemented in any fashion that works. Specific coordinates maybe be selected to be tracked as indicators of convergence if the system allows for it. Ulitmately, one may come up with many case specific simplifications, just as for the detection of attractors. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=.7\textwidth]{figures/limit_cycle_convergence.png}
+\caption[Convergence to Limit Cycle]{Convergence of a disturbed forced 1d spring mass element. An attractor (orange) is given. Once the state of the system is close enough to any point in the attractor, characterized by the rmse (grey) being below a tolerance (red), convergence is detected. The rmse does go above the tolerance periodically, but always returns. }
+\label{lcconv}
+\end{figure}
 
  %Also that with high DOF systems, as there are many different coordionates, small errors might add up in the norm and convergence following (REF) is never detected. 
 
@@ -573,15 +586,15 @@ For certain systems and application, fully determining all coordinates of the at
     $n_{s}$ should be chosen in a way that with a set number of iterations, the resulting robustness measures are consistent when computed repeatedly. 
 
     \begin{figure}[ht] 
-    
+    \centering
     \includegraphics[width=.9\linewidth]{figures/minRad_tuning_graph.png}
-    \caption{TODO}
+    \caption[minRad Tuning]{Exemplification of the effect of sample size on the precision of the minRad algorithm. More samples result in higher precision when computing many iterations, however for lower number of iterations low sample numbers are suffitient as well.}
     \label{fig:minradcomp}
     \end{figure}
 
     Monotonic evolution of $R_{curr}$ over all iterations indicates issues. If $R_{curr}$ monotonically decreasing, it implies that it is always larger than the true minimal radius. Here either $R_{max,init}$ needs to be decreased or the number of iterations increased. On the other hand, monotonical increase implies $R_{max,init}$ was chosen too small.
 
-    As the scaling of the dimensions in $\mathsf{D}$ w.r.t. each other has is significant, the algorithm was implemented for a general case. Given a $d$ dimensional $\mathsf{D}$ and lower and upper bounds $b_{low,i}, b_{upp,i} \in \mathbb{R},\ i \in \{1,2,\ldots,d\ \}$ for every dimension, the domain is restricted to $[0,1]$ for the minRad algorithm, and scaled up to $[b_{low,i}, b_{upp,i}]$ when applying the disturbances for the system. $\mathsf{R_{max,init}}$ was always set to 1, restricting $\mathsf{R_{curr}}$ to $[0,1]$ and giving different robustness measures some degree of comparability. 
+    As the scaling of the dimensions in $\mathsf{D}$ w.r.t. each other has significant, the algorithm was implemented for a general case. Given a $d$ dimensional $\mathsf{D}$ and lower and upper bounds $b_{low,i}, b_{upp,i} \in \mathbb{R},\ i \in \{1,2,\ldots,d\ \}$ for every dimension, the domain is restricted to $[0,1]$ for the minRad algorithm, and scaled up to $[b_{low,i}, b_{upp,i}]$ when applying the disturbances for the system. $\mathsf{R_{max,init}}$ was always set to 1, restricting $\mathsf{R_{curr}}$ to $[0,1]$ and giving different robustness measures some degree of comparability. 
     Changing to a different $\mathsf{D}$ then only requires definining it's dimensionality and corresponding boundaries.
 
     %(verifying minRad results by discretizing disturbance space and brute force exploring the space by evaluating every single node. )
@@ -746,8 +759,6 @@ For certain systems and application, fully determining all coordinates of the at
 
 \section{Results} \label {results}
     
-    Platform (describe laptop specs)
-
     The computation of the following results was carried out on a 64 bit Laptop, with an Intel i7 processor consisting of 8 1.8 GHz cores. 
     First the proper function of the robustness measure computation was verified before making attempts of optimizing the system parameters.   
 
@@ -765,21 +776,27 @@ For certain systems and application, fully determining all coordinates of the at
         maybe failed approaches with pca. better to just track less coordinates
 
     \fi
-    Results of detecting attractors
-        poincare example
+    
+    \subsection{minRad efficiency}
 
-    Results of detecting convergence
-    \
+    The efficiency of the minRad algorithm was measured in an exemplary fashion by comparing it to the results of measuring the minimal radius in a discretized disturbance space. The discretization was chosen to have a step size $h =\frac{1}{25}$ of the domain along each dimension. To achieve a comparable accuracy, $n_{i} = \log_{0.5}(\frac{1}{25}) \approx 5$ iterations of the minRad algorithm were required. Following figure \ref{fig:minradcomp}, $n_s = 20$ samples was chosen to yield a suffitient accuracy at 5 iterations. For this computation the minRad algorithm took 56 seconds, which is less than one fifth of 307 seconds it took the discretization approach to perform computations to achieve the same accuracy. Figure \ref{fig:minradanal} shows this comparison directly. 
+
+    \begin{figure}[hb!]
+    \centering
+    \includegraphics[width=.5\linewidth]{figures/minrad_analysis_v2.png}
+    \caption[minRad Result Analysis]{Overlay of results from minRad algorithm and discretization approach, for the same system and identical parameters. Each gray quarter circle represents one iteration of the minRad algorithm. The final guess for the minimal radius is the radius of the second outermost circle. The same accuracy is achieved using significantly fewer samples when compared to the discretization.}
+    \label{fig:minradanal}
+    \end{figure}
     %Introduction to laikago (probably should do that earlier?) => yes. previous section
     %    high dof
     %    rather long computational time when solving trajectories (compared to simpler systems, duh)
     %    how it's implemented (no walking yet) laikago, that it doesn't do anything but try to keep its limbs in the predefined state.  
 
     \subsection{Laikago Drop Test}
-    \begin{figure}[hb]
+    \begin{figure}[ht!]
     \centering
     \includegraphics[width=.7\linewidth]{figures/droptest_ds_v2.png}
-    \caption{TODO}
+    \caption[Discretized Disturbande Space, Drop Test]{Discretized disturbance space of the drop test. The color of each point represents whether the robot will land on its feet within a given time frame. The location of each point quantifies the magnitude of the applied disturbance, i.e. a combination of roll and pitch displacement. The irregular shape stems from the pose of the robot not being symmetric.}
     \label{fig:drop}
     \end{figure}    
     In initial tests an arbitrary set of parameters was chosen to inspect the consistency of the minRad algorithm. In figure \ref{fig:drop} the results of evaluating the discretized disturbance space can be seen, showing a connected set of convergence with a relatively smooth boundary. The top region has a part that is almost separated, exemplifying the complex shapes these sets can take. Symmetry about the pitch axis is not given as the pose of the robot is not perfectly symmetric either. One may also notice that the discretization is slightly cuved. This is presumably due to the method of manipulating the robot model. Its coordinates were not set directly, but rather the whole robot was forced into the specified position and orientation by a spring dampener element in simulation. As the time alotted for the model to settle into the desired pose was constant for all disturbance samples, the ones farhter from the origin presumably didn't have quite enough time to settle, distorting the resulting space.
@@ -789,7 +806,7 @@ For certain systems and application, fully determining all coordinates of the at
     \begin{figure}[ht]
     \centering
     \includegraphics[width=.7\linewidth]{figures/droptest_ds_overay_v10000.png}
-    \caption{TODO}
+    \caption[Overlay of minRad and Discretized Disturbance Space, Drop Test]{Comparison of the samples form the minRad algorithm to those from the discretization. Different radii of circles represent the iteration of the minRad algorithm. It correctly finds the minimal radius at the indentation of the green set.}
     \label{fig:dropoverlay}
     \end{figure}
     \begin{figure}[h]
@@ -811,7 +828,7 @@ For certain systems and application, fully determining all coordinates of the at
             %\caption{second figure}
         \end{minipage}
 
-    \caption{TODO}
+    \caption[Discretized Parameter Space, Drop Test]{Discretized parameter space of the swing test. Lighter colors represent higher robustness for the corresponding parameters. The figures are zoomed in onto the most robust region from left to right.}
     \label{fig:dropps}
     \end{figure}
 
@@ -842,7 +859,7 @@ For certain systems and application, fully determining all coordinates of the at
             %\caption{second figure}
         \end{minipage}
 
-    \caption{TODO}
+    \caption[Disturbance Spaces for Selected Parameter Sets, Drop Test]{Disturbance spaces for specific parameters k and d chosen from the discretized parameter space. The corresponding robustness measure increases from left to right. The green area of the rightmost figure is smaller than the middle one, but their minimal radii are approximately equal at this resolution.}
     \label{fig:dropds}
     \end{figure}
     \newpage
@@ -855,13 +872,13 @@ For certain systems and application, fully determining all coordinates of the at
     \begin{figure}[h]\label{fig:swingoverlay}
     \centering
     \includegraphics[width=.7\linewidth]{figures/swingtest_ds_overay_v3.png}
-    \caption{TODO}
+    \caption[Overlay of minRad and Discretized Disturbance Space, Swing Test]{Comparison of the samples from the minRad algorithm to those from the discretization. Different radii of circles represent the iteration of the minRad algorithm. Two unexplained annomalies of green dots in an otherwise red area can be seen.}
     \end{figure}    
 
     \begin{figure}[h]
     \centering
     \includegraphics[width=.7\linewidth]{figures/swingtest_ps.png}
-    \caption{TODO}
+    \caption[Discretized Parameter Space, Swing Test]{Discretized parameter space of the drop test. Lighter colors represent higher robustness for the corresponding parameters. A dominant dependence of the robustness measure on the motor stiffness is apparent.}
     \label{fig:swingps}
     \end{figure}    
 
@@ -884,7 +901,7 @@ For certain systems and application, fully determining all coordinates of the at
             %\caption{second figure}
         \end{minipage}
 
-    \caption{Disturbance Spaces for parameter samples with increasing robustness measure from left to right.}
+    \caption[Disturbance Spaces for Selected Parameter Sets, Drop Test]{Disturbance Spaces for specific parameter samples k and d with increasing robustness measure from left to right. A corresponding increase of the green area representing converging trajectories can be observed.}
     \label{fig:swingds}
     \end{figure}
 
@@ -901,10 +918,11 @@ For certain systems and application, fully determining all coordinates of the at
             \includegraphics[width=\textwidth]{figures/swingtest_6d_cmaes.png} % second figure itself
             %\caption{second figure}
         \end{minipage}
-    \caption{TODO}
+    \caption[CMAES Evolution for 2d and 6d Parameter Spaces]{Average robustness measure for each generation of the CMAES algorithm. In the left figure stiffness and damping parameters that are equal for all motors are optimized, implying a 2d parameter space. On the right motors are grouped in three catergories, the stiffness and damping parameters of each category is taken individually in the optimization. In this 6d parameter space, slightly higher robustness measures are achieved.}
     \label{fig:cmaes}
     \end{figure}    
-    In this test the second option of optimization described in section \ref{opt} was tested as well. Using the CMAES algorithm, comparable optimal robustness values were found, requiring less evaluations. Each "generation" of the algorithm required 4 evaluations, yielding a total of 80 revaluations before the algorithm leveled out (see figure \ref{fig:cmaes}). This corresponds to $\frac{2}{3}$ the amount of compuational effort compared to the exploration of the discretized space. 
+
+    The second option of optimization described in section \ref{opt} was tested here as well. Using the CMAES algorithm, comparable optimal robustness values were found, requiring less evaluations. Each "generation" of the algorithm required 4 evaluations, yielding a total of 80 revaluations before the algorithm leveled out (see figure \ref{fig:cmaes}). This corresponds to $\frac{2}{3}$ the amount of compuational effort compared to the exploration of the discretized space. 
     Here another attempt was made to increase robustness by grouping the three types of leg motors together and varying their paramters separately. This implies a 6 dimensional disturbance space $\mathsf{D}$, which would have needed $11^6=1771561$ evaluations when optimizing within the discretized space with equivalent resolution. The robustness acquired using the CMAES algorithm was marginally higher than in the 2d case, but needed only approximately 280 evaluations to do be computed.  
 
 

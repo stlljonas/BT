@@ -11,7 +11,6 @@
 \contentsline {subsection}{\numberline {2.2.1}Phase Space Representation of Dynamic Systems}{5}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Robustness Measures via the Basin of Attraction}{6}{subsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.2.3}Numerical Methods for Basin of Attraction Analysis}{7}{subsection.2.2.3}%
-\contentsline {section}{\numberline {2.3}Discussion}{10}{section.2.3}%
 \contentsline {chapter}{\numberline {3}Your Central Work}{13}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Theory and Problem Formulation}{13}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Dynamical Systems}{13}{subsection.3.1.1}%
@@ -22,14 +21,15 @@
 \contentsline {subsection}{\numberline {3.2.1}Framework Overview}{18}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}Computing Trajectories}{19}{subsection.3.2.2}%
 \contentsline {subsection}{\numberline {3.2.3}Detecting Attractors}{20}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Evaluating Convergence}{21}{subsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.2.5}minRad algorithm}{22}{subsection.3.2.5}%
-\contentsline {subsection}{\numberline {3.2.6}Multithreading}{23}{subsection.3.2.6}%
-\contentsline {subsection}{\numberline {3.2.7}Optimization}{24}{subsection.3.2.7}%
-\contentsline {subsection}{\numberline {3.2.8}Boundaries of $\mathsf {D}$ and $\mathsf {P}$}{24}{subsection.3.2.8}%
-\contentsline {section}{\numberline {3.3}Application to a Quadruped Robot}{24}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Results}{26}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Laikago Drop Test}{26}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Laikago Swing Test}{29}{subsection.3.4.2}%
-\contentsline {chapter}{\numberline {4}Conclusion and Outlook}{33}{chapter.4}%
-\contentsline {chapter}{\numberline {A}Information For The Few (Appendix)}{35}{appendix.A}%
+\contentsline {subsection}{\numberline {3.2.4}Evaluating Convergence}{22}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}minRad algorithm}{23}{subsection.3.2.5}%
+\contentsline {subsection}{\numberline {3.2.6}Multithreading}{25}{subsection.3.2.6}%
+\contentsline {subsection}{\numberline {3.2.7}Optimization}{25}{subsection.3.2.7}%
+\contentsline {subsection}{\numberline {3.2.8}Boundaries of $\mathsf {D}$ and $\mathsf {P}$}{26}{subsection.3.2.8}%
+\contentsline {section}{\numberline {3.3}Application to a Quadruped Robot}{26}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Results}{27}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}minRad efficiency}{28}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Laikago Drop Test}{28}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Laikago Swing Test}{31}{subsection.3.4.3}%
+\contentsline {chapter}{\numberline {4}Conclusion and Outlook}{35}{chapter.4}%
+\contentsline {chapter}{\numberline {A}Information For The Few (Appendix)}{37}{appendix.A}%
