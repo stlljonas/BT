@@ -9,14 +9,14 @@
 \contentsline {figure}{\numberline {2.7}{\ignorespaces Bisection Algorithm. Using two initial guesses $N_{MC}$ samples at the current radius are evaluated for convergence. If all samples converge the minimal radius is updated, otherwise the maximal radius. This is repeated for $N_{BS}$ iterations. \def ####1{####1}\cite {quant}\relax }}{12}{figure.caption.13}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Block diagram of the implementation of robustness measure computation and optimization. The blue boxes represent inputs specified by the user. The arrows connecting boxes designate the flow of data. Orange and yellow boxes correspond to operations on the data; the latter need to be specified for different systems and disturbances while the former stays as is. Outputs are defined depending on the application.\relax }}{19}{figure.caption.14}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces TODO\relax }}{23}{figure.caption.15}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces TODO\relax }}{27}{figure.caption.16}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces TODO\relax }}{28}{figure.caption.17}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces TODO\relax }}{29}{figure.caption.18}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces TODO\relax }}{29}{figure.caption.19}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces TODO\relax }}{30}{figure.caption.20}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces TODO\relax }}{31}{figure.caption.21}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces TODO\relax }}{31}{figure.caption.22}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces TODO\relax }}{31}{figure.caption.23}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces TODO\relax }}{23}{figure.caption.16}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces TODO\relax }}{26}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces TODO\relax }}{27}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces TODO\relax }}{28}{figure.caption.19}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces TODO\relax }}{28}{figure.caption.20}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces TODO\relax }}{29}{figure.caption.21}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces TODO\relax }}{30}{figure.caption.22}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Disturbance Spaces for parameter samples with increasing robustness measure from left to right.\relax }}{31}{figure.caption.23}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces TODO\relax }}{31}{figure.caption.24}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

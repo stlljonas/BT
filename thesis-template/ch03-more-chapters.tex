@@ -129,29 +129,29 @@
     
     %INTERPRETATION OF CONVERGENCE
      %Disturbances in mechanical systems can generally be viewed as external forces acting on the system. 
-    Given a dynamical system, assume that it holds a desired pose or behaves in a periodic fashion in its undisturbed state. We can interpret these types of behaviour as attractors in the phase space of the system. Applying disturbances will change the system state in ways that are hard to predict as the IVP doesn't hold while the disturbance is acting. Once the distubances stop however, the disturbed state $\mathbf{x_d}$ at that point in time can be used to compute a new trajectory in accordance with the IVP. With this one can evaluate whether the disturbed trajectory converges back to the attractor, denoted as a recovery, or fails to do so, denoted as a fatality. %Disturbances resulting in disturbed states lying on the attractor or within the BoA will trivially lead to recoveries, while any state outside of these sets will cause a fatality. 
+    Given a dynamical system, assume that it holds a desired pose or behaves in a periodic fashion in its undisturbed state. We can interpret these types of behaviour as attractors in the phase space of the system. Applying disturbances will change the system state in ways that are hard to predict as the IVP doesn't hold while the disturbance is acting. Once the distubances stop however, the disturbed state $\mathbf{x_d}$ at that point in time can be used to compute a new trajectory in accordance with the IVP. With this one can evaluate whether the disturbed trajectory converges back to the attractor or fails to do so implying divergence. %Disturbances resulting in disturbed states lying on the attractor or within the BoA will trivially lead to recoveries, while any state outside of these sets will cause a fatality. 
 
     (add hand drawn representations of the effect of disturbances in the phase space )
 
-    Because of the direct relation between disturbances and state changes, one may choose to analyze only the convergence behaviour of states in phase space. This is how REF formulated their robustness measure. The size of the set of states in the phase space resulting in recoveries is a measure of robustness. Notice that this is precisely the basin of attraction as defined in \ref{eq:7}. As outlined in REF, finding the size of the BoA is nontrivial, for which the conervative measure of the minimal radius as the shortest distance from the origin to the boundary of the BoA was introduced. One may also think of this as the radius of the largest hypersphere that is still fully contained in the BoA.
+    Because of the direct relation between disturbances and state changes, one may choose to analyze only the convergence behaviour of states in phase space. This is how REF formulated their robustness measure. The size of the set of states in the phase space resulting in convergence is a measure of robustness. Notice that this is precisely the basin of attraction as defined in \ref{eq:7}. As outlined in REF, finding the size of the BoA is nontrivial, for which the conervative measure of the minimal radius as the shortest distance from the origin to the boundary of the BoA was introduced. One may also think of this as the radius of the largest hypersphere that is still fully contained in the BoA.
 
     While this measure is rather straight forward to implement, it becomes quite computationally expensive for systems with high DoF. 
     In the paper the computational time for a system of just a two DoF was already at 15 hours for a total of 225 robustness measure compuations and the most complex system analyzed had only six DOFs. For comparison, the quadruped model to be analyzed here has 78 degrees of freedom. The exact dependency of the computational effort on the DoF's of the system is hard to determine because of the stochastic nature of the process (see section \ref{minrad}). However in the 6 DoF test in REF, evolutionary algoritms had to be applied as computation of a discretized phase space was no longer feasible, implying that scaling up will be very compuationally expensive. One may choose to measure robustness taking only some dimensions of the phase space into consideration, however in this case the robustness measure is valid only for that subset of the system. This makes its applications less useful, as one would only measure the robustness of a single leg for example, which does not guarantee implications for the whole system. Clearly, some other method of sampling the disturbances is needed.
 
-    Recall that the disturbed states sampled in the phase space are results of underlying disturbances. Given a dynamics engine capable of simulating the disturbances in addition to the system, one can compute the complete disturbed trajectories, removing the necessity for sampling of specific states. This enables direct application of disturbances to the system, which can be chosen as desired. Here a $d$-dimensional disturbance space $\mathsf{D}$ is defined, from which disturbances $s_{\mathsf{D}}$ will be sampled and in which robustness will be measured. The idea is to transfer the concept of the minimal radius to this new space to approximate the size of the set of disturbances the system can recover from. Note that recovery of the system under a disturbance will still be evaluated by verifying convergence of the state trajectory to the $\mathbf{A}$ in the phase space. 
+    Recall that the disturbed states sampled in the phase space are results of underlying disturbances. Given a dynamics engine capable of simulating the disturbances in addition to the system, one can compute the complete disturbed trajectories, removing the necessity for sampling of specific states. This enables direct application of disturbances to the system, which can be chosen as desired. Here a $d$-dimensional disturbance space $\mathsf{D}$ is defined, from which disturbances $\mathbf{s}_{\mathsf{D}}$ will be sampled and in which robustness will be measured. The idea is to transfer the concept of the minimal radius to this new space to approximate the size of the set of disturbances the system can recover from. Note that convergence of the system under a disturbance will still be evaluated by verifying convergence of the state trajectory to the $\mathbf{A}$ in the phase space. 
 
-    Denoting $\mathbf{x}(t,\mathbf{x}_0,s_{\mathsf{D}},s_{\mathsf{P}})$ as a trajectory that is disturbed at least once for $t > 0$ and given some $\mathbf{A}$, the robustness measure
+    Denoting $\mathbf{x}(t,\mathbf{x}_0,\mathbf{s}_{\mathsf{D}},\mathbf{s}_{\mathsf{P}})$ as a trajectory that is disturbed at least once for $t > 0$ and given some $\mathbf{A}$, the robustness measure
     \begin{gather} \label{eq:8}
-        %robustness\ measure = \min \norm{ s_{\mathsf{D},rec} }\, \{s_{\mathsf{D},rec} = s_{\mathsf{D}} \in \mathsf{D} \mid \underset{t \rightarrow \infty}{lim} \ \mathbf{x}(t,\mathbf{x}_0,s_{\mathsf{D}}) \in \mathbf{A}\ \}\\
-        %robustness\ measure = \min_{s \in \mathsf{D}_{f}} \norm{ s }\ ,\ \mathsf{D}_{f} = \{s_{\mathsf{D}} \in \mathsf{D} \mid \underset{t \rightarrow \infty}{lim} \ \mathbf{x}(t,\mathbf{x}_0,s_{\mathsf{D}}) \notin \mathbf{A}\ \forall\ t > 0 \} \subset \mathsf{D}\\
-        RM = \max r\ \in \mathbb{R}^+ \ \ s.t.\ \forall\ s_{\mathsf{D},r} \in \{s_{\mathsf{D}} \in \mathsf{D} \mid\ \ \norm{s_{\mathsf{D}}} = r\}:\ \ \underset{t \rightarrow \infty}{lim} \ \mathbf{x}(t,\mathbf{x}_0,s_{\mathsf{D},r},s_{\mathsf{P}}) \in \mathbf{A},\
-        %\mathsf{D}_{f} = \{s_{\mathsf{D}} \in \mathsf{D} \mid \underset{t \rightarrow \infty}{lim} \ \mathbf{x}(t,\mathbf{x}_0,s_{\mathsf{D}}) \notin \mathbf{A}\ \forall t > 0 \} \subset \mathsf{D}
+        %robustness\ measure = \min \norm{ s_{\mathsf{D},rec} }\, \{s_{\mathsf{D},rec} = \mathbf{s}_{\mathsf{D}} \in \mathsf{D} \mid \underset{t \rightarrow \infty}{lim} \ \mathbf{x}(t,\mathbf{x}_0,\mathbf{s}_{\mathsf{D}}) \in \mathbf{A}\ \}\\
+        %robustness\ measure = \min_{s \in \mathsf{D}_{f}} \norm{ s }\ ,\ \mathsf{D}_{f} = \{\mathbf{s}_{\mathsf{D}} \in \mathsf{D} \mid \underset{t \rightarrow \infty}{lim} \ \mathbf{x}(t,\mathbf{x}_0,\mathbf{s}_{\mathsf{D}}) \notin \mathbf{A}\ \forall\ t > 0 \} \subset \mathsf{D}\\
+        RM = \max r\ \in \mathbb{R}^+ \ \ s.t.\ \forall\ \mathbf{s}_{\mathsf{D},r} \in \{\mathbf{s}_{\mathsf{D}} \in \mathsf{D} \mid\ \ \norm{\mathbf{s}_{\mathsf{D}}} = r\}:\ \ \underset{t \rightarrow \infty}{lim} \ \mathbf{x}(t,\mathbf{x}_0,\mathbf{s}_{\mathsf{D},r},\mathbf{s}_{\mathsf{P}}) \in \mathbf{A},\
+        %\mathsf{D}_{f} = \{\mathbf{s}_{\mathsf{D}} \in \mathsf{D} \mid \underset{t \rightarrow \infty}{lim} \ \mathbf{x}(t,\mathbf{x}_0,\mathbf{s}_{\mathsf{D}}) \notin \mathbf{A}\ \forall t > 0 \} \subset \mathsf{D}
         %robustness measure is the smalles (norm) of any element of the set of disturbances for which the state trajectory converges to the attractor.  
     \end{gather}
-    is defined, where $s_{\mathsf{P}}$ denotes a set of constant system parameters.
-    In other words, RM is the largest radius $r$ for which all disturbances sampled at that distance from the origin will lead to recovery of the disturbed state trajectory.
+    is defined, where $\mathbf{s}_{\mathsf{P}}$ denotes a set of constant system parameters.
+    In other words, RM is the largest radius $r$ for which all disturbances sampled at that distance from the origin will lead to convergence of the disturbed state trajectory.
 
-    %s_{\mathsf{D},rec} = \mid s_{\mathsf{D}} \in \mathsf{D}
+    %s_{\mathsf{D},rec} = \mid \mathbf{s}_{\mathsf{D}} \in \mathsf{D}
 
 
 
@@ -269,25 +269,25 @@
 \subsection{ Parameter space and Disturbance space}
     
     In order to apply the concept of the minimal radius as a measure of robustness in the disturbance space $\mathsf{D}$, one must impose some conditions on it.
-    In the phase space, the origin is generally chosen such that the attractor of interest lies on or in close viscinity to it. This means sampled points $s_{\mathsf{D}} \in \mathsf{D}$ with a small norm represent no or very small disturbances, guaranteeing recovery if $\norm{s_{\mathsf{D}}}$ is chosen small enough. The minimal Radius approach builds on the fact that the origin lies within the converging set and the it's boundary is reached at some point when moving farther away. 
+    In the phase space, the origin is generally chosen such that the attractor of interest lies on or in close viscinity to it. This means sampled points $\mathbf{s}_{\mathsf{D}} \in \mathsf{D}$ with a small norm represent no or very small disturbances, guaranteeing convergence of the state trajectory if $\norm{\mathbf{s}_{\mathsf{D}}}$ is chosen small enough. The minimal Radius approach builds on the fact that the origin lies within the converging set and the it's boundary is reached at some point when moving farther away. 
     For this reason me must ensure that in $\mathsf{D}$ the origin also represents the state being on the attractor, implying no disturbance.
     Each element of the disturbance space is just a d dimensional vector of coordinates representing a single or multiple disturbances. To impose the above condition it must be ensured that the 0 vector in $\mathsf{D}$ represents no disturbance. 
     Taking oscillations as an example one might want to represent them in a 2 dimensional DS with amplitude and frequency as the coordinates. An oscillation with either 0 amplitude or 0 frequency implies no oscillation at all, making this choice valid.
     An invalid example of a coordinate is the direction of a force applied. If the angle of attack is 0, the disturbance itself is clearly non zero, breaking our condition.
-    Here, given an initial condition $\mathbf{x}_0$, the $set\ of\ recoveries$ 
+    Here, given an initial condition $\mathbf{x}_0$, the $set\ of\ convergence$ 
     \begin{gather} \label{eq:9}
-    \mathsf{D}_r = \{ s_{\mathsf{D}} \in \mathsf{D} \mid\ \underset{t \rightarrow \infty}{lim} \ \mathbf{x}(t,\mathbf{x}_0,s_{\mathsf{D},r}) \in \mathbf{A}\ \}\end{gather}
+    \mathsf{D}_c = \{ \mathbf{s}_{\mathsf{D}} \in \mathsf{D} \mid\ \underset{t \rightarrow \infty}{lim} \ \mathbf{x}(t,\mathbf{x}_0,\mathbf{s}_{\mathsf{D}}) \in \mathbf{A}\ \}\end{gather}
     is defined to be quantified by the minimal radius as the equivalent to the BoA.
     For any set of valid coordinates, their scaling w.r.t. each other turns out to considerably affect the resulting robustness measure. Just choosing different units for any coordinate will stretch $\mathsf{D}$ along the corresponding dimension, changing the shape of the converging set and in turn changing the minimal radius to its boundary. This issue is alluded to in the paper REF by allowing the minimal radius to trace an elliptical shape, which corresponds to rescaling one dimension. There seems to be no comprehensive solution to this issue, which is why finding a well posed $\mathsf{D}$ by trial and error is crucial. 
     Conversely, this problem may also be leveraged for controlling later optimization of robustness. If the boundary of the converging set is a given distance away along a dimensions, shrinking that dimension will move that boundary closer to the origin, making it more likely that the minimal Radius lies in that direction. With this the scaling of the coordinates could be seen as a weighting of how important robustness against that part of the disturbance is. 
 
     (illustration)
 
-    For the aforementioned optimization, the parameter space $\mathsf{P}$ is defined to perform the optimization in. Each element $s_{\mathsf{P}}$ of $\mathsf{P}$ is a set of parameters describing some parts of the underlying system. A different set of parameters will fundamentally change the system and for each element of $\mathsf{P}$, robustness can be evaluated. Eventually the vector of parameters for which robustness is maximized is to be found:
+    For the aforementioned optimization, the parameter space $\mathsf{P}$ is defined to perform the optimization in. Each element $\mathbf{s}_{\mathsf{P}}$ of $\mathsf{P}$ is a set of parameters describing some parts of the underlying system. A different set of parameters will fundamentally change the system and for each element of $\mathsf{P}$, robustness can be evaluated. Eventually the vector of parameters for which robustness is maximized is to be found:
 
-    \begin{gather}\label{eq:10} \max \text{RM}(s_{\mathsf{P}}),\ s_{\mathsf{P}}  \in \mathsf{P}\end{gather}
+    \begin{gather}\label{eq:10} \max \text{RM}(\mathbf{s}_{\mathsf{P}}),\ \mathbf{s}_{\mathsf{P}}  \in \mathsf{P}\end{gather}
 
-    Methods on finding the optimal set of parameters $s_{\mathsf{P},opt}$ are presented in section \ref{opt}.
+    Methods on finding the optimal set of parameters $\mathbf{s}_{\mathsf{P},opt}$ are presented in section \ref{opt}.
     %sNote that the choice of $\mathsf{P}$ is fundamental for the results. 
 
 
@@ -377,7 +377,6 @@ I.e. cell mapping also needs the solver, but in addition also a lot of other str
             %arrNote/.style = {draw=black, minimum width = font=\sffamily},
 }
 \begin{figure}[ht]
-    \label{fig:framework}
     \scalebox{1.35}{
         \begin{tikzpicture}[node distance=3cm, every node/.style={fill=white, font=\sffamily}, align=center]
         \node (pBounds)[activityStarts, scale=.5]{Parameter Bounds};
@@ -405,7 +404,7 @@ I.e. cell mapping also needs the solver, but in addition also a lot of other str
         \draw[-] ([xshift=2cm]opt) |- (join1);
 
         \draw  (pInit.south) edge (join1);
-        \node (sysPar)[ scale = .4, left of=join1, xshift = 1cm]{System\\Parameters};
+        \node (sysPar)[ scale = .4, left of=join1, xshift = 1cm]{System\\Parameters\\$\mathbf{s}_{\mathsf{P}}$};
 
         \draw[->] (system.south) -| ([xshift=7cm]setParam);
         %\node (adSys)[scale = .4, below of=setParam, yshift = -.75cm]{Adapted System};
@@ -421,7 +420,7 @@ I.e. cell mapping also needs the solver, but in addition also a lot of other str
         \draw[-] (rInit.south) |- (join2);
         \node (R)[scale =.5, below of=join2, yshift =3cm]{$R_{curr}$};
         \draw[->] (R.south) -| ([xshift=3.3cm]samplDist);
-        \draw[->] (samplDist) -- node[scale=.4]{Disturbances\\$\{s_{D,i}\}, i=\{1,2,...,n_s\}$}(simSys);
+        \draw[->] (samplDist) -- node[scale=.4]{Disturbances\\$\{\mathbf{s}_{D,i}\}, i=\{1,2,...,n_s\}$}(simSys);
         \draw[->] (simSys) -- node[scale=.4]{State Trajectories}(eval);
         \draw[->] (eval) -- node[scale=.4]{$R_{curr} >$ or $<$ \\than minimal radius}(updR);
         \node (R2)[scale =.5, below of=join3, yshift =2.25cm]{$R_{curr}$};
@@ -432,6 +431,7 @@ I.e. cell mapping also needs the solver, but in addition also a lot of other str
         \draw[-] (join4) -- ([xshift=.3cm]join2);\end{tikzpicture}
     }
     \caption{Block diagram of the implementation of robustness measure computation and optimization. The blue boxes represent inputs specified by the user. The arrows connecting boxes designate the flow of data. Orange and yellow boxes correspond to operations on the data; the latter need to be specified for different systems and disturbances while the former stays as is. Outputs are defined depending on the application.}
+    \label{fig:framework}
 \end{figure}
 \newpage
 \subsection{Computing Trajectories} \label{solver}
@@ -503,6 +503,12 @@ It is also important to inspect the resulting attractor. As generally there exis
 
 (add figs of cloth in hanging and inverted position)
 
+
+\begin{figure}
+
+\end{figure}
+
+
 For certain systems and application, fully determining all coordinates of the attractor might turn out to be difficult or simply excessively precise. Examples of this are found in section \ref{app}.
 %Once we detect a state at time $t = t_{fp}$ for which $\mathbf{q}(t_{fp}) = \mathbf{0}$ and $\dot{\mathbf{q}}(t_{fp}) = \mathbf{0}$ hold, we can save this state as an attractor for disturbed trajectories to be compared to. In order to rule out numerical errors, we can additionally check that for the generalized accelerations provided by DDE $\ddot{\mathbf{q}}(t_{fp}) = \mathbf{0}$ holds, implying that the state $\mathbf{x}(t) = \begin{bmatrix}\mathbf{q}(t)&\dot{\mathbf{q}}(t)\end{bmatrix}^\intercal$ will stay $\mathbf{0}$ for future times as well. Alternatively one could verify that any  
 
@@ -561,20 +567,21 @@ For certain systems and application, fully determining all coordinates of the at
     %Talk aboubt finding the parameters (nSamples and nIterations, effects)
 
     %MinRad encompasses .. from the framework
-    With the tools outlined above one can evaluate the response of a system to any individual disturbance. In order to finally copmute the robustness measure, one needs to measure the minimal radius of the set of recovering responses as defined in \ref{robustnessmeasure}. We approximate this value following \ref{fig:alg}, applying the bisection algorithm to an initial upper guess $R_{curr} =  R_{max,init}$ and iteratively updating $R_{curr}$ until the desired accuracy is reached. For any iteration, $n_{s}$ number of disturbances are randomly sampled on the surface of the d dimensional hypersphere of radius $R_{curr}$ in $\mathsf{D}$. This achieved by enforcing $\mid\mid s_{\mathsf{D}}\mid\mid\ = R_{curr}$ for all samples at that iteration. For any $R_{curr}$, if it lies below the true minimal radius, all disturbances ${s_D}$ sampled at $R_{curr}$ and applied to the underlying system will result in recovery. Conversely, a single failure of recovery indicates that the true minimal radius must be smaller than $R_{curr}$. The bisection algorithm requires an inital lower bound as well, but as the minimal radius $R_m$ must by construction always be positive, 0 is a generally valid choice here. 
+    With the tools outlined above one can evaluate the response of a system to any individual disturbance. In order to finally copmute the robustness measure, one needs to measure the minimal radius of the set of converging responses as defined in \ref{robustnessmeasure}. We approximate this value following \ref{fig:alg}, applying the bisection algorithm to an initial upper guess $R_{curr} =  R_{max,init}$ and iteratively updating $R_{curr}$ until the desired accuracy is reached. For any iteration, $n_{s}$ number of disturbances are randomly sampled on the surface of the d dimensional hypersphere of radius $R_{curr}$ in $\mathsf{D}$. This achieved by enforcing $\mid\mid \mathbf{s}_{\mathsf{D}}\mid\mid\ = R_{curr}$ for all samples at that iteration. For any $R_{curr}$, if it lies below the true minimal radius, all disturbances ${s_D}$ sampled at $R_{curr}$ and applied to the underlying system will result in convergence. Conversely, a single failure to converge indicates that the true minimal radius must be smaller than $R_{curr}$. The bisection algorithm requires an inital lower bound as well, but as the minimal radius $R_m$ must by construction always be positive, 0 is a generally valid choice here. 
 
-    As the algorithm is bisecting the domain of possible values at every iteration, one can compute the resolution $h$ of the resulting robustness measure after $n_i$ iterations as: $h = R_{max,init}\cdot\frac{1}{2}^{n_i}$. The choice of $n_i$ depends on the overarching application of the robustnes measure, i.e. how much precision is required.The other parameter to be considered is the number of samples $n_{s}$ at every iteration. The sampling is stochastic in nature, so no determenistic results can be guaranteed. A $n_{s}$ that is too low might miss some disturbances that result in failure of recovery of the system, leading the algorithm down a wrong path. High $n_{s}$ on the other hand lead to an unnecessary increase in computational effort. An exemplary comparison can be seen in figure \ref{fig:minradcomp}. 
+    As the algorithm is bisecting the domain of possible values at every iteration, one can compute the resolution $h$ of the resulting robustness measure after $n_i$ iterations as: $h = R_{max,init}\cdot\frac{1}{2}^{n_i}$. The choice of $n_i$ depends on the overarching application of the robustnes measure, i.e. how much precision is required.The other parameter to be considered is the number of samples $n_{s}$ at every iteration. The sampling is stochastic in nature, so no determenistic results can be guaranteed. A $n_{s}$ that is too low might miss some disturbances that result in divergence of the system, leading the algorithm down a wrong path. High $n_{s}$ on the other hand lead to an unnecessary increase in computational effort. An exemplary comparison can be seen in figure \ref{fig:minradcomp}. 
     $n_{s}$ should be chosen in a way that with a set number of iterations, the resulting robustness measures are consistent when computed repeatedly. 
 
-    \begin{figure}[ht] \label{fig:minradcomp}
+    \begin{figure}[ht] 
     
     \includegraphics[width=.9\linewidth]{figures/minRad_tuning_graph.png}
     \caption{TODO}
+    \label{fig:minradcomp}
     \end{figure}
 
     Monotonic evolution of $R_{curr}$ over all iterations indicates issues. If $R_{curr}$ monotonically decreasing, it implies that it is always larger than the true minimal radius. Here either $R_{max,init}$ needs to be decreased or the number of iterations increased. On the other hand, monotonical increase implies $R_{max,init}$ was chosen too small.
 
-    As the scaling of the dimensions in $\mathsf{D}$ w.r.t. each other has is significant, the algorithm was implemented for a general case. Given a $d$ dimensional $\mathsf{D}$ and lower and upper bounds $b_{low,i}, b_{upp,i} \in \mathbb{R},\ i \in \{1,2,\ldots,d\ \}$ for every dimension, the domain restricted to $[0,1]$ for the minRad algorithm, and scaled up to $[b_{low,i}, b_{upp,i}]$ when applying the disturbances for the system. $\mathsf{R_{max,init}}$ was always set to 1, restricting $\mathsf{R_{curr}}$ to $[0,1]$ and giving different robustness measures some degree of comparability. 
+    As the scaling of the dimensions in $\mathsf{D}$ w.r.t. each other has is significant, the algorithm was implemented for a general case. Given a $d$ dimensional $\mathsf{D}$ and lower and upper bounds $b_{low,i}, b_{upp,i} \in \mathbb{R},\ i \in \{1,2,\ldots,d\ \}$ for every dimension, the domain is restricted to $[0,1]$ for the minRad algorithm, and scaled up to $[b_{low,i}, b_{upp,i}]$ when applying the disturbances for the system. $\mathsf{R_{max,init}}$ was always set to 1, restricting $\mathsf{R_{curr}}$ to $[0,1]$ and giving different robustness measures some degree of comparability. 
     Changing to a different $\mathsf{D}$ then only requires definining it's dimensionality and corresponding boundaries.
 
     %(verifying minRad results by discretizing disturbance space and brute force exploring the space by evaluating every single node. )
@@ -604,14 +611,14 @@ For certain systems and application, fully determining all coordinates of the at
 \subsection{Multithreading} \label{mt}
     
     %computational time can be reduced by 
-    The computation of the state trajectories takes up a bulk of the computational time. As for every minRad iteration a number trajectories need to be found, this process benefits from parallelization. A simple multithreading pipeline was implement, computing $n_{th}$ simulations on $n_{th}$ threads in parallel. For this to be effitient, it is necessary for the functions to give feedback to the pipeline on whether the simulations are done. Completed simulations are restarted with different disturbance samples until either all $n_s$ samples are computed or a failure of recovery  is detected. In this case all threads are stopped and the minRad algorithm proceeds to the next iteration. 
+    The computation of the state trajectories takes up a bulk of the computational time. As for every minRad iteration a number trajectories need to be found, this process benefits from parallelization. A simple multithreading pipeline was implement, computing $n_{th}$ simulations on $n_{th}$ threads in parallel. For this to be effitient, it is necessary for the functions to give feedback to the pipeline on whether the simulations are done. Completed simulations are restarted with different disturbance samples until either all $n_s$ samples are computed or an instance of divergence is detected. In this case all threads are stopped and the minRad algorithm proceeds to the next iteration. 
     With this the computational time can approximatiely be reduced by a factor of $n_{th}$, assuming there exist $n_{th}$ cores on the platform. 
 
 \subsection{Optimization} \label{opt}
     
     %Given a way to quantify the robustness of a system and the possibility to change its parameters, it is possible to optimize said parameters to maximize robustness.
     At this point it is possible to change the system parameters in order to increase its robustness measure.
-    Without applying any further algorithms, one may discretize $\mathsf{P}$ in every dimension and compute the robustness for every possible combination of parameter values. The optimal parameters are the ones with the maximal robustness within the resolution of the chosen discretization step size $h$. This approach is computationally expensive and becomes infeasible for high ($p$) dimensional $\mathsf{P}$ as the computational effort is $\mathcal{O}(\frac{1}{h^d})$ with smaller $h$ yielding higher precision. 
+    Without applying any further algorithms, one may discretize $\mathsf{P}$ in every dimension and compute the robustness for every possible combination of parameter values $\mathbf{s}_{\mathsf{P}}$. The optimal parameters $\mathbf{s}_{\mathsf{P},opt}$ are the ones with the maximal robustness within the resolution of the chosen discretization step size $h$. This approach is computationally expensive and becomes infeasible for high dimensional $\mathsf{P}$ as the computational effort is $\mathcal{O}(\frac{1}{h^d})$ with smaller $h$ yielding higher precision. 
     
     A second approach is utilizing optimizers, which can drastically reduce the number of robustness computations needed to get (close) to an optimum. As derivatives of the robustness measure are not available, the choice fell on evolutionary algorithms. In particular, the Covariance Matrix Adaptation Evolution Strategy (CMAES) was used with algorithm parameters being kept as suggested by the documentation. Combining both approaches enables comparison and verification of either one. 
 
@@ -626,7 +633,7 @@ For certain systems and application, fully determining all coordinates of the at
 
 \subsection{Boundaries of $\mathsf{D}$ and $\mathsf{P}$ } \label{bounds}
 
-    The boundaries of $\mathsf{D}$ are relevant for the minRad algorithm during sampling of the disturbances. Because of their fundamental effect on the robustness measure, they have to be chosen thoughtfully. In the tests carried out $\mathsf{D}$ was restricted to 2 dimensions for simplicity and ease of visualization, making finding appropriate boundaries by trial and error feasible. This would be significantly more challenging for $\mathsf{D}$ with of higher dimensions. The approach was to find a balanced set of boundaries where at the minimal radius all elements $s_{\mathsf{D},i} = 0.5$, implying $R_{minRad} = \begin{Vmatrix}s_{\mathsf{D}}\end{Vmatrix}= \sqrt{\sum_{i=1}^{d} s_{\mathsf{D},i}^2} = \frac{\sqrt{d}}{2}$ for some set of system parameters. These boundaries were then used when computing robustness measures for different sets of parameters. 
+    The boundaries of $\mathsf{D}$ are relevant for the minRad algorithm during sampling of the disturbances. Because of their fundamental effect on the robustness measure, they have to be chosen thoughtfully. In the tests carried out $\mathsf{D}$ was restricted to 2 dimensions for simplicity and ease of visualization, making finding appropriate boundaries by trial and error feasible. This would be significantly more challenging for $\mathsf{D}$ with of higher dimensions. The approach was to find a balanced set of boundaries where at the minimal radius all elements $s_{\mathsf{D},i} = 0.5$, implying $R_{minRad} = \begin{Vmatrix}\mathbf{s}_{\mathsf{D}}\end{Vmatrix}= \sqrt{\sum_{i=1}^{d} s_{\mathsf{D},i}^2} = \frac{\sqrt{d}}{2}$ for some set of system parameters. These boundaries were then used when computing robustness measures for different sets of parameters. 
     Here it shall be noted that some elements of disturbance may be negative. In order to keep the framework simple, these cases are handled by randomly negating those values and scaling them appropriately. 
 
     %Here there could be an opportunity to have an influence on the eventual optimization process. Increasing the upper boundary of a specific dimension of $\mathsf{D}$ would shift the boundary of the set of recoveries closer to the origin. This squishing changes the shape of the set of recoveries and in turn affects the robustness measure. (this was already done in the first D-P space section)
@@ -698,13 +705,14 @@ For certain systems and application, fully determining all coordinates of the at
 
     (add some nice (maybe annotated) pics of laikago drop)
 
-    For the Swing Test, the robot was kept in its initial standing pose and disturbances took the form of oscillating the ground back and forth. This means disturbances were now applied continuously and in case of recovery, the state trajectory of the robot would (optimally) never leave the attractor. The disturbance space was chosen as the span of amplitude and frequency of the oscillation. With this choice robustness would be evaluated w.r.t. general oscillations about the roll axis, i.e. both low frequencey and high amplitude and vice versa. As amplitudes and frequencies only make sense for positive values, the disturbance space was only analyzed in the first quadrant of the two dimensional plane. The upper boundary of $0.3$ radians for the amplitude was chosen to be slightly higher than the value for which the robot would start to tip over when the ground wasn't moving. The frequencies were limited to 5 Hz after visual inspection. 
+    For the Swing Test, the robot was kept in its initial standing pose and disturbances took the form of oscillating the ground back and forth. This means disturbances were now applied continuously and in case of convergence, the state trajectory of the robot would (optimally) never leave the attractor. The disturbance space was chosen as the span of amplitude and frequency of the oscillation. With this choice robustness would be evaluated w.r.t. general oscillations about the roll axis, i.e. both low frequencey and high amplitude and vice versa. As amplitudes and frequencies only make sense for positive values, the disturbance space was only analyzed in the first quadrant of the two dimensional plane. The upper boundary of $0.3$ radians for the amplitude was chosen to be slightly higher than the value for which the robot would start to tip over when the ground wasn't moving. The frequencies were limited to 5 Hz after visual inspection. 
     The attractor coincided with the previous test, as with zero disturbance it would take its standing pose. 
     Again the convergence evaluation proved problematic, as the state trajectory would only be on the attractor for brief periods of time while oscillatiog back and forth. To remedy this, the states were tranesformed s.t. they were expressed in the coordinate frame of the ground itself. With this convergence should have been possible to be evaluated, however slight wobbling of the robot cause it to slip on the ground. Here again the convergence definition was loosend and only height, pitch and roll of the core compared to the attractor. As in the first test, this approach proved successfull. 
 
     (add some nice (maybe annotated) pics of laikago swing)
 
-    All the test specific adaptations were implemented in the function handling the simulation and evaluation of trjaectories, represented by the yellow fields in figure \ref{framework}. The application of parameters was specific to Laikago, but identical for both tests. The rest of the framwork stayed was untouched. The choice of boundaries for both $\mathsf{D}$ and $\mathsf{P}$ is detailed in the following section.
+
+    For both tests, the proper function of the convergence evaluation was verified by visually inspecting final states of trajectories to the determined outome. All the test specific adaptations were implemented in the function handling the simulation and evaluation of trjaectories, represented by the yellow fields in figure \ref{framework}. The application of parameters was specific to Laikago, but identical for both tests. The rest of the framwork remained untouched.
     %For both tests the setting of parameters stayed the same, however the application of disturbances and .. see yellow things in framework.
 
 
@@ -736,17 +744,18 @@ For certain systems and application, fully determining all coordinates of the at
 
     
 
-\section{results} \label {results}
+\section{Results} \label {results}
     
     Platform (describe laptop specs)
 
-    Computations were performed on a ...
+    The computation of the following results was carried out on a 64 bit Laptop, with an Intel i7 processor consisting of 8 1.8 GHz cores. 
+    First the proper function of the robustness measure computation was verified before making attempts of optimizing the system parameters.   
 
-    Initially, simple systems were analyzed to gain familiarity with dde and it's implementation. Visualizing 3d time dependent trajectories all in one plot becomes very convoluted quickly as can be seen in Fig .. . This is especially true when working with multibody systems. Attempts were made to apply principle component analysis to reduce the dimensionality, however this only yielded usable data when working with multibody systems where all bodies moved in a coordinated fashion. In these cases picking out and tracking individual bodies yielded
+    %Initially, simple systems were analyzed to gain familiarity with dde and it's implementation. Visualizing 3d time dependent trajectories all in one plot becomes very convoluted quickly as can be seen in Fig .. . This is especially true when working with multibody systems. Attempts were made to apply principle component analysis to reduce the dimensionality, however this only yielded usable data when working with multibody systems where all bodies moved in a coordinated fashion. In these cases picking out and tracking individual bodies yielded
 
 
-    Another issue is that for effitient computation, yada yada let's see how much we want to talk about PCA anyways.  
-
+    %Another issue is that for effitient computation, yada yada let's see how much we want to talk about PCA anyways.  
+    \iffalse
     It is much more practical to plot the evolution of individual coordinates over time, as trends are much more evident and 
 
     "While visually appealing, these graphs were less useful for actual inspection of the trajectories."
@@ -755,41 +764,35 @@ For certain systems and application, fully determining all coordinates of the at
         plot coordinates over time individually and maybe more importantly, in 2d plots. Compare to convoluted 3d attempts. 
         maybe failed approaches with pca. better to just track less coordinates
 
-
+    \fi
     Results of detecting attractors
         poincare example
 
     Results of detecting convergence
-
+    \
     %Introduction to laikago (probably should do that earlier?) => yes. previous section
     %    high dof
     %    rather long computational time when solving trajectories (compared to simpler systems, duh)
     %    how it's implemented (no walking yet) laikago, that it doesn't do anything but try to keep its limbs in the predefined state.  
 
-    optimization of robustness examples
-
-    \subsection{Laikago Droptest}
-
-    The choice of 
-
-        for this and the high precision example, do the buildup. 
-        DS, minRad, PS, CMAES for this and the next example. 
-        In initial tests an arbitrary set of parameters was chosen to inspect the consistency of the simulation and evaluation functions as well as the minRad algorithm. 
-        Figure ... 
-
-    \begin{figure}[h]\label{fig:drop}
+    \subsection{Laikago Drop Test}
+    \begin{figure}[hb]
     \centering
     \includegraphics[width=.7\linewidth]{figures/droptest_ds_v2.png}
     \caption{TODO}
+    \label{fig:drop}
     \end{figure}    
+    In initial tests an arbitrary set of parameters was chosen to inspect the consistency of the minRad algorithm. In figure \ref{fig:drop} the results of evaluating the discretized disturbance space can be seen, showing a connected set of convergence with a relatively smooth boundary. The top region has a part that is almost separated, exemplifying the complex shapes these sets can take. Symmetry about the pitch axis is not given as the pose of the robot is not perfectly symmetric either. One may also notice that the discretization is slightly cuved. This is presumably due to the method of manipulating the robot model. Its coordinates were not set directly, but rather the whole robot was forced into the specified position and orientation by a spring dampener element in simulation. As the time alotted for the model to settle into the desired pose was constant for all disturbance samples, the ones farhter from the origin presumably didn't have quite enough time to settle, distorting the resulting space.
+    
+    For confimation of these results a run of the minRad algorithm was performed using the same set of system parameters. The disturbance samples from this can be seen in a direct comparison to the discretized disturbance space in figure \ref{fig:dropoverlay}. The circular arrengement of the samples corresponds to the individual guesses for the minimal radius and their distance from each other reflects the increasingly small adjustment steps taken by the algorithm. The indentation in the set of converging disturbances is confirmed as the algorithm also detects disturbances leading to divergence at that point, indicated by red crosses. Notice also that a minimal amount of diverging disturbances is computed as the algorithm iterates whenever it encounters one. From this one can confirm that the minRad algorithm does indeed approximate the minimal radius of the set of convergence $\mathsf{D}_c$. Note that for the following results the simulation time was changed, resulting in smaller sets of convergence. 
 
-    \begin{figure}\label{fig:dropoverlay}
+    \begin{figure}[ht]
     \centering
     \includegraphics[width=.7\linewidth]{figures/droptest_ds_overay_v10000.png}
     \caption{TODO}
+    \label{fig:dropoverlay}
     \end{figure}
-
-    \begin{figure}[h]\label{fig:}
+    \begin{figure}[h]
     %\includegraphics[width=.9\linewidth]{.png}
         \centering
         \begin{minipage}{0.33\textwidth}
@@ -809,10 +812,18 @@ For certain systems and application, fully determining all coordinates of the at
         \end{minipage}
 
     \caption{TODO}
+    \label{fig:dropps}
     \end{figure}
 
+    With a verified method of computing robustness measures, the parameter space of stiffeness and damping values $\mathsf{P}$ could be explored. The approach for this test was the computation of the robustness measures for all points in the  discretized space. From the results, see figure \ref{fig:dropps} it was clear that the region of robust parameters was concentrated in one region. Two further computations were performed, each yielding higher resolution of the area of interest, as well as larger optimal orbustness values. The time needed for these computations was rather high with over 26 hours each. 
 
-    \begin{figure}[h]\label{fig:}
+    These results were analyzed by computing discretized disturbance spaces for the optimal set of parameters, as well as a "medium" and a "bad"s set, seen in figure \ref{fig:dropps}. Here one can see that that the bad set of parameters does correspond to the smallest set of convergence, between the optimal and the medium set of parameters however, this is not as clear cut. When counting individual points, the medium result actually has a larger set of convergence, but with respect to the minimal radius they are both equivalent, indicating that higher resolution would be needed for a more detailed disctinction. 
+
+    Visual inspection of the model behaviour confirmed that the optimal parameters did indeed outperform the less robust ones. 
+
+
+
+    \begin{figure}[h]
     %\includegraphics[width=.9\linewidth]{.png}
         \centering
         \begin{minipage}{0.33\textwidth}
@@ -832,25 +843,29 @@ For certain systems and application, fully determining all coordinates of the at
         \end{minipage}
 
     \caption{TODO}
+    \label{fig:dropds}
     \end{figure}
     \newpage
 
 
 
-    \subsection{Laikago Swingtest}
-    \begin{figure}[h]\label{fig:}
+    \subsection{Laikago Swing Test}
+
+    The approach here was analogous to the previous test. First proper function of the minRad algorithm was verified by comparing it to a discretized disturbance space, seen in figure \ref{fig:swingoverlay}. There are two annomalies of convergence in the othervise diverging region, which are attributed to numerical errors but the exact cause couldn't be determined. With that the parameter space was explored, see figure \ref{fig:swingps}, showing a noticably different overall appearance compared to the previouse test. Here the stiffness parameter seems to be the dominant factor regarding robustness, while the damping is less important. The robustness measures are also a lot larger than in the drop test, however this is a direct result from the choice of boundaries on $\mathsf{D}$ and is not a quantitative result.   
+    \begin{figure}[h]\label{fig:swingoverlay}
     \centering
     \includegraphics[width=.7\linewidth]{figures/swingtest_ds_overay_v3.png}
     \caption{TODO}
     \end{figure}    
 
-    \begin{figure}[h]\label{fig:}
+    \begin{figure}[h]
     \centering
     \includegraphics[width=.7\linewidth]{figures/swingtest_ps.png}
     \caption{TODO}
+    \label{fig:swingps}
     \end{figure}    
 
-    \begin{figure}[h]\label{fig:}
+    \begin{figure}[h]
     %\includegraphics[width=.9\linewidth]{.png}
         \centering
         \begin{minipage}{0.33\textwidth}
@@ -869,11 +884,12 @@ For certain systems and application, fully determining all coordinates of the at
             %\caption{second figure}
         \end{minipage}
 
-    \caption{TODO}
+    \caption{Disturbance Spaces for parameter samples with increasing robustness measure from left to right.}
+    \label{fig:swingds}
     \end{figure}
 
-
-    \begin{figure}[h]\label{fig:}
+    The results of the discretized parameter space were again further analyzed by taking three parameter samples and inspecting their disturbance spaces. There is a clear correlation between the robustness measure and size of the set of convergence, which can be seen in figure \ref{fig:swingds}. 
+    \begin{figure}[h]
         \centering
         \begin{minipage}{0.5\textwidth}
             \centering
@@ -886,7 +902,12 @@ For certain systems and application, fully determining all coordinates of the at
             %\caption{second figure}
         \end{minipage}
     \caption{TODO}
+    \label{fig:cmaes}
     \end{figure}    
+    In this test the second option of optimization described in section \ref{opt} was tested as well. Using the CMAES algorithm, comparable optimal robustness values were found, requiring less evaluations. Each "generation" of the algorithm required 4 evaluations, yielding a total of 80 revaluations before the algorithm leveled out (see figure \ref{fig:cmaes}). This corresponds to $\frac{2}{3}$ the amount of compuational effort compared to the exploration of the discretized space. 
+    Here another attempt was made to increase robustness by grouping the three types of leg motors together and varying their paramters separately. This implies a 6 dimensional disturbance space $\mathsf{D}$, which would have needed $11^6=1771561$ evaluations when optimizing within the discretized space with equivalent resolution. The robustness acquired using the CMAES algorithm was marginally higher than in the 2d case, but needed only approximately 280 evaluations to do be computed.  
+
+
 
 
 
