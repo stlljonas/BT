@@ -8,13 +8,14 @@ Sample references are~\cite{Zwicker04Perspective} and~\cite{Altman89QuaternionSc
 
 
 \section{Robustness Overview} \label{Robustness Overview}
-Robustness is a desirable property of robotic systems as it allows for errors and uncertainties without system failure. yet a universal definition or approach in quantifying it is nowhere to be found. To acquire an overview of the topic, a couple of definitions are presented in the following.
+Robustness is a desirable property of robotic systems as it allows them to navigate uncertain environments without system failure. At the same time, finding concrete measures for quantifying robustness is difficult, especially when striving for a generality, as often definitions are either vague or overly specific.
+This section provides an overview of differenct interpretations of the concept. 
 
 
 
 \subsection{The Robustness Principle} \label{The Robustness Principle}
 %\subsubsection{Sub-Sub-Category (if necessary)}
-The Transmission Control Protocol from 1981 ~\cite{trm}, which contains guidelines for host-to-host communication via networks, states: “Be conservative in what you do, be liberal in what you accept from others”. The idea being that sent data out should be as concise as possible, while on the receiving side deviations from the standard should be accounted for.Translated to our problem, a robot behaves robustly when given concise commands it successfully executes them even in the presence of unexpected disturbances. A margin of error should always be accounted for to bridge the gap between theory and practice.
+The Transmission Control Protocol from 1981 ~\cite{trm}, which contains guidelines for host-to-host communication via networks, states: “Be conservative in what you do, be liberal in what you accept from others”. The idea being that sent data out should be as concise as possible, while on the receiving side deviations from the standard should be accounted for. Translated to our problem, a robot behaves robustly when given concise commands it successfully executes them even in the presence of unexpected disturbances. A margin of error should always be accounted for to bridge the gap between theory and practice.
 
 
 
@@ -49,9 +50,11 @@ A popular method of visualizing dynamic systems are phase space diagrams, which 
 
 While the trajectories go on indefinitely, most quickly go to infinity or end up in a cyclic pattern. The latter are called attractors, which are of large interest in the discussion of nonlinear dynamic systems. They represent a set of states which the trajectories will not leave once they encounter them. This might represent the repeating motion of a robotic foot at the end of a leg. An important insight here is that around any attractor there exists a set of states who's trajectories will always converge towards the attractor. This set is called the Basin of Attraction (BoA), however it should be noted that the terms “Domain of Attraction”, “Region of Attraction” as well as “Basin Attraction” are used synonymously in literature.
 \begin{figure}[ht]
+    %\resizebox{.9\linewidth}{!}{\input{plot.tex}}
     \centering
-    \includegraphics[width=.9\linewidth]{figures/Limitcycle}
-    \caption{Phase Space Diagram of a Van der Pol Oscillator. The attractor is indicated by the thick line and the  trajectories by the thin lines, all converging towards the attractor. \cite{phase}}
+    \includegraphics[width=.5\linewidth]{figures/Limitcycle}
+    \caption{Phase Space Diagram of a Van der Pol Oscillator. The attractor is indicated by the thick line and the trajectories by thin lines, all converging towards the attractor. \cite{phase}}
+    %\scalebox{0.25}{0.25}
     \label{fig:Limitcycle}
 \end{figure}
 
