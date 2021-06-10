@@ -15,17 +15,17 @@ This section provides an overview of differenct interpretations of the concept.
 
 \subsection{The Robustness Principle} \label{The Robustness Principle}
 %\subsubsection{Sub-Sub-Category (if necessary)}
-The Transmission Control Protocol from 1981 ~\cite{trm}, which contains guidelines for host-to-host communication via networks, states: “Be conservative in what you do, be liberal in what you accept from others”. The idea being that sent data out should be as concise as possible, while on the receiving side deviations from the standard should be accounted for. Translated to our problem, a robot behaves robustly when given concise commands it successfully executes them even in the presence of unexpected disturbances. A margin of error should always be accounted for to bridge the gap between theory and practice.
+The Transmission Control Protocol from 1981 ~\cite{trm}, which contains guidelines for host-to-host communication via networks, states: “Be conservative in what you do, be liberal in what you accept from others”. The idea being that sent out data should be as concise as possible, while on the receiving side deviations from the standard should be accounted for. Translated to our problem, a robot behaves robustly when it successfully executes concisely given commands even in the presence of unexpected disturbances. To achieve this a margin of error should always be accounted for to bridge the gap between theory and practice.
 
 
 
 
 \subsection{Robustness against Failure} \label{Robustness against Failure}
-N. Hazon et al.\ \cite{covrob} have improved upon multi-agent algorithms for coverage  to account for failure of agents. Here robustness was quantified by proving that the presented algorithms would always succeed, given that at least one agent is still functioning. On a similar note, M. Hofbaur et al.\ \cite{sysrob} have worked on making mobile robots robust against failure, however here the robustness was defined with respect to unexpected internal changes, for example the failure of an actuator. The issue with these failures is that the robot is usually not aware of the fault and continues to try to use the broken component, resulting in the failure of the entire robot. By actively monitoring the system and changing the internal model in, the robot is able to overcome its impairment in many cases. In both cases, robustness is merely a binary measure and its value can be quantified quite decisively. In contrast, the problem at hand seeks a measure that can be evaluated continuously, especially as the robustness is to be compared between designs and eventually maximized. 
+N. Hazon et al.\ \cite{covrob} have improved upon multi-agent algorithms for coverage  to account for failure of agents. Here robustness was quantified by proving that the presented algorithms would always succeed, as long as at least one functioning agent remains. On a similar note, M. Hofbaur et al.\ \cite{sysrob} have worked on making mobile robots robust against failure, however here robustness was defined with respect to unexpected internal changes, for example the failure of an actuator. The issue with these failures is that the robot is usually unaware and continues to try to use the broken component, resulting in the failure of the entire robot. By actively monitoring the system and changing the internal model, the robot is often able to overcome its impairment. In both cases, robustness is merely a binary measure and its value can be quantified quite decisively. In contrast, the problem at hand seeks a measure that can be evaluated continuously, especially as the robustness is to be optimized and to be compared between different designs. 
  
 
 \subsection{Robust Optimization} \label{Robust Optimization}
-Robust optimization is an extension to ordinary optimization problems, in which uncertainty sets are introduced as additional parameters, as described and summarized by \cite{optrob}. The argument goes that if a solution is feasible not for only one parameter but covers a set of uncertainties, it will in turn be generally robust against them. While optimally the solution would be robust against any arbitrary uncertainty, covering a larger amount of cases usually also results in the deterioration of the solution for any particular case. The optimization algorithm is applied to find a balance within this trade-off. The way the uncertainties are defined and considered results in different “strengths” of robustness, however there exists no method for measuring the resulting robustness of the solution, meaning that it cannot be assessed independently of the optimization problem. This makes it impossible to compare different systems as optimizing over the same set of uncertainties in different systems in no way guarantees that their behaviour in any specific case will be comparable.
+Robust optimization is an extension to ordinary optimization problems, in which uncertainty sets are introduced as additional parameters, as described and summarized by \cite{optrob}. The argument goes that if a solution is feasible not for only one parameter but covers a set of uncertainties, it will in turn be generally robust against them. While optimally the solution would be robust against any arbitrary uncertainty, covering a larger amount of cases usually also results in the deterioration of the solution for any particular case. The optimization algorithm is applied to find a balance within this trade-off. While the choice of defining the uncertainties results in different “strengths” of robustness,  there exists no method for measuring the resulting robustness of the solution, meaning that it cannot be assessed independently of the optimization problem. This makes it impossible to compare different systems as optimizing over the same set of uncertainties in different systems in no way guarantees that their behaviour in any specific case will be comparable.
 
 
 \subsection{Residual Force Polytopes} \label{Residual Force Polytopes}
@@ -40,11 +40,17 @@ On a first look this seems promising, however there might be a multitude of phys
 
 
 \section{Global Robustness in Nonlinear Dynamic Systems} \label{Global Robustness}
-It should now become clear that the way robustness is defined and quantified strongly depends on the problem it is applied to. The hurdle in finding a measure for the particular problem at hand is that neither the underlying system nor the applied disturbances are predefined as to preserve generality. 
-To find a suitable solution, it is a good idea to formalize the question to a degree. The mathematical representation of mechanical systems is usually given in the form of differential equations $\dot{\textbf{x}} =F(\textbf{x})$, describing the relationship between the states of a system and their change with respect to time. 
+From this it should be evident that the way robustness is defined and quantified strongly depends on the particular application.
+For the goal of optimization of dynamical systems with respect to robustness, an unanbiguous quantification is required. As real world systems are compliant and experience impacts, linear system theory is not applicable. There exist however some approaches for dealing with nonlinear dynamical systems, laid out in the following. 
+
+\iffalse
+From this it should be evident that the way robustness is defined and quantified strongly depends on the problem it is applied to. The hurdle in finding a measure for the problem at hand is that neither the system nor the applied disturbances are predefined as to preserve generality. Statemen
+
+Analyzing the underlying nonlinear differential equations promises a possibility of making
+%To find a suitable solution, it is a good idea to formalize the question to a degree. The mathematical representation of mechanical systems is usually given in the form of differential equations $\dot{\textbf{x}} =F(\textbf{x})$, describing the relationship between the states of a system and their change with respect to time. 
 Nonlinearities caused by compliance as well as impacts typically occurring in legged locomotion exclude methods applicable to linear systems of equations. 
 What remains are nonlinear systems of differential equations which are to be analyzed and ultimately quantified with respect to robustness. 
- 
+
 \subsection{Phase Space Representation of Dynamic Systems} \label{Phase Space}
 A popular method of visualizing dynamic systems are phase space diagrams, which encompass all possible states of a system. For mechanical systems these states are usually the generalized coordinates and their temporal derivatives, where the dimension of the space scales with the degrees of freedom. Solving the differential equations repeatedly, taking various states as the initial conditions, reveals the global behaviour in the form of trajectories within the phase space. An two dimensional example of this can be seen in Figure~\ref{fig:Limitcycle}.
 
@@ -57,13 +63,17 @@ While the trajectories go on indefinitely, most quickly go to infinity or end up
     %\scalebox{0.25}{0.25}
     \label{fig:Limitcycle}
 \end{figure}
-
+\fi
 \subsection{Robustness Measures via the Basin of Attraction} \label{Basin of Attraction}
 
+Given a system which can instantaneously be described by a state, the space spanned by all possible states promises a general approach of analysis. This state space, or phase space (see section \ref{dynamicstheory}), can be partitioned into different regions based on the evolution of states through time. These state trajectories may converge toward a set of states, called the attractor, from a larger surrounding set, called the Basin of Attraction (BoA). Convergence to the attractor is guaranteed for state trajectories starting within the BoA. Disturbances applied to the system may be interpreted as instantaneous state changes, which may move a trajectory outside the BoA, fundamentally changing the future evolution of the system. Attractors may be chosen to represent a desired system behaviour, implying system failure if a disturbance moves the state outside the BoA. The size of the set of states the BoA contains can be used as a robustness measure as a larger BoA implies larger robustness against general disturbances. 
+\iffalse
 Given that all trajectories starting in the BoA will also always stay within it, a robustness formulation can be derived by taking the effect of disturbances into account. Disturbances generally result in a state changes, which in the context of the phase space corresponds to a jump onto a different trajectory. As long as the new state lies within the BoA, the trajectory will return back to the stable solution and the robot will recover. However if the disturbance is too large, the system will land on a diverging trajectory outside the BoA, quickly leading to failure of the system. To increase robustness, we want to decrease the likelihood of a disturbance moving the system state outside of the basin. Having no control over the types of disturbances that our robot leg might encounter, the geometry of the basin itself needs to be changed. A larger basin will make it more likely that the new trajectory will stay within it, given a random disturbance. The geometry of the BoA is therefore a representation of the system's robustness. To obtain a quantified measure of the robustness, one simple approach is to take the high dimensional volume of the basin.
-Rummel et al.\ \cite{walkbasin} have applied this robustness formulation to identify stable walking gaits in a two degree of freedom spring-mass walker model. In this low dimensional case the volume translates to the area of the BoA, which was always bounded for the system analyzed. Of course these basins may take many complicated forms, including fractals and regions that stretch to infinity. Sprott et al.\ \cite{classify} have come up with a method to sort the BoA into classes, listed in Table~\ref{t:class} and shown in part in Figure~\ref{fig:classes}. They achieved this by finding a power law describing the probability of a point laying within the basin, depending on it's distance from the attractor. 
+\fi
+Rummel et al.\ \cite{walkbasin} have applied this robustness formulation to identify stable walking gaits in a two degree of freedom spring-mass walker model. In this low dimensional case the size takes shape of the area of the BoA, which was always bounded for the system analyzed. Problematically, these basins may take many complicated forms, including fractals and regions that stretch to infinity. Sprott et al.\ \cite{classify} have come up with a method to sorting the BoA into classes, listed in Table~\ref{t:class} and shown in part in Figure~\ref{fig:classes}. They achieved this by finding a power law describing the probability of a state laying within the basin, depending on it's distance from the attractor. 
 
 \begin{table}[ht]
+\centering
 \caption[Classes of Basins]{Classes of Basins. \cite{classify}}
 \begin{tabular}{l l}
 \hline
@@ -77,9 +87,23 @@ Rummel et al.\ \cite{walkbasin} have applied this robustness formulation to iden
 \end{table}
 \begin{figure}
     \centering
-    \subfloat[\centering Class 3]{{\includegraphics*[width=0.4\linewidth]{figures/IMG_0769.jpg} }}%
-    \qquad
-    \subfloat[\centering Class 4]{{\includegraphics*[width=0.4\linewidth]{figures/IMG_0770.jpg} }}%
+    \iffalse
+    {{\includegraphics*[width=0.4\linewidth]{figures/IMG_0769.jpg} }}%
+
+    {{\includegraphics*[width=0.4\linewidth]{figures/IMG_0770.jpg} }}%
+    \small (b)
+    \fi
+    \begin{tabular}[b]{c}
+        \includegraphics[width=.4\linewidth]{figures/IMG_0769.jpg} \\
+        \small (a)
+    \end{tabular} \qquad
+    \begin{tabular}[b]{c}
+        \includegraphics[width=.4\linewidth]{figures/IMG_0770.jpg} \\
+        \small (b)
+    \end{tabular}
+
+
+
     \caption[Examples of Basin Classes]{Examples of basin classes. The black lines represent the attractors and the blue areas the basins of attraction. Note that in (a) parts of the basin extend to infinity while (b) is bounded. \cite{classify}}%
     \label{fig:classes}%
 \end{figure}
@@ -95,13 +119,13 @@ An alternative approach are the “Cell Mapping Methods”, first summarized in 
 \begin{figure}[h]
     
     \centering
-    \includegraphics[width=.5\linewidth]{figures/1d-cm}
+    \includegraphics[width=.5\linewidth]{figures/1d-cm.jpg}
     \caption[One dimensional SCM]{One dimensional SCM. The rightmost cell goes to infinity, which is mapped to the 0 position, the so called sink-cell. With the remaining cells an attractor can be seen at x = 0.5. \cite{cell1}}
     \label{fig:1d-cm}
 \end{figure}
 
 This deterministic mapping between cells represents the Simple Cell Mapping (SCM). An issue with it is that it does not consider the infinite amount of initial conditions covered by each cell, which could all potentially result in vastly different trajectories. This discrepancy is overcome with the General Cell Mapping (GCM), a stochastic approach where from each starting cell the probability of landing in any other cell is found. This problem translates to a Markov chain representation, which has been well researched and for which efficient algorithms exist. The GCM is also better at dealing with fractal basin boundaries and can handle chaotic systems. As seen \cite{cell2}, there are many extensions to, as well as hybrids of the SCM and GCM methods, yielding better results. But of course cell mapping methods do have their limitations. 
-As always, the curse of dimensionality persists and adding more dimensions exponentially increases the number of cells that have to be evaluated. For the overarching project leg designs with many degrees of freedom need to be analyzed, resulting in high dimensional phase spaces and increasing the computational cost. To overcome this hurdle, there have been efforts in parallelization of the computation by \cite{sixdim},\cite{parallel} and \cite{integr}, allowing for the exploration of higher dimensional systems, with promising results (see Figure~\ref{fig:sboa}). Given the results from any of the Cell Mapping Measures, either the volume or the minimal radius of a BoA can then be found to act as the concrete measure of robustness. 
+As always, the curse of dimensionality persists and adding more dimensions exponentially increases the number of cells that have to be evaluated. For the overarching project systems with many degrees of freedom need to be analyzed, resulting in high dimensional phase spaces and increasing the computational cost. To overcome this hurdle, there have been efforts in parallelization of the computation by \cite{sixdim},\cite{parallel} and \cite{integr}, allowing for the exploration of higher dimensional systems, with promising results (see Figure~\ref{fig:sboa}). Given the results from any of the Cell Mapping Measures, either the volume or the minimal radius of a BoA can then be found to act as the concrete measure of robustness. 
 
 \begin{figure}[ht]
     \centering
@@ -120,7 +144,7 @@ As always, the curse of dimensionality persists and adding more dimensions expon
     \label{fig:alg}
 \end{figure}
 
-Looking again at \cite{quant}, the robustness was determined without a global exploration, but by strategically sampling initial conditions and using the bisection algorithm to approximate the minimal radius, as seen in Figure~\ref{fig:alg}. For this method the trajectories had to again be evaluated until their convergence could be determined. Still, with the strong reduction of the total number of evaluations to be performed, the computational cost of quantifying the robustness was greatly decreased. 
+Looking again at \cite{quant}, robustness was determined without a global exploration, but by strategically sampling initial conditions and using the bisection algorithm to approximate the minimal radius, as seen in Figure~\ref{fig:alg}. For this method the trajectories had to again be evaluated until their convergence could be determined. Still, with the strong reduction of the total number of evaluations to be performed, the computational cost of quantifying the robustness was greatly decreased. 
 
 
 

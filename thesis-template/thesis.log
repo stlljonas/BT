@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.4.25)  12 MAY 2021 23:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.4.25)  10 JUN 2021 15:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -958,8 +958,11 @@ ut line 50.
 (./preamble.tex) (./bibpre.tex
 \bibhang=\skip87
 ) (./thesis.aux (./abstract.aux)
-(./ch01-introduction.aux) (./ch02-related-work.aux) (./ch03-more-chapters.aux)
-(./ch04-conclusion.aux) (./apx-sample-appendix.aux))
+(./ch01-introduction.aux) (./ch02-related-work.aux) (./ch03-more-chapters.aux
+
+LaTeX Warning: Label `fig:droplkg' multiply defined.
+
+) (./ch04-conclusion.aux))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 76.
@@ -1083,12 +1086,18 @@ Type  H <return>  for immediate help.
 l.92 \newcommand{\figref}[1]{Figure \ref{#1}}
                                              
 ? 
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
+
+]
 LaTeX Font Info:    Trying to load font information for T1+phv on input line 11
 3.
+
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
-<figures/teaser.png, id=7, 472.26437pt x 170.13562pt>
+<figures/teaser.png, id=17, 472.26437pt x 170.13562pt>
 File: figures/teaser.png Graphic file (type png)
 <use figures/teaser.png>
 Package pdftex.def Info: figures/teaser.png  used on input line 114.
@@ -1099,29 +1108,25 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <14.4> not available
 
 pdfTeX warning: /usr/bin/pdflatex (file ./figures/ETH_logo.pdf): PDF inclusion:
  found PDF version <1.7>, but at most version <1.5> allowed
-<figures/ETH_logo.pdf, id=10, 8833.0pt x 2366.8425pt>
+<figures/ETH_logo.pdf, id=20, 8833.0pt x 2366.8425pt>
 File: figures/ETH_logo.pdf Graphic file (type pdf)
 <use figures/ETH_logo.pdf>
-Package pdftex.def Info: figures/ETH_logo.pdf  used on input line 3627.
+Package pdftex.def Info: figures/ETH_logo.pdf  used on input line 132.
 (pdftex.def)             Requested size: 136.59175pt x 36.58455pt.
-<figures/CRL_logo.pdf, id=12, 3207.02144pt x 894.56308pt>
-File: figures/CRL_logo.pdf Graphic file (type pdf)
-<use figures/CRL_logo.pdf>
-Package pdftex.def Info: figures/CRL_logo.pdf  used on input line 3628.
-(pdftex.def)             Requested size: 136.59175pt x 38.09691pt.
-[1
-
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./figures/teaser.png> <./f
-igures/ETH_logo.pdf> <./figures/CRL_logo.pdf>] [2
+<figures/CRL-logo.pdf, id=22, 601.24625pt x 119.44624pt>
+File: figures/CRL-logo.pdf Graphic file (type pdf)
+<use figures/CRL-logo.pdf>
+Package pdftex.def Info: figures/CRL-logo.pdf  used on input line 133.
+(pdftex.def)             Requested size: 136.59175pt x 27.13487pt.
+[3 <./figures/teaser.png> <./figures/ETH_logo.pdf> <./figures/CRL-Logo.pdf>]
+[4
 
 ]
 \openout2 = `abstract.aux'.
 
  (./abstract.tex
 LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
@@ -1147,28 +1152,23 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@lof=\write6
 \openout6 = `thesis.lof'.
 
+
+Underfull \vbox (badness 3333) has occurred while \output is active []
+
  [5
 
 
-] [6
-
-] (./thesis.lot)
-\tf@lot=\write7
-\openout7 = `thesis.lot'.
-
- [7
-
-] [8
-
 ]
+[6]
 \openout2 = `ch01-introduction.aux'.
 
-
-(./ch01-introduction.tex
+ (./ch01-introduction.tex
 chapter 1.
-)
+
+Underfull \vbox (badness 2435) has occurred while \output is active []
+
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <100> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 3788.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 52.
 
 Overfull \hbox (2.28006pt too wide) has occurred while \output is active
 []|[] []
@@ -1181,23 +1181,21 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.3788 \include{ch01-introduction}
-                                   [1
+l.52 T
+      o overcome this, a finite set of scalable disturbances can be chosen a...
+[1
 
 
-]
-\openout2 = `ch02-related-work.aux'.
 
- (./ch02-related-work.texpdfTeX warning (ext4): destination with the same ident
-ifier (name{page.2}) has been already used, duplicate ignored
+])pdfTeX warning (ext4): destination with the same identifier (name{page.2}) ha
+s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.4 \chapter
-            {Related Work} [2
+l.195 \include{ch01-introduction}
+                                  [2]
+\openout2 = `ch02-related-work.aux'.
 
-
-
-]
+ (./ch02-related-work.tex
 chapter 2.
 
 LaTeX Warning: Citation `Zwicker04Perspective' on page 3 undefined on input lin
@@ -1227,8 +1225,16 @@ Overfull \hbox (2.28006pt too wide) has occurred while \output is active
 
 Overfull \vbox (459.06232pt too high) has occurred while \output is active []
 
+pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.25 
+      [3
 
-[3]
+
+
+]
 
 LaTeX Warning: Citation `optrob' on page 4 undefined on input line 28.
 
@@ -1238,7 +1244,7 @@ LaTeX Warning: Citation `respoly' on page 4 undefined on input line 32.
 
 LaTeX Warning: Citation `anytraj' on page 4 undefined on input line 32.
 
-<figures/resdidual_force_polytope.png, id=211, 807.015pt x 424.58624pt>
+<figures/resdidual_force_polytope.png, id=208, 807.015pt x 424.58624pt>
 File: figures/resdidual_force_polytope.png Graphic file (type png)
 <use figures/resdidual_force_polytope.png>
 Package pdftex.def Info: figures/resdidual_force_polytope.png  used on input li
@@ -1250,141 +1256,121 @@ LaTeX Warning: Citation `respoly' on page 4 undefined on input line 37.
 
 LaTeX Warning: Citation `respoly' on page 4 undefined on input line 37.
 
-[4] [5 <./figures/resdidual_force_polytope.png>]
-<figures/Limitcycle.png, id=224, 391.4625pt x 298.11375pt>
-File: figures/Limitcycle.png Graphic file (type png)
-<use figures/Limitcycle.png>
-Package pdftex.def Info: figures/Limitcycle.png  used on input line 55.
-(pdftex.def)             Requested size: 227.6506pt x 173.36552pt.
+pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.40 
+      [4]
+
+LaTeX Warning: Citation `walkbasin' on page 5 undefined on input line 73.
 
 
-LaTeX Warning: Citation `phase' on page 6 undefined on input line 56.
+LaTeX Warning: Citation `classify' on page 5 undefined on input line 73.
+
+[5 <./figures/resdidual_force_polytope.png>]
+
+LaTeX Warning: Citation `classify' on page 6 undefined on input line 77.
 
 
-LaTeX Warning: Citation `phase' on page 6 undefined on input line 56.
+LaTeX Warning: Citation `classify' on page 6 undefined on input line 77.
 
-
-LaTeX Warning: Citation `walkbasin' on page 6 undefined on input line 64.
-
-
-LaTeX Warning: Citation `classify' on page 6 undefined on input line 64.
-
-[6 <./figures/Limitcycle.png>]
-
-LaTeX Warning: Citation `classify' on page 7 undefined on input line 67.
-
-
-LaTeX Warning: Citation `classify' on page 7 undefined on input line 67.
-
-! Undefined control sequence.
-l.80     \subfloat
-                  [\centering Class 3]{{\includegraphics*[width=0.4\linewidt...
-
-? 
-<figures/IMG_0769.jpg, id=232, 960.58875pt x 945.5325pt>
+<figures/IMG_0769.jpg, id=220, 960.58875pt x 945.5325pt>
 File: figures/IMG_0769.jpg Graphic file (type jpg)
 <use figures/IMG_0769.jpg>
-Package pdftex.def Info: figures/IMG_0769.jpg  used on input line 80.
+Package pdftex.def Info: figures/IMG_0769.jpg  used on input line 97.
 (pdftex.def)             Requested size: 182.11769pt x 179.26349pt.
-! Undefined control sequence.
-l.82     \subfloat
-                  [\centering Class 4]{{\includegraphics*[width=0.4\linewidt...
-
-? 
-<figures/IMG_0770.jpg, id=234, 948.54375pt x 949.5475pt>
+<figures/IMG_0770.jpg, id=221, 948.54375pt x 949.5475pt>
 File: figures/IMG_0770.jpg Graphic file (type jpg)
 <use figures/IMG_0770.jpg>
-Package pdftex.def Info: figures/IMG_0770.jpg  used on input line 82.
+Package pdftex.def Info: figures/IMG_0770.jpg  used on input line 101.
 (pdftex.def)             Requested size: 182.11769pt x 182.29945pt.
 
-LaTeX Warning: Citation `classify' on page 7 undefined on input line 83.
+LaTeX Warning: Citation `classify' on page 6 undefined on input line 107.
 
 
-LaTeX Warning: Citation `classify' on page 7 undefined on input line 83.
+LaTeX Warning: Citation `classify' on page 6 undefined on input line 107.
 
 
-LaTeX Warning: Citation `quant' on page 7 undefined on input line 87.
+LaTeX Warning: Citation `quant' on page 6 undefined on input line 111.
 
 
-LaTeX Warning: Citation `integr' on page 7 undefined on input line 88.
+LaTeX Warning: Citation `integr' on page 6 undefined on input line 112.
 
 
-LaTeX Warning: Citation `quant' on page 7 undefined on input line 89.
+LaTeX Warning: Citation `quant' on page 6 undefined on input line 113.
+
+[6 <./figures/IMG_0769.jpg> <./figures/IMG_0770.jpg>]
+
+LaTeX Warning: Citation `multistable' on page 7 undefined on input line 116.
 
 
-LaTeX Warning: Citation `multistable' on page 7 undefined on input line 92.
+LaTeX Warning: Citation `limitsBoA' on page 7 undefined on input line 116.
 
 
-LaTeX Warning: Citation `limitsBoA' on page 7 undefined on input line 92.
+LaTeX Warning: Citation `cell1' on page 7 undefined on input line 117.
 
 
-LaTeX Warning: Citation `cell1' on page 7 undefined on input line 93.
+LaTeX Warning: Citation `cell2' on page 7 undefined on input line 117.
+
+<figures/1d-cm.jpg, id=229, 1858.945pt x 965.6075pt>
+File: figures/1d-cm.jpg Graphic file (type jpg)
+<use figures/1d-cm.jpg>
+Package pdftex.def Info: figures/1d-cm.jpg  used on input line 122.
+(pdftex.def)             Requested size: 227.6506pt x 118.24007pt.
+
+LaTeX Warning: Citation `cell1' on page 7 undefined on input line 123.
 
 
-LaTeX Warning: Citation `cell2' on page 7 undefined on input line 93.
-
-[7] [8 <./figures/IMG_0769.jpg> <./figures/IMG_0770.jpg>]
-
-! LaTeX Error: File `figures/1d-cm' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.98 ...raphics[width=.5\linewidth]{figures/1d-cm}
-                                                  
-? 
-
-LaTeX Warning: Citation `cell1' on page 9 undefined on input line 99.
+LaTeX Warning: Citation `cell1' on page 7 undefined on input line 123.
 
 
-LaTeX Warning: Citation `cell1' on page 9 undefined on input line 99.
+LaTeX Warning: Citation `cell2' on page 7 undefined on input line 127.
 
 
-LaTeX Warning: Citation `cell2' on page 9 undefined on input line 103.
+LaTeX Warning: Citation `sixdim' on page 7 undefined on input line 128.
 
 
-LaTeX Warning: Citation `sixdim' on page 9 undefined on input line 104.
+LaTeX Warning: Citation `parallel' on page 7 undefined on input line 128.
 
 
-LaTeX Warning: Citation `parallel' on page 9 undefined on input line 104.
+LaTeX Warning: Citation `integr' on page 7 undefined on input line 128.
 
-
-LaTeX Warning: Citation `integr' on page 9 undefined on input line 104.
-
-<figures/IMG_0783.jpg, id=249, 2055.68pt x 2593.69pt>
+[7 <./figures/1d-cm.jpg>]
+<figures/IMG_0783.jpg, id=235, 2055.68pt x 2593.69pt>
 File: figures/IMG_0783.jpg Graphic file (type jpg)
 <use figures/IMG_0783.jpg>
-Package pdftex.def Info: figures/IMG_0783.jpg  used on input line 108.
+Package pdftex.def Info: figures/IMG_0783.jpg  used on input line 132.
 (pdftex.def)             Requested size: 227.6506pt x 287.20645pt.
 
-LaTeX Warning: Citation `sixdim' on page 9 undefined on input line 109.
+
+LaTeX Warning: Citation `sixdim' on page 8 undefined on input line 133.
 
 
-LaTeX Warning: Citation `sixdim' on page 9 undefined on input line 109.
+LaTeX Warning: Citation `sixdim' on page 8 undefined on input line 133.
 
-<figures/bisection.png, id=250, 550.30594pt x 737.00343pt>
+<figures/bisection.png, id=236, 550.30594pt x 737.00343pt>
 File: figures/bisection.png Graphic file (type png)
 <use figures/bisection.png>
-Package pdftex.def Info: figures/bisection.png  used on input line 118.
+Package pdftex.def Info: figures/bisection.png  used on input line 142.
 (pdftex.def)             Requested size: 227.6506pt x 304.88359pt.
 
-LaTeX Warning: Citation `quant' on page 9 undefined on input line 119.
+LaTeX Warning: Citation `quant' on page 8 undefined on input line 143.
 
 
-LaTeX Warning: Citation `quant' on page 9 undefined on input line 119.
+LaTeX Warning: Citation `quant' on page 8 undefined on input line 143.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Citation `quant' on page 9 undefined on input line 123.
+LaTeX Warning: Citation `quant' on page 8 undefined on input line 147.
 
-) [9] [10 <./figures/IMG_0783.jpg>] [11 <./figures/bisection.png>]
+) [8 <./figures/IMG_0783.jpg>] [9 <./figures/bisection.png>]
 \openout2 = `ch03-more-chapters.aux'.
 
 
-(./ch03-more-chapters.tex [12
+(./ch03-more-chapters.tex [10
 
 
 
@@ -1399,14 +1385,21 @@ Overfull \hbox (2.28006pt too wide) has occurred while \output is active
 Overfull \vbox (459.06232pt too high) has occurred while \output is active []
 
 
-[13] [14] [15]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[11] [12] [13]
+<figures/conv_div_viz_crop.png, id=293, 295.5843pt x 250.7769pt>
+File: figures/conv_div_viz_crop.png Graphic file (type png)
+<use figures/conv_div_viz_crop.png>
+Package pdftex.def Info: figures/conv_div_viz_crop.png  used on input line 134.
 
- [16]
-[17]
+(pdftex.def)             Requested size: 227.6506pt x 193.14471pt.
+
+Underfull \vbox (badness 3439) has occurred while \output is active []
+
+ [14 <./figures/conv_div_viz_crop.png>] [15]
 LaTeX Font Info:    Trying to load font information for T1+pcr on input line 43
-2.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
+4.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 
@@ -1416,212 +1409,297 @@ See the tikz package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.432     }
+l.434     }
            
 ? 
-[18] [19]
-<figures/fixed_point_detection.png, id=339, 2306.6175pt x 2131.965pt>
+[16] [17]
+<figures/fixed_point_detection.png, id=326, 2306.6175pt x 2131.965pt>
 File: figures/fixed_point_detection.png Graphic file (type png)
 <use figures/fixed_point_detection.png>
 Package pdftex.def Info: figures/fixed_point_detection.png  used on input line 
-489.
+491.
 (pdftex.def)             Requested size: 318.70944pt x 294.56934pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/limit_cycle_detection.png, id=341, 2830.575pt x 2204.235pt>
+<figures/limit_cycle_detection.png, id=328, 2830.575pt x 2204.235pt>
 File: figures/limit_cycle_detection.png Graphic file (type png)
 <use figures/limit_cycle_detection.png>
 Package pdftex.def Info: figures/limit_cycle_detection.png  used on input line 
-502.
+503.
 (pdftex.def)             Requested size: 318.70944pt x 248.18436pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[20] [21 <./figures/fixed_point_detection.png>] [22 <./figures/limit_cycle_dete
-ction.png>]
-<figures/limit_cycle_convergence.png, id=362, 2577.63pt x 2547.5175pt>
+[18] [19 <./figures/fixed_point_detection.png>]
+<figures/noninverted_cloth_col_small.png, id=341, 350.30875pt x 345.29pt>
+File: figures/noninverted_cloth_col_small.png Graphic file (type png)
+<use figures/noninverted_cloth_col_small.png>
+Package pdftex.def Info: figures/noninverted_cloth_col_small.png  used on input
+ line 518.
+(pdftex.def)             Requested size: 136.59175pt x 134.6362pt.
+<figures/inverted_cloth_col_small.png, id=342, 487.8225pt x 533.995pt>
+File: figures/inverted_cloth_col_small.png Graphic file (type png)
+<use figures/inverted_cloth_col_small.png>
+Package pdftex.def Info: figures/inverted_cloth_col_small.png  used on input li
+ne 523.
+(pdftex.def)             Requested size: 182.11769pt x 199.35133pt.
+<figures/forced_cloth_nominal_graph.png, id=343, 2469.225pt x 1445.4pt>
+File: figures/forced_cloth_nominal_graph.png Graphic file (type png)
+<use figures/forced_cloth_nominal_graph.png>
+Package pdftex.def Info: figures/forced_cloth_nominal_graph.png  used on input 
+line 530.
+(pdftex.def)             Requested size: 182.11769pt x 106.59181pt.
+<figures/forced_cloth_inverted_graph.png, id=344, 2469.225pt x 1445.4pt>
+File: figures/forced_cloth_inverted_graph.png Graphic file (type png)
+<use figures/forced_cloth_inverted_graph.png>
+Package pdftex.def Info: figures/forced_cloth_inverted_graph.png  used on input
+ line 535.
+(pdftex.def)             Requested size: 182.11769pt x 106.59181pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[20 <./figures/limit_cycle_detection.png>]
+<figures/limit_cycle_convergence.png, id=354, 2577.63pt x 2547.5175pt>
 File: figures/limit_cycle_convergence.png Graphic file (type png)
 <use figures/limit_cycle_convergence.png>
 Package pdftex.def Info: figures/limit_cycle_convergence.png  used on input lin
-e 539.
+e 564.
 (pdftex.def)             Requested size: 318.70944pt x 314.97931pt.
- [23 <./figures/limit_cycle_convergence.png>]
-<figures/minRad_tuning_graph.png, id=370, 2758.305pt x 2421.045pt>
-File: figures/minRad_tuning_graph.png Graphic file (type png)
-<use figures/minRad_tuning_graph.png>
-Package pdftex.def Info: figures/minRad_tuning_graph.png  used on input line 59
-0.
-(pdftex.def)             Requested size: 409.7683pt x 359.63158pt.
- [24 <./figures/minRad_tuning_graph.png>]
-Overfull \hbox (4.0818pt too wide) in paragraph at lines 597--599
-\T1/ptm/m/n/12 ple-mented for a gen-eral case. Given a $\OML/cmm/m/it/12 d$ \T1
-/ptm/m/n/12 di-men-sional $\OT1/cmss/m/n/12 D$ \T1/ptm/m/n/12 and lower and up-
-per bounds $\OML/cmm/m/it/12 b[]; b[] \OMS/cmsy/m/n/12 2
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 647.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 647.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 647.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 647.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [25]
-[26]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [27]
-<figures/minrad_analysis_v2.png, id=391, 2180.145pt x 2023.56pt>
-File: figures/minrad_analysis_v2.png Graphic file (type png)
-<use figures/minrad_analysis_v2.png>
-Package pdftex.def Info: figures/minrad_analysis_v2.png  used on input line 786
-.
-(pdftex.def)             Requested size: 227.6506pt x 211.2913pt.
-<figures/droptest_ds_v2.png, id=392, 3209.9925pt x 3234.0825pt>
-File: figures/droptest_ds_v2.png Graphic file (type png)
-<use figures/droptest_ds_v2.png>
-Package pdftex.def Info: figures/droptest_ds_v2.png  used on input line 798.
-(pdftex.def)             Requested size: 318.70944pt x 321.05849pt.
-
-[28 <./figures/minrad_analysis_v2.png>]
-<figures/droptest_ds_overay_v10000.png, id=399, 3209.9925pt x 3234.0825pt>
-File: figures/droptest_ds_overay_v10000.png Graphic file (type png)
-<use figures/droptest_ds_overay_v10000.png>
-Package pdftex.def Info: figures/droptest_ds_overay_v10000.png  used on input l
-ine 808.
-(pdftex.def)             Requested size: 318.70944pt x 321.05849pt.
-<figures/droptest_ps_full_v2.png, id=400, 1927.2pt x 1716.4125pt>
-File: figures/droptest_ps_full_v2.png Graphic file (type png)
-<use figures/droptest_ps_full_v2.png>
-Package pdftex.def Info: figures/droptest_ps_full_v2.png  used on input line 81
-7.
-(pdftex.def)             Requested size: 150.25023pt x 133.8063pt.
-<figures/droptest_ps_zoom1_v2.png, id=401, 1927.2pt x 1716.4125pt>
-File: figures/droptest_ps_zoom1_v2.png Graphic file (type png)
-<use figures/droptest_ps_zoom1_v2.png>
-Package pdftex.def Info: figures/droptest_ps_zoom1_v2.png  used on input line 8
-22.
-(pdftex.def)             Requested size: 150.25023pt x 133.8063pt.
-<figures/droptest_ps_zoom2_v2.png, id=402, 1927.2pt x 1716.4125pt>
-File: figures/droptest_ps_zoom2_v2.png Graphic file (type png)
-<use figures/droptest_ps_zoom2_v2.png>
-Package pdftex.def Info: figures/droptest_ps_zoom2_v2.png  used on input line 8
-27.
-(pdftex.def)             Requested size: 150.25023pt x 133.8063pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[29 <./figures/droptest_ds_v2.png>]
-<figures/droptest_ds_bad_v4.png, id=409, 1927.2pt x 1933.2225pt>
-File: figures/droptest_ds_bad_v4.png Graphic file (type png)
-<use figures/droptest_ds_bad_v4.png>
-Package pdftex.def Info: figures/droptest_ds_bad_v4.png  used on input line 848
+[21 <./figures/noninverted_cloth_col_small.png> <./figures/inverted_cloth_col_s
+mall.png> <./figures/forced_cloth_nominal_graph.png> <./figures/forced_cloth_in
+verted_graph.png>]
+<figures/minRad_tuning_graph.png, id=365, 2758.305pt x 2421.045pt>
+File: figures/minRad_tuning_graph.png Graphic file (type png)
+<use figures/minRad_tuning_graph.png>
+Package pdftex.def Info: figures/minRad_tuning_graph.png  used on input line 61
+5.
+(pdftex.def)             Requested size: 409.7683pt x 359.63158pt.
+ [22 <./figures/limit_cycle_convergence.png>] [23 <./figures/minRad_tuning_grap
+h.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 672.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 672.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 672.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 672.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [24]
+<figures/laikago_zoom.png, id=378, 1057.9525pt x 570.13pt>
+File: figures/laikago_zoom.png Graphic file (type png)
+<use figures/laikago_zoom.png>
+Package pdftex.def Info: figures/laikago_zoom.png  used on input line 741.
+(pdftex.def)             Requested size: 227.6506pt x 122.67995pt.
+<figures/lkgdrop_1_crop.png, id=379, 1356.06625pt x 1010.77625pt>
+File: figures/lkgdrop_1_crop.png Graphic file (type png)
+<use figures/lkgdrop_1_crop.png>
+Package pdftex.def Info: figures/lkgdrop_1_crop.png  used on input line 753.
+(pdftex.def)             Requested size: 145.6997pt x 108.59464pt.
+<figures/lkgdrop_2_crop.png, id=380, 1358.07375pt x 1007.765pt>
+File: figures/lkgdrop_2_crop.png Graphic file (type png)
+<use figures/lkgdrop_2_crop.png>
+Package pdftex.def Info: figures/lkgdrop_2_crop.png  used on input line 758.
+(pdftex.def)             Requested size: 145.6997pt x 108.11734pt.
+<figures/lkgdrop_3_crop.png, id=381, 1358.07375pt x 1005.7575pt>
+File: figures/lkgdrop_3_crop.png Graphic file (type png)
+<use figures/lkgdrop_3_crop.png>
+Package pdftex.def Info: figures/lkgdrop_3_crop.png  used on input line 763.
+(pdftex.def)             Requested size: 145.6997pt x 107.90196pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[25 <./figures/laikago_zoom.png>]
+<figures/lkgswing_1_crop.png, id=386, 1380.15625pt x 818.05624pt>
+File: figures/lkgswing_1_crop.png Graphic file (type png)
+<use figures/lkgswing_1_crop.png>
+Package pdftex.def Info: figures/lkgswing_1_crop.png  used on input line 781.
+(pdftex.def)             Requested size: 136.59175pt x 80.9616pt.
+<figures/lkgswing_2_crop.png, id=387, 1435.3625pt x 839.135pt>
+File: figures/lkgswing_2_crop.png Graphic file (type png)
+<use figures/lkgswing_2_crop.png>
+Package pdftex.def Info: figures/lkgswing_2_crop.png  used on input line 786.
+(pdftex.def)             Requested size: 136.59175pt x 79.84668pt.
+<figures/lkgswing_3_crop.png, id=388, 1482.53876pt x 885.3075pt>
+File: figures/lkgswing_3_crop.png Graphic file (type png)
+<use figures/lkgswing_3_crop.png>
+Package pdftex.def Info: figures/lkgswing_3_crop.png  used on input line 791.
+(pdftex.def)             Requested size: 136.59175pt x 81.56544pt.
+ [26 <./figures/lkgdrop_1_crop.png> <./figures/lkgdrop_2_crop.png> <./figures/l
+kgdrop_3_crop.png> <./figures/lkgswing_1_crop.png> <./figures/lkgswing_2_crop.p
+ng> <./figures/lkgswing_3_crop.png>]
+chapter 4.
+<figures/minrad_analysis_v2.png, id=395, 2180.145pt x 2023.56pt>
+File: figures/minrad_analysis_v2.png Graphic file (type png)
+<use figures/minrad_analysis_v2.png>
+Package pdftex.def Info: figures/minrad_analysis_v2.png  used on input line 859
 .
-(pdftex.def)             Requested size: 150.25023pt x 150.70815pt.
-<figures/droptest_ds_medium_v4.png, id=410, 1939.245pt x 1933.2225pt>
-File: figures/droptest_ds_medium_v4.png Graphic file (type png)
-<use figures/droptest_ds_medium_v4.png>
-Package pdftex.def Info: figures/droptest_ds_medium_v4.png  used on input line 
-853.
-(pdftex.def)             Requested size: 150.25023pt x 149.76419pt.
-<figures/droptest_ds_opt_v4.png, id=411, 1927.2pt x 1951.29pt>
-File: figures/droptest_ds_opt_v4.png Graphic file (type png)
-<use figures/droptest_ds_opt_v4.png>
-Package pdftex.def Info: figures/droptest_ds_opt_v4.png  used on input line 858
-.
-(pdftex.def)             Requested size: 150.25023pt x 152.11664pt.
+(pdftex.def)             Requested size: 227.6506pt x 211.2913pt.
+<figures/droptest_ds_v2.png, id=398, 3209.9925pt x 3234.0825pt>
+File: figures/droptest_ds_v2.png Graphic file (type png)
+<use figures/droptest_ds_v2.png>
+Package pdftex.def Info: figures/droptest_ds_v2.png  used on input line 874.
+(pdftex.def)             Requested size: 273.1835pt x 275.21414pt.
+
+Overfull \hbox (2.28006pt too wide) has occurred while \output is active
+[]|[] []
+ []
+
+
+Overfull \vbox (459.06232pt too high) has occurred while \output is active []
+
+
+[27
+
+]
+<figures/droptest_ds_overay_v10000.png, id=406, 3209.9925pt x 3234.0825pt>
+File: figures/droptest_ds_overay_v10000.png Graphic file (type png)
+<use figures/droptest_ds_overay_v10000.png>
+Package pdftex.def Info: figures/droptest_ds_overay_v10000.png  used on input l
+ine 884.
+(pdftex.def)             Requested size: 273.1835pt x 275.21414pt.
+<figures/droptest_ps_full_correct.png, id=407, 588.2778pt x 481.3182pt>
+File: figures/droptest_ps_full_correct.png Graphic file (type png)
+<use figures/droptest_ps_full_correct.png>
+Package pdftex.def Info: figures/droptest_ps_full_correct.png  used on input li
+ne 893.
+(pdftex.def)             Requested size: 150.25023pt x 122.92914pt.
+<figures/droptest_ps_zoom1_correct.png, id=408, 588.2778pt x 481.3182pt>
+File: figures/droptest_ps_zoom1_correct.png Graphic file (type png)
+<use figures/droptest_ps_zoom1_correct.png>
+Package pdftex.def Info: figures/droptest_ps_zoom1_correct.png  used on input l
+ine 898.
+(pdftex.def)             Requested size: 150.25023pt x 122.92914pt.
+<figures/droptest_ps_zoom2_correct.png, id=409, 588.2778pt x 481.3182pt>
+File: figures/droptest_ps_zoom2_correct.png Graphic file (type png)
+<use figures/droptest_ps_zoom2_correct.png>
+Package pdftex.def Info: figures/droptest_ps_zoom2_correct.png  used on input l
+ine 903.
+(pdftex.def)             Requested size: 150.25023pt x 122.92914pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \vbox (badness 3646) has occurred while \output is active []
+
+ [28 <./figures/minrad_analysis_v2.png>] [29 <./figures/droptest_ds_v2.png>]
+<figures/droptest_ds_bad_correct.png, id=420, 463.2507pt x 468.3096pt>
+File: figures/droptest_ds_bad_correct.png Graphic file (type png)
+<use figures/droptest_ds_bad_correct.png>
+Package pdftex.def Info: figures/droptest_ds_bad_correct.png  used on input lin
+e 924.
+(pdftex.def)             Requested size: 150.25023pt x 151.89154pt.
+<figures/droptest_ds_medium_correct.png, id=421, 462.528pt x 463.9734pt>
+File: figures/droptest_ds_medium_correct.png Graphic file (type png)
+<use figures/droptest_ds_medium_correct.png>
+Package pdftex.def Info: figures/droptest_ds_medium_correct.png  used on input 
+line 929.
+(pdftex.def)             Requested size: 150.25023pt x 150.71877pt.
+<figures/droptest_ds_opt_correct.png, id=422, 466.8642pt x 463.9734pt>
+File: figures/droptest_ds_opt_correct.png Graphic file (type png)
+<use figures/droptest_ds_opt_correct.png>
+Package pdftex.def Info: figures/droptest_ds_opt_correct.png  used on input lin
+e 934.
+(pdftex.def)             Requested size: 150.25023pt x 149.31699pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [30 <./figures/droptest_ds_overay_v10000.png>]
 
-Package caption Warning: \label without proper reference on input line 872.
+Package caption Warning: \label without proper reference on input line 948.
 See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `fig:swingoverlay' on page 31 undefined on input line 
-871.
+947.
 
-<figures/swingtest_ds_overay_v3.png, id=418, 3209.9925pt x 3216.015pt>
+<figures/swingtest_ds_overay_v3.png, id=429, 3209.9925pt x 3216.015pt>
 File: figures/swingtest_ds_overay_v3.png Graphic file (type png)
 <use figures/swingtest_ds_overay_v3.png>
 Package pdftex.def Info: figures/swingtest_ds_overay_v3.png  used on input line
- 874.
-(pdftex.def)             Requested size: 318.70944pt x 319.26486pt.
+ 950.
+(pdftex.def)             Requested size: 273.1835pt x 273.67664pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/swingtest_ps.png, id=419, 579.6054pt x 563.706pt>
+<figures/swingtest_ps.png, id=430, 579.6054pt x 563.706pt>
 File: figures/swingtest_ps.png Graphic file (type png)
 <use figures/swingtest_ps.png>
-Package pdftex.def Info: figures/swingtest_ps.png  used on input line 880.
-(pdftex.def)             Requested size: 318.70944pt x 309.97044pt.
+Package pdftex.def Info: figures/swingtest_ps.png  used on input line 956.
+(pdftex.def)             Requested size: 273.1835pt x 265.69019pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/swingtest_ds_bad.png, id=420, 1951.29pt x 1951.29pt>
+<figures/swingtest_ds_bad.png, id=431, 1951.29pt x 1951.29pt>
 File: figures/swingtest_ds_bad.png Graphic file (type png)
 <use figures/swingtest_ds_bad.png>
-Package pdftex.def Info: figures/swingtest_ds_bad.png  used on input line 890.
+Package pdftex.def Info: figures/swingtest_ds_bad.png  used on input line 966.
 (pdftex.def)             Requested size: 150.25023pt x 150.24086pt.
-<figures/swingtest_ds_medium.png, id=421, 1933.2225pt x 1933.2225pt>
+<figures/swingtest_ds_medium.png, id=432, 1933.2225pt x 1933.2225pt>
 File: figures/swingtest_ds_medium.png Graphic file (type png)
 <use figures/swingtest_ds_medium.png>
-Package pdftex.def Info: figures/swingtest_ds_medium.png  used on input line 89
-5.
+Package pdftex.def Info: figures/swingtest_ds_medium.png  used on input line 97
+1.
 (pdftex.def)             Requested size: 150.25023pt x 150.23618pt.
-<figures/swingtest_ds_opt_vfinal.png, id=422, 463.9734pt x 463.9734pt>
+<figures/swingtest_ds_opt_vfinal.png, id=433, 463.9734pt x 463.9734pt>
 File: figures/swingtest_ds_opt_vfinal.png Graphic file (type png)
 <use figures/swingtest_ds_opt_vfinal.png>
 Package pdftex.def Info: figures/swingtest_ds_opt_vfinal.png  used on input lin
-e 900.
+e 976.
 (pdftex.def)             Requested size: 150.25023pt x 150.24443pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/swingtest_2dPS_cmaes.png, id=424, 2378.8875pt x 1264.725pt>
+<figures/swingtest_2dPS_cmaes.png, id=435, 2378.8875pt x 1264.725pt>
 File: figures/swingtest_2dPS_cmaes.png Graphic file (type png)
 <use figures/swingtest_2dPS_cmaes.png>
 Package pdftex.def Info: figures/swingtest_2dPS_cmaes.png  used on input line 9
-13.
+89.
 (pdftex.def)             Requested size: 227.6506pt x 121.01854pt.
-<figures/swingtest_6d_cmaes.png, id=425, 2378.8875pt x 1264.725pt>
+<figures/swingtest_6d_cmaes.png, id=436, 2378.8875pt x 1264.725pt>
 File: figures/swingtest_6d_cmaes.png Graphic file (type png)
 <use figures/swingtest_6d_cmaes.png>
-Package pdftex.def Info: figures/swingtest_6d_cmaes.png  used on input line 918
+Package pdftex.def Info: figures/swingtest_6d_cmaes.png  used on input line 994
 .
 (pdftex.def)             Requested size: 227.6506pt x 121.01854pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[31 <./figures/droptest_ps_full_v2.png> <./figures/droptest_ps_zoom1_v2.png> <.
-/figures/droptest_ps_zoom2_v2.png> <./figures/droptest_ds_bad_v4.png> <./figure
-s/droptest_ds_medium_v4.png> <./figures/droptest_ds_opt_v4.png>]) [32 <./figure
-s/swingtest_ds_overay_v3.png>] [33 <./figures/swingtest_ps.png> <./figures/swin
-gtest_ds_bad.png> <./figures/swingtest_ds_medium.png> <./figures/swingtest_ds_o
-pt_vfinal.png>] [34 <./figures/swingtest_2dPS_cmaes.png> <./figures/swingtest_6
-d_cmaes.png>]
+[31 <./figures/droptest_ps_full_correct.png> <./figures/droptest_ps_zoom1_corre
+ct.png> <./figures/droptest_ps_zoom2_correct.png> <./figures/droptest_ds_bad_co
+rrect.png> <./figures/droptest_ds_medium_correct.png> <./figures/droptest_ds_op
+t_correct.png>]) [32 <./figures/swingtest_ds_overay_v3.png>] [33 <./figures/swi
+ngtest_ps.png> <./figures/swingtest_ds_bad.png> <./figures/swingtest_ds_medium.
+png> <./figures/swingtest_ds_opt_vfinal.png>] [34 <./figures/swingtest_2dPS_cma
+es.png> <./figures/swingtest_6d_cmaes.png>]
 \openout2 = `ch04-conclusion.aux'.
 
  (./ch04-conclusion.tex
-chapter 4.
-)
+chapter 5.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 Overfull \hbox (2.28006pt too wide) has occurred while \output is active
 []|[] []
  []
@@ -1634,83 +1712,62 @@ Overfull \vbox (459.06232pt too high) has occurred while \output is active []
 
 
 
-]
-\openout2 = `apx-sample-appendix.aux'.
-
- (./apx-sample-appendix.tex [36
-
-
-
-
-]
-chapter A.
-)
-Overfull \hbox (2.28006pt too wide) has occurred while \output is active
-[]|[] []
- []
-
-
-Overfull \vbox (459.06232pt too high) has occurred while \output is active []
-
-
-[37] [38
-
-
-
-]
+]) [36]
 No file thesis.bbl.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3812.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3812.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 219.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 219.
 (./thesis.aux (./abstract.aux) (./ch01-introduction.aux)
-(./ch02-related-work.aux) (./ch03-more-chapters.aux) (./ch04-conclusion.aux)
-(./apx-sample-appendix.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3812.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3812.
-
+(./ch02-related-work.aux) (./ch03-more-chapters.aux) (./ch04-conclusion.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 219.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 219.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 26007 strings out of 481239
- 500318 string characters out of 5920377
- 887061 words of memory out of 5000000
- 40553 multiletter control sequences out of 15000+600000
- 605758 words of font info for 115 fonts, out of 8000000 for 9000
+ 26042 strings out of 481239
+ 502189 string characters out of 5920377
+ 887211 words of memory out of 5000000
+ 40591 multiletter control sequences out of 15000+600000
+ 603752 words of font info for 115 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,28n,81p,10101b,880s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{section*.28} has been referenced but does not exi
+ 64i,29n,81p,10101b,880s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{section*.30} has been referenced but does not exi
 st, replaced by a fixed one
 
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helveti
-c/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-urw/times/utmr8a.pfb>
-Output written on thesis.pdf (48 pages, 12608597 bytes).
+texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+mi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/h
+elvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr
+8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ti
+mes/utmr8a.pfb>
+Output written on thesis.pdf (46 pages, 12392772 bytes).
 PDF statistics:
- 678 PDF objects out of 1000 (max. 8388607)
- 555 compressed objects within 6 object streams
- 125 named destinations out of 1000 (max. 500000)
- 476 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 681 PDF objects out of 1000 (max. 8388607)
+ 541 compressed objects within 6 object streams
+ 121 named destinations out of 1000 (max. 500000)
+ 500 words of extra memory for PDF output out of 10000 (max. 10000000)
 
