@@ -1,0 +1,30 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Residual Force Polytopes}}{5}{figure.caption.6}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Examples of Basin Classes}}{6}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces One dimensional SCM}}{7}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Six Dimensional Basin of Attraction}}{8}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Biseciton Algorithm}}{9}{figure.caption.11}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Convergence and Divergence in the Phase Space}}{14}{figure.caption.12}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Minimal Radius of Basin of attraction}}{15}{figure.caption.13}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Framework Block Diagram}}{17}{figure.caption.14}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Fixed Point Detection}}{19}{figure.caption.15}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Limit Cycle Detection}}{20}{figure.caption.16}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Example for systems with multiple attractors: Inverted Cloth}}{21}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Convergence to Limit Cycle}}{22}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces minRad Tuning}}{23}{figure.caption.19}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Quadruped Robot "Laikago"}}{25}{figure.caption.20}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Drop Test Visualization\relax }}{26}{figure.caption.21}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Swing Test Visualization\relax }}{26}{figure.caption.22}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces minRad Result Analysis}}{30}{figure.caption.23}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Discretized Disturbande Space, Drop Test}}{30}{figure.caption.24}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Overlay of minRad and Discretized Disturbance Space, Drop Test}}{31}{figure.caption.25}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Discretized Parameter Space, Drop Test}}{31}{figure.caption.26}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Disturbance Spaces for Selected Parameter Sets, Drop Test}}{32}{figure.caption.27}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Overlay of minRad and Discretized Disturbance Space, Swing Test}}{33}{figure.caption.28}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Discretized Parameter Space, Swing Test}}{34}{figure.caption.29}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Disturbance Spaces for Selected Parameter Sets, Drop Test}}{34}{figure.caption.30}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces CMAES Evolution for 2d and 6d Parameter Spaces}}{35}{figure.caption.31}%
+\addvspace {10\p@ }

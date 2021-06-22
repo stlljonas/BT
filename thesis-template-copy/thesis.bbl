@@ -1,0 +1,94 @@
+\begin{thebibliography}{10}
+
+\bibitem{trm}
+{\em Transmission Control Protocol}.
+\newblock Information Sciences Institute, University of Southern California,
+  1981.
+
+\bibitem{covrob}
+On redundancy, efficiency, and robustness in coverage for multiple robots.
+\newblock {\em Robotics and Autonomous Systems 56}, 12 (2008), 1102 -- 1114.
+\newblock Towards Autonomous Robotic Systems 2008: Mobile Robotics in the UK.
+
+\bibitem{sixdim}
+{\sc Andonovski, N., and Lenci, S.}
+\newblock Six-dimensional basins of attraction computation on small clusters
+  with semi-parallelized scm method.
+\newblock {\em International Journal of Dynamics and Control 8\/} (2020).
+
+\bibitem{integr}
+{\sc Belardinelli, P., and Lenci, S.}
+\newblock Improving the global analysis of mechanical systems via parallel
+  computation of basins of attraction.
+\newblock {\em Procedia IUTAM 22\/} (2017), 192 -- 199.
+\newblock IUTAM Symposium on Nonlinear and Delayed Dynamics of Mechatronic
+  Systems.
+
+\bibitem{multistable}
+{\sc Brzeski, P., Lazarek, M., Kapitaniak, T., Kurths, J., and Perlikowski, P.}
+\newblock Basin stability approach for quantifying responses of multistable
+  systems with parameters mismatch.
+\newblock {\em Meccanica 51\/} (2016).
+
+\bibitem{anytraj}
+{\sc Ferrolho, H., Merkt, W., Ivan, V., Wolfslag, W., and Vijayakumar, S.}
+\newblock Optimizing dynamic trajectories for robustness to disturbances using
+  polytopic projections.
+
+\bibitem{respoly}
+{\sc Ferrolho, H., Merkt, W., Tiseo, C., and Vijayakumar, S.}
+\newblock Residual force polytope: Admissible task-space forces of dynamic
+  trajectories.
+
+\bibitem{sysrob}
+{\sc Hofbaur, N., Köb, J., Steinbauer, G., and Wotawa, F.}
+\newblock Improving robustness of mobile robots using model-based reasoning.
+\newblock {\em Journal of Intelligent and Robotic Systems 48\/} (2007).
+
+\bibitem{quant}
+{\sc Horibe, T., Zhou, B., Hara, S., and Tsubakino, D.}
+\newblock Quantitative measure for nonlinear unstable systems based on the
+  region of attraction and its application to designing parameter optimization
+  – inverted pendulum example.
+\newblock {\em Advanced Robotics 32\/} (2018), 399 -- 410.
+
+\bibitem{cell1}
+{\sc Hsu, C.~S.}
+\newblock {\em Cell-to-Cell Mapping A Method of Global Analysis for Nonlinear
+  Systems}.
+\newblock Springer, 1987.
+
+\bibitem{optrob}
+{\sc Park, G.-J., Hwang, K.-H., Lee, T., and Lee, K.}
+\newblock Robust design: An overview.
+\newblock {\em Aiaa Journal - AIAA J 44\/} (01 2006), 181--191.
+
+\bibitem{walkbasin}
+{\sc Rummel, J., Blum, Y., and Seyfarth, A.}
+\newblock Robust and efficient walking with spring-like legs.
+\newblock {\em Bioinspiration & biomimetics 5\/} (11 2010), 046004.
+
+\bibitem{limitsBoA}
+{\sc Schultz, P., Menck, P.~J., Heitzig, J., and Kurths, J.}
+\newblock Potentials and limits to basin stability estimation.
+\newblock {\em New Journal of Physics 19}, 2 (feb 2017), 023005.
+
+\bibitem{classify}
+{\sc Sprott, J.~C., and Xiong, A.}
+\newblock Classifying and quantifying basins of attraction.
+\newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science 25}, 8
+  (2015), 083101.
+
+\bibitem{cell2}
+{\sc Sun, J.-Q., Xiong, F.-R., Schutze, O., and Hernández, C.}
+\newblock {\em Cell Mapping Methods, Algorithmic Approaches and Applications}.
+\newblock Springer, 2019.
+
+\bibitem{parallel}
+{\sc Xiong, F., Qin, Z.-C., Ding, Q., Hernández~Castellanos, C., Fernandez,
+  J., Schüetze, O., and Sun, J.~Q.}
+\newblock Parallel cell mapping method for global analysis of high-dimensional
+  nonlinear dynamical systems.
+\newblock {\em Journal of Applied Mechanics 82\/} (07 2015).
+
+\end{thebibliography}

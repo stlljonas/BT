@@ -1,0 +1,72 @@
+% set counter to n-1:
+\setcounter{chapter}{0}
+
+\chapter{Introduction}
+\iffalse
+also state here that we are dealing with mechanical systems in particular\
+
+Give clear indicaitons that the goal is to work with robots and make them mor robust. Don't start with the general case. 
+
+
+BLATANT SoM COPY
+\fi
+\iffalse
+Quadruped locomotion has advanced far enough that they are now feasible for more and more  making legged robotics feasible for everyday applications. For 
+
+The recent advances in quadruped locomotion are allowing for an increasing amount of everday applications. 
+
+With advances in quadruped locomotion allowing for an increasing number of everyday applications, 
+
+As robots are taking the step from tightly controlled industrial and research spaces, a certain leve  
+
+The advances in quadruped locomotion are allowing legged robots to be a feasible solution for an increasing number of everyday tasks. In this process rob
+
+With quadruped locomotion continually advancing, legged robotics are being applied in increasigly diverse and uncertain environments. In order for these robots to accomplish their tasks 
+
+
+With the continuing advances in quadruped locomotion, legged robots are being applied to an ever increasing number of real world tasks. With this come many uncertainties present in real world environments. For robots to successfully make this step from the tightly controlled industrial and research settings, their robustness is 
+For the robots to still function like in a tighly controlled industrial or reasearch setting, their robustness is of utmost importance. 
+
+
+What am I trying to say:
+robot becoming better
+are applied in more settings
+also in more uncertain environments (especially that)
+robots still need to function as they would in a tightly controlled lab setting. 
+for this robustness is needed
+
+give examples.  
+
+Quadruped locomotion has advanced to an extent that applications outside of a tightly controlled industrial or research setting are becoming feasible. With this step into an uncertain and often unpredictable environment, a degree of robustness is necessary for these systems for them to successfully complete their tasks. 
+\fi
+
+Legged locomotion promises better performance within difficult terrain and human infrastructure, which often present insurmountable hurdles for wheeled robots. Inspired by nature, these platforms tend to quadruped resembling general mammal physiology. The successful implementation of such systems turns out to be much more difficult and expensive compared to their wheeled counterparts. 
+
+Still, continuing advances in legged locomotion are opening up an increasing amount of feasible use cases for quadruped robots. As with this process robots are often taking the step from tightly controlled research or industrial settings to real world environments, their robustness towards unpredictable distrubances and general uncertainty is of utmost importance. 
+
+In popular platforms like Boston Dynamics' "Spot" [REF] or "ANYmal" by ANY-botics [REF], robust behaviour is achieved via highly sophisticated control arlgorithms capable of producing precisely coordinated movements. The mechanical design of the legs on the other hand is generally kept rather simple. In contrast, examples like Theo Jansens "Strandbeest" \cite{jansen} achieve robust locomotion via a complex mechanical leg designs producing precise foot trajectories. A constant torque driving the main axle is all that is needed for locomotion to occur, completely eliminating the need for controllers to be applied.   
+While versatility here is limited to even surfaces, the question arises whether more adapted mechanical leg designs could elliviate the need for complex control strategies, while keeping the robustness properties. Such adaptations pormise improvements regarding cost and development time of legged robotics.
+
+In order to explore what benefits novel leg mechanisms might bring, a method of quantifying their robustness properties is needed. Taking robustness of a system a resilience against disturbances, one may check whether the robot is robust against any particular disturbance by applying it to the system in simulation. Simple criteria for differentiating between recovery and failure can be used for numerical evaluation. The sheer amount of possible disturbances makes a brute force approach infeasible in practice. 
+
+To overcome this, a finite set of scalable disturbances can be chosen against which robustness is measured. Concrete quantification of robustness can be achieved by approximating the size of the set of disturbances from which the system will recover from. 
+With this system parameters are optimized to maximize the robustness of given leg designs. Fundamentally different mechanism may also be quantitatively compared with respect to their robustness, given the same choice of disturbances set.
+
+\iffalse
+Lay out examples of two approaches of aquiring robustness (control vs. mechanical design), see below. 
+
+Want to find a compromise. 
+
+For this need to quantify robustness.
+
+Also briefly state how this is done
+brute force. use set of scalable disturbances. test how large these disturbances may be. use conservative measure to reduce number of evaluations. Change system parameters and optimize over robustness measure.
+
+
+
+
+Quadruped locomotion has advanced greatly over the  recent  years  and  is  slowly  finding  its  wayinto  mainstream  applications,  the  most  notablebeing Boston Dynamics’ autonomous quadruped”Spot”  and  the  ”ANYmal”  platform  by  ANY-botics.    While  robots  like  these  are  becomingincreasingly capable of navigating autonomouslyand robustly through rough terrain, the progressin the field can almost exclusively be attributedto  improvements  on  the  control  side,  while  thephysical design of the legs has stayed quite prim-itive.  A stark contrast to these systems can befound in closed loop linkages, notably the popu-lar  Theo  Jansen  Mechanism  [13],  which  are  ca-pable of achieving complex end effector trajecto-ries  with  nothing  but  a  constant  control  input.The  issue  is  that  these  complex  mechanical  de-signs lack general robustness as they only workin  very  predictable  environments,  making  themunviable  for  most  real  world  applications.   Oneapproach of improving on the robustness of de-signs lacking in that area could be adding spring-damper-systems to mimic the compliance of legsfound on mammals, which has been successfullyattempted before in [7] and [19].  The overarch-ing goal of the underlying project is therefore toexplore the benefits that alternative leg designscan bring to bio-inspired quadruped robots, first determining the optimally robust mechanical design of such legs and later developing suitable locomotion controllers.  Leaving the latter open forfuture work, the main problem to be solved here is the quantification of robustness, with the goal of  comparing  vastly  different  designs  under one unified measure.  As robustness is universally de-sired, a multitude of definitions as well as meth-ods for quantifying it exists, a selection of whichare discussed in this report. Section 2 will presentvarious robustness definitions and applications toconvey an intuitive understanding of the concept,including its limitations.  Section 3 will discuss indetail what requirements are needed in a robust-ness measure for the specific problem at hand, aswell  as  explaining  various  methods  for  fulfillingthem.  Finally, Section 4 will summarize and dis-cuss the findings and Section 5 will present theconclusion.3
+
+BLATANT SoM COPY END
+
+\fi

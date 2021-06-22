@@ -1,0 +1,58 @@
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: thesis.aux
+The style file: acm.bst
+A level-1 auxiliary file: abstract.aux
+A level-1 auxiliary file: ch01-introduction.aux
+A level-1 auxiliary file: ch02-related-work.aux
+A level-1 auxiliary file: ch03-more-chapters.aux
+A level-1 auxiliary file: ch04-conclusion.aux
+Database file #1: references.bib
+Warning--to sort, need author, editor, or key in trm
+Warning--to sort, need author or key in covrob
+Warning--empty author and editor in trm
+Warning--empty author in covrob
+Warning--empty journal in anytraj
+Warning--empty journal in respoly
+You've used 16 entries,
+            2253 wiz_defined-function locations,
+            630 strings with 6860 characters,
+and the built_in function-call counts, 4964 in all, are:
+= -- 448
+> -- 285
+< -- 0
++ -- 118
+- -- 102
+* -- 427
+:= -- 850
+add.period$ -- 46
+call.type$ -- 16
+change.case$ -- 96
+chr.to.int$ -- 0
+cite$ -- 22
+duplicate$ -- 153
+empty$ -- 367
+format.name$ -- 102
+if$ -- 992
+int.to.chr$ -- 0
+int.to.str$ -- 16
+missing$ -- 18
+newline$ -- 81
+num.names$ -- 28
+pop$ -- 92
+preamble$ -- 1
+purify$ -- 83
+quote$ -- 0
+skip$ -- 82
+stack$ -- 0
+substring$ -- 242
+swap$ -- 28
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 58
+warning$ -- 6
+while$ -- 35
+width$ -- 18
+write$ -- 152
+(There were 6 warnings)
