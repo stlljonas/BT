@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.4.25)  14 JUN 2021 15:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.4.25)  1 JUL 2021 20:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -408,7 +408,7 @@ Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 \c@LT@chunks=\count275
 \LT@p@ftn=\toks26
 )
-Class scrbook Info: longtable captions redefined on input line 50.
+Class scrbook Info: longtable captions redefined on input line 40.
 
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2020/01/03 v3.4h Customizing captions (AR)
@@ -749,7 +749,7 @@ Package scrbase Warning: Usage of deprecated command `\ifpdfoutput'.
 (scrbase)                The command has been renamed because of a
 (scrbase)                recommendation of The LaTeX Project Team.
 (scrbase)                Please replace `\ifpdfoutput' by `\Ifpdfoutput' on inp
-ut line 67.
+ut line 76.
 
 
 ! LaTeX Error: Option clash for package graphicx.
@@ -758,7 +758,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.72 }
+l.81 }
       
 ? 
 (/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pdfpages.sty
@@ -828,7 +828,7 @@ Package scrbase Warning: Usage of deprecated command `\ifpdfoutput'.
 (scrbase)                The command has been renamed because of a
 (scrbase)                recommendation of The LaTeX Project Team.
 (scrbase)                Please replace `\ifpdfoutput' by `\Ifpdfoutput' on inp
-ut line 89.
+ut line 93.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
@@ -946,7 +946,7 @@ Package scrbase Warning: Usage of deprecated command `\ifpdfoutput'.
 (scrbase)                The command has been renamed because of a
 (scrbase)                recommendation of The LaTeX Project Team.
 (scrbase)                Please replace `\ifpdfoutput' by `\Ifpdfoutput' on inp
-ut line 110.
+ut line 114.
 
 (./preamble.tex) (./bibpre.tex
 \bibhang=\skip87
@@ -955,25 +955,25 @@ ut line 110.
 (./ch04-conclusion.aux))
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-Package scrbase Info: activating english \contentsname on input line 134.
-Package scrbase Info: activating english \listfigurename on input line 134.
-Package scrbase Info: activating english \listtablename on input line 134.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+Package scrbase Info: activating english \contentsname on input line 138.
+Package scrbase Info: activating english \listfigurename on input line 138.
+Package scrbase Info: activating english \listtablename on input line 138.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1013,7 +1013,7 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
-Package hyperref Info: Link coloring ON on input line 134.
+Package hyperref Info: Link coloring ON on input line 138.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1026,9 +1026,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count323
 )
-LaTeX Info: Redefining \ref on input line 134.
-LaTeX Info: Redefining \pageref on input line 134.
-LaTeX Info: Redefining \nameref on input line 134.
+LaTeX Info: Redefining \ref on input line 138.
+LaTeX Info: Redefining \pageref on input line 138.
+LaTeX Info: Redefining \nameref on input line 138.
 
 (./thesis.out) (./thesis.out)
 \@outlinefile=\write4
@@ -1041,7 +1041,7 @@ Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           `bookmarkpackage=false' before \begin{document} and
 (scrbook)           you can avoid this message adding:
 (scrbook)             \usepackage{bookmark}
-(scrbook)           before \begin{document} on input line 134.
+(scrbook)           before \begin{document} on input line 138.
 
 (/usr/share/texlive/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2019/12/03 v1.28 PDF bookmarks (HO)
@@ -1062,7 +1062,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.161 \newcommand{\secref}[1]{Section \ref{#1}}
+l.165 \newcommand{\secref}[1]{Section \ref{#1}}
                                                
 ? 
 
@@ -1073,21 +1073,21 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.163 \newcommand{\figref}[1]{Figure \ref{#1}}
+l.167 \newcommand{\figref}[1]{Figure \ref{#1}}
                                               
 ? 
 LaTeX Font Info:    Trying to load font information for T1+phv on input line 18
-4.
+8.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 <figures/colors_on_black.png, id=7, 1665.22125pt x 972.63374pt>
 File: figures/colors_on_black.png Graphic file (type png)
 <use figures/colors_on_black.png>
-Package pdftex.def Info: figures/colors_on_black.png  used on input line 185.
+Package pdftex.def Info: figures/colors_on_black.png  used on input line 189.
 (pdftex.def)             Requested size: 364.24236pt x 212.74826pt.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <14.4> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 196.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 200.
 
 
 pdfTeX warning: /usr/bin/pdflatex (file ./figures/ETH_logo.pdf): PDF inclusion:
@@ -1095,12 +1095,12 @@ pdfTeX warning: /usr/bin/pdflatex (file ./figures/ETH_logo.pdf): PDF inclusion:
 <figures/ETH_logo.pdf, id=9, 8833.0pt x 2366.8425pt>
 File: figures/ETH_logo.pdf Graphic file (type pdf)
 <use figures/ETH_logo.pdf>
-Package pdftex.def Info: figures/ETH_logo.pdf  used on input line 200.
+Package pdftex.def Info: figures/ETH_logo.pdf  used on input line 204.
 (pdftex.def)             Requested size: 136.59175pt x 36.58455pt.
 <figures/CRL-logo.pdf, id=11, 601.24625pt x 119.44624pt>
 File: figures/CRL-logo.pdf Graphic file (type pdf)
 <use figures/CRL-logo.pdf>
-Package pdftex.def Info: figures/CRL-logo.pdf  used on input line 201.
+Package pdftex.def Info: figures/CRL-logo.pdf  used on input line 205.
 (pdftex.def)             Requested size: 136.59175pt x 27.13487pt.
 [1
 
@@ -1167,7 +1167,7 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.52 T
-      o overcome this, a finite set of scalable disturbances can be chosen a...
+      o overcome this, a finite set of scalable disturbances is chosen again...
 [1
 
 
@@ -1176,7 +1176,7 @@ l.52 T
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.246 \include{ch01-introduction}
+l.250 \include{ch01-introduction}
                                   [2]
 \openout2 = `ch02-related-work.aux'.
 
@@ -1207,12 +1207,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [4]
 [5 <./figures/resdidual_force_polytope.png>]
-<figures/IMG_0769.jpg, id=241, 960.58875pt x 945.5325pt>
+<figures/IMG_0769.jpg, id=240, 960.58875pt x 945.5325pt>
 File: figures/IMG_0769.jpg Graphic file (type jpg)
 <use figures/IMG_0769.jpg>
 Package pdftex.def Info: figures/IMG_0769.jpg  used on input line 88.
 (pdftex.def)             Requested size: 182.11769pt x 179.26349pt.
-<figures/IMG_0770.jpg, id=242, 948.54375pt x 949.5475pt>
+<figures/IMG_0770.jpg, id=241, 948.54375pt x 949.5475pt>
 File: figures/IMG_0770.jpg Graphic file (type jpg)
 <use figures/IMG_0770.jpg>
 Package pdftex.def Info: figures/IMG_0770.jpg  used on input line 92.
@@ -1249,6 +1249,15 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 ]
 chapter 3.
 
+Overfull \hbox (5.98636pt too wide) in paragraph at lines 9--10
+\T1/ptm/m/n/12 evo-lu-tion can be mod-eled by a set of or-di-nary dif-fer-en-ti
+al equa-tions of the form $[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12
+ ) = \OT1/cmr/bx/n/12 F\OT1/cmr/m/n/12 (\OT1/cmr/bx/n/12 x\OT1/cmr/m/n/12 (\OML
+/cmm/m/it/12 t\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; t\OT1/cmr/m/n/12 )$\T1/ptm/m/
+n/12 ,
+ []
+
+
 Overfull \hbox (2.28006pt too wide) has occurred while \output is active
 []|[] []
  []
@@ -1261,142 +1270,142 @@ Overfull \vbox (459.06232pt too high) has occurred while \output is active []
 <figures/conv_div_viz_crop.png, id=349, 295.5843pt x 250.7769pt>
 File: figures/conv_div_viz_crop.png Graphic file (type png)
 <use figures/conv_div_viz_crop.png>
-Package pdftex.def Info: figures/conv_div_viz_crop.png  used on input line 134.
+Package pdftex.def Info: figures/conv_div_viz_crop.png  used on input line 140.
 
 (pdftex.def)             Requested size: 227.6506pt x 193.14471pt.
-<figures/MinRad_col.png, id=353, 373.6359pt x 357.7365pt>
+<figures/MinRad_col.png, id=354, 373.6359pt x 357.7365pt>
 File: figures/MinRad_col.png Graphic file (type png)
 <use figures/MinRad_col.png>
-Package pdftex.def Info: figures/MinRad_col.png  used on input line 143.
+Package pdftex.def Info: figures/MinRad_col.png  used on input line 153.
 (pdftex.def)             Requested size: 182.11769pt x 174.3699pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \vbox (badness 3439) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [14 <./figures/conv_div_viz_crop.png>] [15 <./figures/MinRad_col.png>] [16]
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 44
-0.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 45
+2.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-) [17]
-Underfull \vbox (badness 2790) has occurred while \output is active []
-
- [18]
-<figures/fixed_point_detection.png, id=389, 2306.6175pt x 2131.965pt>
+) [17] [18]
+<figures/fixed_point_detection.png, id=393, 2306.6175pt x 2131.965pt>
 File: figures/fixed_point_detection.png Graphic file (type png)
 <use figures/fixed_point_detection.png>
 Package pdftex.def Info: figures/fixed_point_detection.png  used on input line 
-497.
+509.
 (pdftex.def)             Requested size: 318.70944pt x 294.56934pt.
-<figures/limit_cycle_detection.png, id=391, 2830.575pt x 2204.235pt>
+<figures/limit_cycle_detection.png, id=395, 2830.575pt x 2204.235pt>
 File: figures/limit_cycle_detection.png Graphic file (type png)
 <use figures/limit_cycle_detection.png>
 Package pdftex.def Info: figures/limit_cycle_detection.png  used on input line 
-509.
+521.
 (pdftex.def)             Requested size: 318.70944pt x 248.18436pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[19 <./figures/fixed_point_detection.png>] [20 <./figures/limit_cycle_detection
-.png>]
-<figures/noninverted_cloth_col_small.png, id=406, 350.30875pt x 345.29pt>
+[19 <./figures/fixed_point_detection.png>]
+<figures/noninverted_cloth_col_small.png, id=404, 350.30875pt x 345.29pt>
 File: figures/noninverted_cloth_col_small.png Graphic file (type png)
 <use figures/noninverted_cloth_col_small.png>
 Package pdftex.def Info: figures/noninverted_cloth_col_small.png  used on input
- line 524.
+ line 536.
 (pdftex.def)             Requested size: 136.59175pt x 134.6362pt.
-<figures/inverted_cloth_col_small.png, id=407, 487.8225pt x 533.995pt>
+<figures/inverted_cloth_col_small.png, id=405, 487.8225pt x 533.995pt>
 File: figures/inverted_cloth_col_small.png Graphic file (type png)
 <use figures/inverted_cloth_col_small.png>
 Package pdftex.def Info: figures/inverted_cloth_col_small.png  used on input li
-ne 529.
+ne 541.
 (pdftex.def)             Requested size: 182.11769pt x 199.35133pt.
-<figures/forced_cloth_nominal_graph.png, id=408, 2469.225pt x 1445.4pt>
+<figures/forced_cloth_nominal_graph.png, id=406, 2469.225pt x 1445.4pt>
 File: figures/forced_cloth_nominal_graph.png Graphic file (type png)
 <use figures/forced_cloth_nominal_graph.png>
 Package pdftex.def Info: figures/forced_cloth_nominal_graph.png  used on input 
-line 536.
+line 548.
 (pdftex.def)             Requested size: 182.11769pt x 106.59181pt.
-<figures/forced_cloth_inverted_graph.png, id=409, 2469.225pt x 1445.4pt>
+<figures/forced_cloth_inverted_graph.png, id=407, 2469.225pt x 1445.4pt>
 File: figures/forced_cloth_inverted_graph.png Graphic file (type png)
 <use figures/forced_cloth_inverted_graph.png>
 Package pdftex.def Info: figures/forced_cloth_inverted_graph.png  used on input
- line 541.
+ line 553.
 (pdftex.def)             Requested size: 182.11769pt x 106.59181pt.
- [21 <./figures/noninverted_cloth_col_small.png> <./figures/inverted_cloth_col_
-small.png> <./figures/forced_cloth_nominal_graph.png> <./figures/forced_cloth_i
-nverted_graph.png>]
-<figures/limit_cycle_convergence.png, id=422, 2577.63pt x 2547.5175pt>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[20 <./figures/limit_cycle_detection.png>] [21 <./figures/noninverted_cloth_col
+_small.png> <./figures/inverted_cloth_col_small.png> <./figures/forced_cloth_no
+minal_graph.png> <./figures/forced_cloth_inverted_graph.png>]
+<figures/limit_cycle_convergence.png, id=426, 2577.63pt x 2547.5175pt>
 File: figures/limit_cycle_convergence.png Graphic file (type png)
 <use figures/limit_cycle_convergence.png>
 Package pdftex.def Info: figures/limit_cycle_convergence.png  used on input lin
-e 570.
+e 582.
 (pdftex.def)             Requested size: 318.70944pt x 314.97931pt.
  [22 <./figures/limit_cycle_convergence.png>]
-<figures/minRad_tuning_graph.png, id=430, 2758.305pt x 2421.045pt>
+<figures/minRad_tuning_graph.png, id=434, 2758.305pt x 2421.045pt>
 File: figures/minRad_tuning_graph.png Graphic file (type png)
 <use figures/minRad_tuning_graph.png>
-Package pdftex.def Info: figures/minRad_tuning_graph.png  used on input line 62
-1.
+Package pdftex.def Info: figures/minRad_tuning_graph.png  used on input line 63
+3.
 (pdftex.def)             Requested size: 409.7683pt x 359.63158pt.
  [23 <./figures/minRad_tuning_graph.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 678.
+(hyperref)                removing `math shift' on input line 690.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 678.
+(hyperref)                removing `math shift' on input line 690.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 678.
+(hyperref)                removing `math shift' on input line 690.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 678.
+(hyperref)                removing `math shift' on input line 690.
 
 [24]
-<figures/laikago_zoom.png, id=442, 1057.9525pt x 570.13pt>
+<figures/laikago_zoom.png, id=446, 1057.9525pt x 570.13pt>
 File: figures/laikago_zoom.png Graphic file (type png)
 <use figures/laikago_zoom.png>
-Package pdftex.def Info: figures/laikago_zoom.png  used on input line 747.
+Package pdftex.def Info: figures/laikago_zoom.png  used on input line 759.
 (pdftex.def)             Requested size: 227.6506pt x 122.67995pt.
  [25 <./figures/laikago_zoom.png>]
-<figures/lkgdrop_1_crop.png, id=448, 1356.06625pt x 1010.77625pt>
+<figures/lkgdrop_1_crop.png, id=452, 1356.06625pt x 1010.77625pt>
 File: figures/lkgdrop_1_crop.png Graphic file (type png)
 <use figures/lkgdrop_1_crop.png>
-Package pdftex.def Info: figures/lkgdrop_1_crop.png  used on input line 759.
+Package pdftex.def Info: figures/lkgdrop_1_crop.png  used on input line 771.
 (pdftex.def)             Requested size: 145.6997pt x 108.59464pt.
-<figures/lkgdrop_2_crop.png, id=449, 1358.07375pt x 1007.765pt>
+<figures/lkgdrop_2_crop.png, id=453, 1358.07375pt x 1007.765pt>
 File: figures/lkgdrop_2_crop.png Graphic file (type png)
 <use figures/lkgdrop_2_crop.png>
-Package pdftex.def Info: figures/lkgdrop_2_crop.png  used on input line 764.
+Package pdftex.def Info: figures/lkgdrop_2_crop.png  used on input line 776.
 (pdftex.def)             Requested size: 145.6997pt x 108.11734pt.
-<figures/lkgdrop_3_crop.png, id=450, 1358.07375pt x 1005.7575pt>
+<figures/lkgdrop_3_crop.png, id=454, 1358.07375pt x 1005.7575pt>
 File: figures/lkgdrop_3_crop.png Graphic file (type png)
 <use figures/lkgdrop_3_crop.png>
-Package pdftex.def Info: figures/lkgdrop_3_crop.png  used on input line 769.
+Package pdftex.def Info: figures/lkgdrop_3_crop.png  used on input line 781.
 (pdftex.def)             Requested size: 145.6997pt x 107.90196pt.
-<figures/lkgswing_1_crop.png, id=451, 1380.15625pt x 818.05624pt>
+<figures/lkgswing_1_crop.png, id=455, 1380.15625pt x 818.05624pt>
 File: figures/lkgswing_1_crop.png Graphic file (type png)
 <use figures/lkgswing_1_crop.png>
-Package pdftex.def Info: figures/lkgswing_1_crop.png  used on input line 784.
+Package pdftex.def Info: figures/lkgswing_1_crop.png  used on input line 796.
 (pdftex.def)             Requested size: 136.59175pt x 80.9616pt.
-<figures/lkgswing_2_crop.png, id=452, 1435.3625pt x 839.135pt>
+<figures/lkgswing_2_crop.png, id=456, 1435.3625pt x 839.135pt>
 File: figures/lkgswing_2_crop.png Graphic file (type png)
 <use figures/lkgswing_2_crop.png>
-Package pdftex.def Info: figures/lkgswing_2_crop.png  used on input line 789.
+Package pdftex.def Info: figures/lkgswing_2_crop.png  used on input line 801.
 (pdftex.def)             Requested size: 136.59175pt x 79.84668pt.
-<figures/lkgswing_3_crop.png, id=453, 1482.53876pt x 885.3075pt>
+<figures/lkgswing_3_crop.png, id=457, 1482.53876pt x 885.3075pt>
 File: figures/lkgswing_3_crop.png Graphic file (type png)
 <use figures/lkgswing_3_crop.png>
-Package pdftex.def Info: figures/lkgswing_3_crop.png  used on input line 794.
+Package pdftex.def Info: figures/lkgswing_3_crop.png  used on input line 806.
 (pdftex.def)             Requested size: 136.59175pt x 81.56544pt.
  [26 <./figures/lkgdrop_1_crop.png> <./figures/lkgdrop_2_crop.png> <./figures/l
 kgdrop_3_crop.png> <./figures/lkgswing_1_crop.png> <./figures/lkgswing_2_crop.p
@@ -1405,16 +1414,16 @@ ng> <./figures/lkgswing_3_crop.png>]
 
 ]
 chapter 4.
-<figures/minrad_analysis_v2.png, id=468, 2180.145pt x 2023.56pt>
+<figures/minrad_analysis_v2.png, id=472, 2180.145pt x 2023.56pt>
 File: figures/minrad_analysis_v2.png Graphic file (type png)
 <use figures/minrad_analysis_v2.png>
-Package pdftex.def Info: figures/minrad_analysis_v2.png  used on input line 854
+Package pdftex.def Info: figures/minrad_analysis_v2.png  used on input line 866
 .
 (pdftex.def)             Requested size: 227.6506pt x 211.2913pt.
-<figures/droptest_ds_v2.png, id=471, 3209.9925pt x 3234.0825pt>
+<figures/droptest_ds_v2.png, id=475, 3209.9925pt x 3234.0825pt>
 File: figures/droptest_ds_v2.png Graphic file (type png)
 <use figures/droptest_ds_v2.png>
-Package pdftex.def Info: figures/droptest_ds_v2.png  used on input line 870.
+Package pdftex.def Info: figures/droptest_ds_v2.png  used on input line 882.
 (pdftex.def)             Requested size: 227.6506pt x 229.32043pt.
 
 Overfull \hbox (2.28006pt too wide) has occurred while \output is active
@@ -1426,98 +1435,99 @@ Overfull \vbox (459.06232pt too high) has occurred while \output is active []
 
 
 [29] [30 <./figures/minrad_analysis_v2.png> <./figures/droptest_ds_v2.png>]
-<figures/droptest_ds_overay_v10000.png, id=483, 3209.9925pt x 3234.0825pt>
+<figures/droptest_ds_overay_v10000.png, id=487, 3209.9925pt x 3234.0825pt>
 File: figures/droptest_ds_overay_v10000.png Graphic file (type png)
 <use figures/droptest_ds_overay_v10000.png>
 Package pdftex.def Info: figures/droptest_ds_overay_v10000.png  used on input l
-ine 880.
+ine 892.
 (pdftex.def)             Requested size: 227.6506pt x 229.32043pt.
-<figures/droptest_ps_full_correct.png, id=484, 588.2778pt x 481.3182pt>
+<figures/droptest_ps_full_correct.png, id=488, 588.2778pt x 481.3182pt>
 File: figures/droptest_ps_full_correct.png Graphic file (type png)
 <use figures/droptest_ps_full_correct.png>
 Package pdftex.def Info: figures/droptest_ps_full_correct.png  used on input li
-ne 889.
+ne 901.
 (pdftex.def)             Requested size: 150.25023pt x 122.92914pt.
-<figures/droptest_ps_zoom1_correct.png, id=485, 588.2778pt x 481.3182pt>
+<figures/droptest_ps_zoom1_correct.png, id=489, 588.2778pt x 481.3182pt>
 File: figures/droptest_ps_zoom1_correct.png Graphic file (type png)
 <use figures/droptest_ps_zoom1_correct.png>
 Package pdftex.def Info: figures/droptest_ps_zoom1_correct.png  used on input l
-ine 894.
+ine 906.
 (pdftex.def)             Requested size: 150.25023pt x 122.92914pt.
-<figures/droptest_ps_zoom2_correct.png, id=486, 588.2778pt x 481.3182pt>
+<figures/droptest_ps_zoom2_correct.png, id=490, 588.2778pt x 481.3182pt>
 File: figures/droptest_ps_zoom2_correct.png Graphic file (type png)
 <use figures/droptest_ps_zoom2_correct.png>
 Package pdftex.def Info: figures/droptest_ps_zoom2_correct.png  used on input l
-ine 899.
+ine 911.
 (pdftex.def)             Requested size: 150.25023pt x 122.92914pt.
 
 [31 <./figures/droptest_ds_overay_v10000.png> <./figures/droptest_ps_full_corre
 ct.png> <./figures/droptest_ps_zoom1_correct.png> <./figures/droptest_ps_zoom2_
 correct.png>]
-<figures/droptest_ds_bad_correct.png, id=496, 463.2507pt x 468.3096pt>
+<figures/droptest_ds_bad_correct.png, id=500, 463.2507pt x 468.3096pt>
 File: figures/droptest_ds_bad_correct.png Graphic file (type png)
 <use figures/droptest_ds_bad_correct.png>
 Package pdftex.def Info: figures/droptest_ds_bad_correct.png  used on input lin
-e 921.
+e 933.
 (pdftex.def)             Requested size: 150.25023pt x 151.89154pt.
-<figures/droptest_ds_medium_correct.png, id=497, 462.528pt x 463.9734pt>
+<figures/droptest_ds_medium_correct.png, id=501, 462.528pt x 463.9734pt>
 File: figures/droptest_ds_medium_correct.png Graphic file (type png)
 <use figures/droptest_ds_medium_correct.png>
 Package pdftex.def Info: figures/droptest_ds_medium_correct.png  used on input 
-line 927.
+line 939.
 (pdftex.def)             Requested size: 150.25023pt x 150.71877pt.
-<figures/droptest_ds_opt_correct.png, id=498, 466.8642pt x 463.9734pt>
+<figures/droptest_ds_opt_correct.png, id=502, 466.8642pt x 463.9734pt>
 File: figures/droptest_ds_opt_correct.png Graphic file (type png)
 <use figures/droptest_ds_opt_correct.png>
 Package pdftex.def Info: figures/droptest_ds_opt_correct.png  used on input lin
-e 933.
+e 945.
 (pdftex.def)             Requested size: 150.25023pt x 149.31699pt.
  [32 <./figures/droptest_ds_bad_correct.png> <./figures/droptest_ds_medium_corr
 ect.png> <./figures/droptest_ds_opt_correct.png>]
-<figures/swingtest_ds_overay_v3.png, id=506, 3209.9925pt x 3216.015pt>
+<figures/swingtest_ds_overay_v3.png, id=510, 3209.9925pt x 3216.015pt>
 File: figures/swingtest_ds_overay_v3.png Graphic file (type png)
 <use figures/swingtest_ds_overay_v3.png>
 Package pdftex.def Info: figures/swingtest_ds_overay_v3.png  used on input line
- 966.
+ 978.
 (pdftex.def)             Requested size: 227.6506pt x 228.03932pt.
-<figures/swingtest_ps.png, id=509, 579.6054pt x 563.706pt>
+<figures/swingtest_ps.png, id=513, 579.6054pt x 563.706pt>
 File: figures/swingtest_ps.png Graphic file (type png)
 <use figures/swingtest_ps.png>
-Package pdftex.def Info: figures/swingtest_ps.png  used on input line 976.
+Package pdftex.def Info: figures/swingtest_ps.png  used on input line 988.
 (pdftex.def)             Requested size: 227.6506pt x 221.4013pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [33 <./figures/swingtest_ds_overay_v3.png>]
-<figures/swingtest_ds_bad.png, id=515, 1951.29pt x 1951.29pt>
+<figures/swingtest_ds_bad.png, id=519, 1951.29pt x 1951.29pt>
 File: figures/swingtest_ds_bad.png Graphic file (type png)
 <use figures/swingtest_ds_bad.png>
-Package pdftex.def Info: figures/swingtest_ds_bad.png  used on input line 990.
+Package pdftex.def Info: figures/swingtest_ds_bad.png  used on input line 1002.
+
 (pdftex.def)             Requested size: 150.25023pt x 150.24086pt.
-<figures/swingtest_ds_medium.png, id=516, 1933.2225pt x 1933.2225pt>
+<figures/swingtest_ds_medium.png, id=520, 1933.2225pt x 1933.2225pt>
 File: figures/swingtest_ds_medium.png Graphic file (type png)
 <use figures/swingtest_ds_medium.png>
-Package pdftex.def Info: figures/swingtest_ds_medium.png  used on input line 99
-6.
+Package pdftex.def Info: figures/swingtest_ds_medium.png  used on input line 10
+08.
 (pdftex.def)             Requested size: 150.25023pt x 150.23618pt.
-<figures/swingtest_ds_opt_vfinal.png, id=517, 463.9734pt x 463.9734pt>
+<figures/swingtest_ds_opt_vfinal.png, id=521, 463.9734pt x 463.9734pt>
 File: figures/swingtest_ds_opt_vfinal.png Graphic file (type png)
 <use figures/swingtest_ds_opt_vfinal.png>
 Package pdftex.def Info: figures/swingtest_ds_opt_vfinal.png  used on input lin
-e 1002.
+e 1014.
 (pdftex.def)             Requested size: 150.25023pt x 150.24443pt.
-<figures/swingtest_2dPS_cmaes.png, id=518, 2378.8875pt x 1264.725pt>
+<figures/swingtest_2dPS_cmaes.png, id=522, 2378.8875pt x 1264.725pt>
 File: figures/swingtest_2dPS_cmaes.png Graphic file (type png)
 <use figures/swingtest_2dPS_cmaes.png>
 Package pdftex.def Info: figures/swingtest_2dPS_cmaes.png  used on input line 1
-017.
+029.
 (pdftex.def)             Requested size: 227.6506pt x 121.01854pt.
-<figures/swingtest_6d_cmaes.png, id=519, 2378.8875pt x 1264.725pt>
+<figures/swingtest_6d_cmaes.png, id=523, 2378.8875pt x 1264.725pt>
 File: figures/swingtest_6d_cmaes.png Graphic file (type png)
 <use figures/swingtest_6d_cmaes.png>
-Package pdftex.def Info: figures/swingtest_6d_cmaes.png  used on input line 102
-2.
+Package pdftex.def Info: figures/swingtest_6d_cmaes.png  used on input line 103
+4.
 (pdftex.def)             Requested size: 227.6506pt x 121.01854pt.
 
 
@@ -1806,14 +1816,14 @@ Class scrbook Warning: deprecated old font command `\sc' used.
 ! Undefined control sequence.
 <argument> \@listctr 
                      
-l.55 \bibitem{sysrob}
-                     
+l.55 \bibitem{add}
+                  
 ? 
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.55 \bibitem{sysrob}
-                     
+l.55 \bibitem{add}
+                  
 ? 
 
 Class scrbook Warning: deprecated old font command `\sc' used.
@@ -1839,14 +1849,14 @@ Class scrbook Warning: deprecated old font command `\sc' used.
 ! Undefined control sequence.
 <argument> \@listctr 
                      
-l.60 \bibitem{quant}
-                    
+l.62 \bibitem{sysrob}
+                     
 ? 
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.60 \bibitem{quant}
-                    
+l.62 \bibitem{sysrob}
+                     
 ? 
 
 Class scrbook Warning: deprecated old font command `\sc' used.
@@ -1867,18 +1877,18 @@ Class scrbook Warning: deprecated old font command `\sc' used.
 (scrbook)              Otherwise you should reconfigure or replace the
 (scrbook)              package. If you have used the old font command
 (scrbook)              `\sc' yourself you should replace it, e.g., by
-(scrbook)              `\normalfont \scshape ' on input line 61.
+(scrbook)              `\normalfont \scshape ' on input line 63.
 
 ! Undefined control sequence.
 <argument> \@listctr 
                      
-l.67 \bibitem{cell1}
+l.67 \bibitem{quant}
                     
 ? 
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.67 \bibitem{cell1}
+l.67 \bibitem{quant}
                     
 ? 
 
@@ -1905,14 +1915,14 @@ Class scrbook Warning: deprecated old font command `\sc' used.
 ! Undefined control sequence.
 <argument> \@listctr 
                      
-l.73 \bibitem{anymal}
-                     
+l.74 \bibitem{cell1}
+                    
 ? 
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.73 \bibitem{anymal}
-                     
+l.74 \bibitem{cell1}
+                    
 ? 
 
 Class scrbook Warning: deprecated old font command `\sc' used.
@@ -1933,18 +1943,18 @@ Class scrbook Warning: deprecated old font command `\sc' used.
 (scrbook)              Otherwise you should reconfigure or replace the
 (scrbook)              package. If you have used the old font command
 (scrbook)              `\sc' yourself you should replace it, e.g., by
-(scrbook)              `\normalfont \scshape ' on input line 74.
+(scrbook)              `\normalfont \scshape ' on input line 75.
 
 ! Undefined control sequence.
 <argument> \@listctr 
                      
-l.81 \bibitem{jansen}
+l.80 \bibitem{anymal}
                      
 ? 
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.81 \bibitem{jansen}
+l.80 \bibitem{anymal}
                      
 ? 
 
@@ -1966,7 +1976,7 @@ Class scrbook Warning: deprecated old font command `\sc' used.
 (scrbook)              Otherwise you should reconfigure or replace the
 (scrbook)              package. If you have used the old font command
 (scrbook)              `\sc' yourself you should replace it, e.g., by
-(scrbook)              `\normalfont \scshape ' on input line 82.
+(scrbook)              `\normalfont \scshape ' on input line 81.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1991,7 +2001,7 @@ Class scrbook Warning: deprecated old font command `\sl' used.
 (scrbook)              Otherwise you should reconfigure or replace the
 (scrbook)              package. If you have used the old font command
 (scrbook)              `\sl' yourself you should replace it, e.g., by
-(scrbook)              `\normalfont \slshape ' on input line 86.
+(scrbook)              `\normalfont \slshape ' on input line 87.
 
 [39
 
@@ -2000,46 +2010,13 @@ Class scrbook Warning: deprecated old font command `\sl' used.
 ! Undefined control sequence.
 <argument> \@listctr 
                      
-l.87 \bibitem{jansengait}
-                         
-? 
-! You can't use `\relax' after \the.
-<recently read> \c@ 
-                    
-l.87 \bibitem{jansengait}
-                         
-? 
-
-Class scrbook Warning: deprecated old font command `\sc' used.
-(scrbook)              You should note, that since 1994 LaTeX2e provides a
-(scrbook)              new font selection scheme called NFSS2 with several
-(scrbook)              new, combinable font commands. New KOMA-Script classes
-(scrbook)              defined the old font commands like `\sc' only for
-(scrbook)              compatibility with LaTeX 2.09 document styles of
-(scrbook)              Script 2.0. These commands are deprecated and
-(scrbook)              undocumented at least since 2003. Since 2013,
-(scrbook)              KOMA-Script classes warned about soon removement of
-(scrbook)              these deprecated commands. Now, after two decades of
-(scrbook)              LaTeX2e, NFSS2, and KOMA-Script these commands will
-(scrbook)              not work any longer. If loading a package results in
-(scrbook)              this message you should contact the author of that
-(scrbook)              package and ask him to replace the depracted font
-(scrbook)              command `\sc', e.g., by `\normalfont \scshape '.
-(scrbook)              Otherwise you should reconfigure or replace the
-(scrbook)              package. If you have used the old font command
-(scrbook)              `\sc' yourself you should replace it, e.g., by
-(scrbook)              `\normalfont \scshape ' on input line 88.
-
-! Undefined control sequence.
-<argument> \@listctr 
-                     
-l.93 \bibitem{optrob}
+l.88 \bibitem{jansen}
                      
 ? 
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.93 \bibitem{optrob}
+l.88 \bibitem{jansen}
                      
 ? 
 
@@ -2061,18 +2038,51 @@ Class scrbook Warning: deprecated old font command `\sc' used.
 (scrbook)              Otherwise you should reconfigure or replace the
 (scrbook)              package. If you have used the old font command
 (scrbook)              `\sc' yourself you should replace it, e.g., by
-(scrbook)              `\normalfont \scshape ' on input line 94.
+(scrbook)              `\normalfont \scshape ' on input line 89.
 
 ! Undefined control sequence.
 <argument> \@listctr 
                      
-l.98 \bibitem{invpend}
+l.94 \bibitem{jansengait}
+                         
+? 
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.94 \bibitem{jansengait}
+                         
+? 
+
+Class scrbook Warning: deprecated old font command `\sc' used.
+(scrbook)              You should note, that since 1994 LaTeX2e provides a
+(scrbook)              new font selection scheme called NFSS2 with several
+(scrbook)              new, combinable font commands. New KOMA-Script classes
+(scrbook)              defined the old font commands like `\sc' only for
+(scrbook)              compatibility with LaTeX 2.09 document styles of
+(scrbook)              Script 2.0. These commands are deprecated and
+(scrbook)              undocumented at least since 2003. Since 2013,
+(scrbook)              KOMA-Script classes warned about soon removement of
+(scrbook)              these deprecated commands. Now, after two decades of
+(scrbook)              LaTeX2e, NFSS2, and KOMA-Script these commands will
+(scrbook)              not work any longer. If loading a package results in
+(scrbook)              this message you should contact the author of that
+(scrbook)              package and ask him to replace the depracted font
+(scrbook)              command `\sc', e.g., by `\normalfont \scshape '.
+(scrbook)              Otherwise you should reconfigure or replace the
+(scrbook)              package. If you have used the old font command
+(scrbook)              `\sc' yourself you should replace it, e.g., by
+(scrbook)              `\normalfont \scshape ' on input line 95.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.100 \bibitem{optrob}
                       
 ? 
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.98 \bibitem{invpend}
+l.100 \bibitem{optrob}
                       
 ? 
 
@@ -2094,18 +2104,51 @@ Class scrbook Warning: deprecated old font command `\sc' used.
 (scrbook)              Otherwise you should reconfigure or replace the
 (scrbook)              package. If you have used the old font command
 (scrbook)              `\sc' yourself you should replace it, e.g., by
-(scrbook)              `\normalfont \scshape ' on input line 99.
+(scrbook)              `\normalfont \scshape ' on input line 101.
 
 ! Undefined control sequence.
 <argument> \@listctr 
                      
-l.103 \bibitem{walkbasin}
+l.105 \bibitem{invpend}
+                       
+? 
+! You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.105 \bibitem{invpend}
+                       
+? 
+
+Class scrbook Warning: deprecated old font command `\sc' used.
+(scrbook)              You should note, that since 1994 LaTeX2e provides a
+(scrbook)              new font selection scheme called NFSS2 with several
+(scrbook)              new, combinable font commands. New KOMA-Script classes
+(scrbook)              defined the old font commands like `\sc' only for
+(scrbook)              compatibility with LaTeX 2.09 document styles of
+(scrbook)              Script 2.0. These commands are deprecated and
+(scrbook)              undocumented at least since 2003. Since 2013,
+(scrbook)              KOMA-Script classes warned about soon removement of
+(scrbook)              these deprecated commands. Now, after two decades of
+(scrbook)              LaTeX2e, NFSS2, and KOMA-Script these commands will
+(scrbook)              not work any longer. If loading a package results in
+(scrbook)              this message you should contact the author of that
+(scrbook)              package and ask him to replace the depracted font
+(scrbook)              command `\sc', e.g., by `\normalfont \scshape '.
+(scrbook)              Otherwise you should reconfigure or replace the
+(scrbook)              package. If you have used the old font command
+(scrbook)              `\sc' yourself you should replace it, e.g., by
+(scrbook)              `\normalfont \scshape ' on input line 106.
+
+! Undefined control sequence.
+<argument> \@listctr 
+                     
+l.110 \bibitem{walkbasin}
                          
 ? 
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.103 \bibitem{walkbasin}
+l.110 \bibitem{walkbasin}
                          
 ? 
 
@@ -2127,22 +2170,22 @@ Class scrbook Warning: deprecated old font command `\sc' used.
 (scrbook)              Otherwise you should reconfigure or replace the
 (scrbook)              package. If you have used the old font command
 (scrbook)              `\sc' yourself you should replace it, e.g., by
-(scrbook)              `\normalfont \scshape ' on input line 104.
+(scrbook)              `\normalfont \scshape ' on input line 111.
 
 ! Misplaced alignment tab character &.
-l.106 \newblock {\em Bioinspiration &
+l.113 \newblock {\em Bioinspiration &
                                       biomimetics 5\/} (11 2010), 046004.
 ? 
 ! Undefined control sequence.
 <argument> \@listctr 
                      
-l.108 \bibitem{limitsBoA}
+l.115 \bibitem{limitsBoA}
                          
 ? 
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.108 \bibitem{limitsBoA}
+l.115 \bibitem{limitsBoA}
                          
 ? 
 
@@ -2164,18 +2207,18 @@ Class scrbook Warning: deprecated old font command `\sc' used.
 (scrbook)              Otherwise you should reconfigure or replace the
 (scrbook)              package. If you have used the old font command
 (scrbook)              `\sc' yourself you should replace it, e.g., by
-(scrbook)              `\normalfont \scshape ' on input line 109.
+(scrbook)              `\normalfont \scshape ' on input line 116.
 
 ! Undefined control sequence.
 <argument> \@listctr 
                      
-l.113 \bibitem{classify}
+l.120 \bibitem{classify}
                         
 ? 
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.113 \bibitem{classify}
+l.120 \bibitem{classify}
                         
 ? 
 
@@ -2197,18 +2240,18 @@ Class scrbook Warning: deprecated old font command `\sc' used.
 (scrbook)              Otherwise you should reconfigure or replace the
 (scrbook)              package. If you have used the old font command
 (scrbook)              `\sc' yourself you should replace it, e.g., by
-(scrbook)              `\normalfont \scshape ' on input line 114.
+(scrbook)              `\normalfont \scshape ' on input line 121.
 
 ! Undefined control sequence.
 <argument> \@listctr 
                      
-l.119 \bibitem{cell2}
+l.126 \bibitem{cell2}
                      
 ? 
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.119 \bibitem{cell2}
+l.126 \bibitem{cell2}
                      
 ? 
 
@@ -2230,18 +2273,18 @@ Class scrbook Warning: deprecated old font command `\sc' used.
 (scrbook)              Otherwise you should reconfigure or replace the
 (scrbook)              package. If you have used the old font command
 (scrbook)              `\sc' yourself you should replace it, e.g., by
-(scrbook)              `\normalfont \scshape ' on input line 120.
+(scrbook)              `\normalfont \scshape ' on input line 127.
 
 ! Undefined control sequence.
 <argument> \@listctr 
                      
-l.124 \bibitem{parallel}
+l.131 \bibitem{parallel}
                         
 ? 
 ! You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.124 \bibitem{parallel}
+l.131 \bibitem{parallel}
                         
 ? 
 
@@ -2263,7 +2306,7 @@ Class scrbook Warning: deprecated old font command `\sc' used.
 (scrbook)              Otherwise you should reconfigure or replace the
 (scrbook)              package. If you have used the old font command
 (scrbook)              `\sc' yourself you should replace it, e.g., by
-(scrbook)              `\normalfont \scshape ' on input line 125.
+(scrbook)              `\normalfont \scshape ' on input line 132.
 
 )
 
@@ -2285,15 +2328,15 @@ Class scrbook Warning: deprecated old font command `\sl' used.
 (scrbook)              Otherwise you should reconfigure or replace the
 (scrbook)              package. If you have used the old font command
 (scrbook)              `\sl' yourself you should replace it, e.g., by
-(scrbook)              `\normalfont \slshape ' on input line 270.
+(scrbook)              `\normalfont \slshape ' on input line 274.
 
 [40]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 270.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 270.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 274.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 274.
  (./thesis.aux (./abstract.aux) (./ch01-introduction.aux)
 (./ch02-related-work.aux) (./ch03-more-chapters.aux) (./ch04-conclusion.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 270.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 270.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 274.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 274.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -2302,10 +2345,10 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 26098 strings out of 481239
- 502898 string characters out of 5920377
- 885209 words of memory out of 5000000
- 40615 multiletter control sequences out of 15000+600000
+ 26100 strings out of 481239
+ 502911 string characters out of 5920377
+ 884209 words of memory out of 5000000
+ 40616 multiletter control sequences out of 15000+600000
  605132 words of font info for 114 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,29n,81p,10101b,880s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2332,10 +2375,10 @@ usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
 times/utmri8a.pfb>
-Output written on thesis.pdf (48 pages, 12837639 bytes).
+Output written on thesis.pdf (48 pages, 12837297 bytes).
 PDF statistics:
- 768 PDF objects out of 1000 (max. 8388607)
- 619 compressed objects within 7 object streams
- 150 named destinations out of 1000 (max. 500000)
+ 773 PDF objects out of 1000 (max. 8388607)
+ 624 compressed objects within 7 object streams
+ 151 named destinations out of 1000 (max. 500000)
  505 words of extra memory for PDF output out of 10000 (max. 10000000)
 

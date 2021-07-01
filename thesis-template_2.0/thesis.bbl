@@ -52,6 +52,13 @@ On redundancy, efficiency, and robustness in coverage for multiple robots.
 \newblock Residual force polytope: Admissible task-space forces of dynamic
   trajectories.
 
+\bibitem{add}
+{\sc Geilinger, M., Hahn, D., Zehnder, J., B\"{a}cher, M., Thomaszewski, B.,
+  and Coros, S.}
+\newblock Add: Analytically differentiable dynamics for multi-body systems with
+  frictional contact.
+\newblock {\em ACM Trans. Graph. 39}, 6 (Nov. 2020).
+
 \bibitem{sysrob}
 {\sc Hofbaur, N., Köb, J., Steinbauer, G., and Wotawa, F.}
 \newblock Improving robustness of mobile robots using model-based reasoning.

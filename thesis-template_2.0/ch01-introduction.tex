@@ -40,18 +40,35 @@ give examples.
 Quadruped locomotion has advanced to an extent that applications outside of a tightly controlled industrial or research setting are becoming feasible. With this step into an uncertain and often unpredictable environment, a degree of robustness is necessary for these systems for them to successfully complete their tasks. 
 \fi
 
-Legged locomotion promises better performance within difficult terrain and human infrastructure, which often present insurmountable hurdles for wheeled robots. Inspired by nature, these platforms tend to be quadrupeds resembling mammal physiology. The successful implementation of such systems is generally much more difficult and expensive compared to their wheeled counterparts. 
+Legged locomotion promises robust performance within difficult terrain and human infrastructure, which often present insurmountable hurdles for wheeled robots. Inspired by nature, these platforms tend to be quadrupeds resembling mammal physiology. The successful implementation of such systems is generally much more difficult and expensive compared to their wheeled counterparts. 
 
 Still, continuing advances in legged locomotion are opening up an increasing amount of feasible use cases for quadruped robots. As with this process robots are often taking the step from tightly controlled research or industrial settings to real world environments, their robustness towards unpredictable disturbances and general uncertainty is of utmost importance. 
 
 In popular platforms like Boston Dynamics' "Spot" \cite{spot} or "ANYmal" by ANY-botics \cite{anymal}, robust behaviour is achieved via highly sophisticated control algorithms capable of producing precisely coordinated movements. The mechanical design of the legs on the other hand is generally kept rather simple. In contrast, examples like Theo Jansens "Strandbeest" \cite{jansen} achieve robust locomotion via a complex mechanical leg designs producing precise foot trajectories. A constant torque driving the main axle is all that is needed for locomotion to occur, completely eliminating the need for controllers to be applied.   
 While versatility here is limited to even surfaces, the question arises whether more adapted mechanical leg designs could alliviate the need for complex control strategies, while keeping the robustness properties. Such adaptations promise improvements regarding cost and development time of legged robotics.
 
-In order to explore what benefits novel leg mechanisms might bring, a method of quantifying their robustness properties is needed. Taking robustness of a system a resilience against disturbances, one may check whether the robot is robust against any particular disturbance by applying it to the system in simulation. Simple criteria for differentiating between recovery and failure can be used for numerical evaluation. The sheer amount of possible disturbances however makes a brute force approach infeasible in practice. 
+In order to explore what benefits novel leg mechanisms might bring, a method of quantifying their robustness properties is needed. Taking robustness of a system as resilience against disturbances, one may check whether the robot is robust against any particular disturbance by applying it to the system in simulation. Simple criteria for differentiating between recovery and failure can be used to evaluate the response numerically. The sheer amount of possible disturbances however makes a brute force approach infeasible in practice. 
 
-To overcome this, a finite set of scalable disturbances can be chosen against which robustness is measured. Concrete quantification of robustness can be achieved by approximating the size of the set of disturbances from which the system will recover from. 
+To overcome this, a finite set of scalable disturbances is chosen against which robustness is measured. Concrete quantification of robustness is achieved by approximating the size of the set of disturbances from which the system will recover from. 
 With this system parameters are optimized to maximize the robustness of given leg designs. Fundamentally different mechanism may also be quantitatively compared with respect to their robustness, given the same choice of disturbanc set.
 
+While the focus in this thesis lies on robotic leg design, the framework may be applied to other robotics applications as well. Given a functional dynamical system with established poses or cyclic motion patterns, the method can be applied to maximize its robustness against specific sets of disturbances by finding optimal system parameters. 
+
+
+
+\iffalse
+Given .. system parameter optimization is possible. 
+
+As long as a functioning model is at hand, 
+
+The proposed robustness measure is however not limited to robotic leg design but can be applied to any dynamical system that interacts with its environment and for which an undisturbed desired behaviour is known apriori. 
+
+Applications of the framework are not limited to robotic legs allows for robustness quantification and optimization of any dynamical system 
+
+if system has established behaviour it can be made mor robust to disturbances
+not limited to robotic legs
+works in 
+\fi
 \iffalse
 Lay out examples of two approaches of acquiring robustness (control vs. mechanical design), see below. 
 

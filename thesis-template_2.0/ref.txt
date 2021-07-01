@@ -3,11 +3,12 @@
 \bibcite{covrob}{5}
 \bibcite{sixdim}{18}
 \bibcite{integr}{13}
-\bibcite{cmaes}{22}
+\bibcite{cmaes}{23}
 \bibcite{spot}{1}
 \bibcite{multistable}{14}
 \bibcite{anytraj}{9}
 \bibcite{respoly}{8}
+\bibcite{add}{21}
 \bibcite{sysrob}{6}
 \bibcite{quant}{12}
 \bibcite{cell1}{16}
@@ -16,7 +17,7 @@
 \@writefile{toc}{\contentsline {chapter}{Bibliography}{39}{section*.32}\protected@file@percent }
 \bibcite{jansengait}{20}
 \bibcite{optrob}{7}
-\bibcite{invpend}{21}
+\bibcite{invpend}{22}
 \bibcite{walkbasin}{10}
 \bibcite{limitsBoA}{15}
 \bibcite{classify}{11}

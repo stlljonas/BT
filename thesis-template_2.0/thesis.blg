@@ -14,45 +14,45 @@ Warning--empty author and editor in trm
 Warning--empty author in covrob
 Warning--empty journal in anytraj
 Warning--empty journal in respoly
-You've used 22 entries,
+You've used 23 entries,
             2253 wiz_defined-function locations,
-            662 strings with 8217 characters,
-and the built_in function-call counts, 7512 in all, are:
-= -- 670
-> -- 472
+            670 strings with 8501 characters,
+and the built_in function-call counts, 7878 in all, are:
+= -- 700
+> -- 504
 < -- 0
-+ -- 195
-- -- 172
-* -- 657
-:= -- 1280
-add.period$ -- 64
-call.type$ -- 22
-change.case$ -- 149
++ -- 208
+- -- 184
+* -- 695
+:= -- 1346
+add.period$ -- 67
+call.type$ -- 23
+change.case$ -- 158
 chr.to.int$ -- 0
-cite$ -- 28
-duplicate$ -- 219
-empty$ -- 530
-format.name$ -- 172
-if$ -- 1497
+cite$ -- 29
+duplicate$ -- 228
+empty$ -- 549
+format.name$ -- 184
+if$ -- 1565
 int.to.chr$ -- 0
-int.to.str$ -- 22
-missing$ -- 23
-newline$ -- 111
-num.names$ -- 40
-pop$ -- 146
+int.to.str$ -- 23
+missing$ -- 24
+newline$ -- 116
+num.names$ -- 42
+pop$ -- 154
 preamble$ -- 1
-purify$ -- 130
+purify$ -- 138
 quote$ -- 0
-skip$ -- 127
+skip$ -- 132
 stack$ -- 0
-substring$ -- 363
-swap$ -- 46
+substring$ -- 368
+swap$ -- 48
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 82
+type$ -- 86
 warning$ -- 6
-while$ -- 53
-width$ -- 24
-write$ -- 211
+while$ -- 55
+width$ -- 25
+write$ -- 220
 (There were 6 warnings)

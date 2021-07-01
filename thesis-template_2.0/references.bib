@@ -285,4 +285,23 @@ author = "Pierpaolo Belardinelli and Stefano Lenci",
 keywords = "Basins of attraction, dynamical integrity, parallel computing, multidimensional systems",
 abstract = "Numerical integrations represent a time-consuming element in the long-term dynamics analysis of mechanical systems. This limits the resolution of the computations and the dimension of the system to be investigated numerically. In fact, even pushing memory resources to their thresholds, only few tools can deal with higher-dimensional systems. This work illustrates, in a preliminary manner, the results that can be obtained reducing the aforementioned constraints thanks to the implementation of algorithms based on a parallel computing approach. In particular, by focusing on basins of attraction, four applications are discussed. i) The full domain of attraction for a four-dimensional (4D) system describing a linear oscillator coupled with a nonlinear absorber is calculated. ii) The variation of a safe basin with respect to the system dimension is then analyzed. It is highlighted how 4D and 3D analyses provide more confident results with respect to 2D analyses. iii) The parametric variation of a 2D system with a reduced step is performed by building a 3D representation which allows to highlight a smooth transition between the states. iv) A convergence study of a basin of attraction resolution is carried out. The integrity factor is used as a comparison measure."
 }
-1
+
+@article{add,
+author = {Geilinger, Moritz and Hahn, David and Zehnder, Jonas and B\"{a}cher, Moritz and Thomaszewski, Bernhard and Coros, Stelian},
+title = {ADD: Analytically Differentiable Dynamics for Multi-Body Systems with Frictional Contact},
+year = {2020},
+issue_date = {December 2020},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {39},
+number = {6},
+issn = {0730-0301},
+url = {https://doi.org/10.1145/3414685.3417766},
+doi = {10.1145/3414685.3417766},
+abstract = {We present a differentiable dynamics solver that is able to handle frictional contact for rigid and deformable objects within a unified framework. Through a principled mollification of normal and tangential contact forces, our method circumvents the main difficulties inherent to the non-smooth nature of frictional contact. We combine this new contact model with fully-implicit time integration to obtain a robust and efficient dynamics solver that is analytically differentiable. In conjunction with adjoint sensitivity analysis, our formulation enables gradient-based optimization with adaptive trade-offs between simulation accuracy and smoothness of objective function landscapes. We thoroughly analyse our approach on a set of simulation examples involving rigid bodies, visco-elastic materials, and coupled multi-body systems. We furthermore showcase applications of our differentiable simulator to parameter estimation for deformable objects, motion planning for robotic manipulation, trajectory optimization for compliant walking robots, as well as efficient self-supervised learning of control policies.},
+journal = {ACM Trans. Graph.},
+month = nov,
+articleno = {190},
+numpages = {15},
+keywords = {optimization, robotics, rigid-body dynamics, deformable models, contact mechanics, differentiable simulation}
+}
